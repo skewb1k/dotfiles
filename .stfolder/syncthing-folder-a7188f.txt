@@ -1,5 +1,0 @@
-# This directory is a Syncthing folder marker.
-# Do not delete.
-
-folderID: b2vla-ouco3
-created: 2024-10-22T20:36:51+03:00
