@@ -4,7 +4,7 @@
 {
   // ========== Theme ==========
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.colorCustomizations": {
     "editor.linkedEditingBackground": "#00000000"
   },
@@ -18,10 +18,8 @@
   "editor.letterSpacing": 0.3,
 
   // ========== Terminal ==========
-  // "terminal.integrated.fontFamily": "JetbrainsMono Nerd Font",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.cursorBlinking": true,
-  // "terminal.integrated.smoothScrolling": true,
 
   // ========== Window ==========
   "output.smartScroll.enabled": false,
@@ -41,11 +39,9 @@
   "workbench.activityBar.location": "bottom",
   "workbench.panel.showLabels": false,
   "workbench.layoutControl.enabled": false,
-  // "workbench.list.smoothScrolling": true,
 
   // ========== Tabs ==========
   "workbench.editor.wrapTabs": true,
-  // "workbench.editor.labelFormat": "medium",
   "workbench.editor.enablePreview": false,
   "workbench.editor.decorations.badges": false,
   "workbench.editor.decorations.colors": false,
@@ -83,8 +79,6 @@
   "editor.formatOnSave": true,
   "editor.cursorBlinking": "smooth",
   "editor.maxTokenizationLineLength": 1000,
-  // "editor.smoothScrolling": true,
-  // "editor.cursorSmoothCaretAnimation": "on",
   "editor.linkedEditing": true,
   "editor.parameterHints.enabled": false,
   "editor.showFoldingControls": "never",
@@ -115,8 +109,6 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "python.analysis.autoImportCompletions": true,
   "makefile.configureOnOpen": false,
-  // "go.lintTool": "golangci-lint",
-  // "go.lintFlags": ["--fast"],
   "go.lintOnSave": "workspace",
   "go.showWelcome": false,
   "[css]": {
@@ -128,7 +120,6 @@
     "editor.formatOnSaveMode": "file"
   },
   "[sql]": {
-    // "editor.defaultFormatter": "cweijan.vscode-database-client2"
     "editor.defaultFormatter": null
   },
   "[html]": {
@@ -197,7 +188,6 @@
 
   // ========== Code run ==========
   "python.terminal.executeInFileDir": true,
-  "code-runner.runInTerminal": true,
 
   // ========== Telemetry ==========
   "redhat.telemetry.enabled": false,
@@ -317,6 +307,5 @@
 
   // ========== Cody ==========
   "cody.commandHints.enabled": false,
-  "cody.autocomplete.enabled": true,
-  "cody.debug.verbose": true
+  "cody.autocomplete.enabled": true
 }
