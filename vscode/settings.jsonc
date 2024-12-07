@@ -1,0 +1,319 @@
+//! VSCode settings.json file.
+//! Source: https://github.com/skewb1k/dotfiles
+//! --------------------------------------------------
+{
+  // ========== Theme ==========
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "poimandres-noitalics",
+  "workbench.colorCustomizations": {
+    "editor.linkedEditingBackground": "#000"
+  },
+
+  // ========== Font ==========
+  // "editor.fontFamily": "FiraCode NF",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 15,
+  "editor.fontWeight": "bold",
+  "editor.fontVariations": true,
+  // "editor.letterSpacing": 0.2,
+
+  // ========== Terminal ==========
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.cursorBlinking": true,
+
+  // ========== Window ==========
+  "output.smartScroll.enabled": false,
+  "window.menuBarVisibility": "toggle",
+  "window.newWindowProfile": "Default",
+  "window.commandCenter": false,
+  "window.openFilesInNewWindow": "off",
+  "window.customMenuBarAltFocus": false,
+  "window.titleBarStyle": "custom",
+  "window.title": "${rootName}",
+  "window.customTitleBarVisibility": "auto",
+  "window.zoomLevel": 1,
+  "window.enableMenuBarMnemonics": false,
+
+  // ========== Workbench ==========
+  "workbench.tips.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "bottom",
+  "workbench.panel.showLabels": false,
+  "workbench.layoutControl.enabled": false,
+
+  // ========== Tabs ==========
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.decorations.badges": false,
+  "workbench.editor.decorations.colors": false,
+
+  // ========== Sidebar ==========
+  "workbench.sideBar.location": "left",
+
+  // ========== Tree ==========
+  "workbench.tree.expandMode": "doubleClick",
+  "explorer.autoReveal": false,
+  "explorer.compactFolders": false,
+  "explorer.confirmPasteNative": false,
+
+  // ========== Trust rules ==========
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.banner": "never",
+  "explorer.confirmDragAndDrop": false,
+
+  // ========== Editor ==========
+  "editor.folding": false,
+  "editor.stablePeek": false,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.matchBrackets": "never",
+  "editor.guides.highlightActiveIndentation": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.quickSuggestionsDelay": 0,
+  "editor.inlayHints.enabled": "off",
+  "editor.codeLens": false,
+  "editor.overviewRulerBorder": false,
+  "editor.lineNumbers": "relative",
+  "editor.mouseWheelScrollSensitivity": 2,
+  "editor.lightbulb.enabled": "off",
+  "editor.formatOnSave": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.maxTokenizationLineLength": 1000,
+  "editor.linkedEditing": true,
+  "editor.parameterHints.enabled": false,
+  "editor.showFoldingControls": "never",
+  "editor.scrollbar.horizontalScrollbarSize": 8,
+  "editor.scrollbar.verticalScrollbarSize": 8,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.colorDecoratorsLimit": 100,
+  "editor.accessibilitySupport": "off",
+  "editor.find.addExtraSpaceOnTop": false,
+  "editor.screenReaderAnnounceInlineSuggestion": false,
+  "editor.glyphMargin": false,
+  "scm.diffDecorations": "none",
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.icons": false,
+  "breadcrumbs.symbolPath": "off",
+
+  // ========== Diff editor ==========
+  "diffEditor.hideUnchangedRegions.enabled": true,
+
+  // ========== Formatting ==========
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.formatOnPaste": false,
+  "eslint.run": "onSave",
+  "prettier.printWidth": 120,
+  "files.trimTrailingWhitespace": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "python.analysis.autoImportCompletions": true,
+  "makefile.configureOnOpen": false,
+  "go.lintOnSave": "workspace",
+  "go.showWelcome": false,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSaveMode": "file"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": null
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+
+  // ========== Goto ==========
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "testing.automaticallyOpenPeekView": "never",
+  "references.preferredLocation": "view",
+
+  // ========== Minimap ==========
+  "editor.minimap.enabled": false,
+
+  // ========== Git ==========
+  "git.ignoreMissingGitWarning": true,
+  "git.openRepositoryInParentFolders": "never",
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+
+  // ========== Code run ==========
+  "python.terminal.executeInFileDir": true,
+
+  // ========== Telemetry ==========
+  "redhat.telemetry.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "postman.telemetry.enabled": false,
+  "cody.telemetry.level": "off",
+  "database-client.telemetry.usesOnlineServices": false,
+
+  // ========== Other ==========
+  "keyboard.dispatch": "keyCode",
+  "files.maxMemoryForLargeFilesMB": 16392,
+  "update.mode": "default",
+  "explorer.confirmDelete": false,
+  "accessibility.hideAccessibleView": true,
+  "http.proxySupport": "off",
+
+  // ========== Extensions ==========
+  "extensions.ignoreRecommendations": true,
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  // ========== Peacock ==========
+  "peacock.affectActivityBar": false,
+  "peacock.affectTitleBar": false,
+
+  // ========== Emmet ==========
+  "emmet.triggerExpansionOnTab": true,
+  "files.autoSave": "off",
+
+  // ========== ErrorLens ==========
+  "errorLens.replaceLinebreaksSymbol": "",
+  "errorLens.codeLensLength": {
+    "max": 20
+  },
+  "errorLens.messageMaxChars": 100,
+
+  // ========== Snippets Viewer ==========
+  "snippets.viewer.expandSnippetFiles": true,
+
+  // ========== Vim ==========
+  "vim.leader": "<Space>",
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.rename"],
+      "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+      "before": ["g", "f"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["g", "b"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["leader", "r"],
+      "commands": ["workbench.action.openRecent"]
+    },
+    {
+      "before": ["leader", "o"],
+      "commands": ["workbench.action.files.openFolder"]
+    },
+    {
+      "before": ["leader", "b"],
+      "commands": ["extension.vim_ctrl+6"]
+    },
+    {
+      "before": ["leader", "space"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["leader", "p"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["leader", "x"],
+      "commands": [":x"]
+    },
+    {
+      "before": ["leader", "q"],
+      "commands": [":q!"]
+    },
+    {
+      "before": ["leader", "t"],
+      "commands": ["workbench.action.reopenClosedEditor"]
+    },
+    {
+      "before": ["H"],
+      "commands": [":bprevious"]
+    },
+    {
+      "before": ["L"],
+      "commands": [":bnext"]
+    }
+  ],
+
+  // To improve performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "vim.highlightedyank.duration": 150,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(255, 255, 255, 0.2)",
+
+  // ========== Cody ==========
+  "cody.commandHints.enabled": false,
+  "cody.autocomplete.enabled": true,
+}

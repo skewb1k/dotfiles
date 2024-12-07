@@ -1,0 +1,8 @@
+unmap J
+unmap K
+unmap H
+unmap L
+map J goBack
+map K goForward
+map H previousTab
+map L nextTab
