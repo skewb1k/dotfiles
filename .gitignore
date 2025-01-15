@@ -1,3 +1,4 @@
-.ssh
 .stfolder
-vpn.json
+*.log
+*.swp
+.DS_Store

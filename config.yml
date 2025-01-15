@@ -1,0 +1,6 @@
+- source: ~/.zshrc
+  destination: zsh/.zshrc
+- source: ~/.p10k.zsh
+  destination: zsh/.p10k.zsh
+- source: ~/.tmux.conf
+  destination: tmux/.tmux.conf

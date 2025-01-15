@@ -64,6 +64,10 @@ function __zoxide_cd() {
   cd "$1" && l
 }
 
+function mkdir {
+  command mkdir $1 && cd $1
+}
+
 alias cd=z
 alias ..="cd .."
 alias ...="cd ../.."
@@ -71,7 +75,30 @@ alias ~="cd ~"
 
 alias ccache="sudo rm -rf ~/.cache /tmp"
 
+alias python="python3"
+alias py="python3"
 alias c=clear && printf '\e[3J'
-alias zshrc="nvim ~/.zshrc"
+alias t="tmux"
+alias vsc="code ."
+alias zshrc="vim ~/.zshrc"
 alias aptu="sudo apt update && sudo apt upgrade"
 alias apti="f() { sudo apt-get install -y $1 };f"
+
+# dir's aliases
+alias -g winhome=/mnt/c/Users/skewbik
+
+# bun completions
+[ -s "/home/skewbik/.bun/_bun" ] && source "/home/skewbik/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Automatically start tmux and restore session
+if [[ -z "$TMUX" ]]; then
+  tmux new-session \; run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh
+fi
+
+
+
+. "/home/skewbik/.deno/env"
