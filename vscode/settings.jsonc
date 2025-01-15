@@ -2,16 +2,10 @@
 //! Source: https://github.com/skewb1k/dotfiles
 //! --------------------------------------------------
 {
-  // ========== Theme ==========
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "poimandres-noitalics",
-  "workbench.colorCustomizations": {
-    "editor.linkedEditingBackground": "#000"
-  },
-
   // ========== Font ==========
   // "editor.fontFamily": "FiraCode NF",
   "editor.fontFamily": "JetBrainsMono Nerd Font",
+  // "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
   "editor.fontLigatures": false,
   "editor.fontSize": 15,
   "editor.fontWeight": "bold",
@@ -21,6 +15,19 @@
   // ========== Terminal ==========
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontLigatures": false,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.initialHint": false,
+  "terminal.integrated.tabs.title": "${shellType}",
+  "terminal.integrated.tabs.showActions": "never",
+  "terminal.integrated.tabs.description": "${shellType}",
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.selectTheme",
+    "workbench.action.openSettingsJson",
+    "notifications.clearAll",
+    "workbench.action.toggleSidebarVisibility"
+  ],
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 
   // ========== Window ==========
   "output.smartScroll.enabled": false,
@@ -47,9 +54,6 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.decorations.badges": false,
   "workbench.editor.decorations.colors": false,
-
-  // ========== Sidebar ==========
-  "workbench.sideBar.location": "left",
 
   // ========== Tree ==========
   "workbench.tree.expandMode": "doubleClick",
@@ -78,7 +82,6 @@
   "editor.lineNumbers": "relative",
   "editor.mouseWheelScrollSensitivity": 2,
   "editor.lightbulb.enabled": "off",
-  "editor.formatOnSave": true,
   "editor.cursorBlinking": "smooth",
   "editor.maxTokenizationLineLength": 1000,
   "editor.linkedEditing": true,
@@ -87,6 +90,7 @@
   "editor.scrollbar.horizontalScrollbarSize": 8,
   "editor.scrollbar.verticalScrollbarSize": 8,
   "editor.bracketPairColorization.enabled": false,
+  "workbench.editor.empty.hint": "hidden",
   "editor.colorDecoratorsLimit": 100,
   "editor.accessibilitySupport": "off",
   "editor.find.addExtraSpaceOnTop": false,
@@ -96,33 +100,30 @@
   "breadcrumbs.enabled": true,
   "breadcrumbs.icons": false,
   "breadcrumbs.symbolPath": "off",
-
-  // ========== Diff editor ==========
-  "diffEditor.hideUnchangedRegions.enabled": true,
+  "http.proxySupport": "off",
 
   // ========== Formatting ==========
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.formatOnPaste": false,
-  "eslint.run": "onSave",
-  "prettier.printWidth": 120,
-  "files.trimTrailingWhitespace": true,
+  "go.lintOnSave": "workspace",
+  "go.useLanguageServer": true,
+  "gopls": {
+    "formatting.gofumpt": true
+  },
+  "go.lintTool": "golangci-lint",
+  "go.showWelcome": false,
+  "go.toolsManagement.autoUpdate": true,
+  "files.autoSave": "off",
+  "editor.formatOnSave": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "python.analysis.autoImportCompletions": true,
+  "files.trimTrailingWhitespace": true,
+  "prettier.useEditorConfig": true,
   "makefile.configureOnOpen": false,
-  "go.lintOnSave": "workspace",
-  "go.showWelcome": false,
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[go]": {
-    "editor.defaultFormatter": "golang.go",
-    "editor.formatOnSaveMode": "file"
+    "editor.defaultFormatter": "golang.go"
   },
   "[sql]": {
     "editor.defaultFormatter": null
@@ -130,13 +131,8 @@
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -151,29 +147,23 @@
     "editor.defaultFormatter": "redhat.java"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[lua]": {
     "editor.defaultFormatter": "sumneko.lua"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 2
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "python.analysis.autoImportCompletions": true
   },
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
 
   // ========== Goto ==========
@@ -191,31 +181,30 @@
   // ========== Git ==========
   "git.ignoreMissingGitWarning": true,
   "git.openRepositoryInParentFolders": "never",
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-
-  // ========== Code run ==========
-  "python.terminal.executeInFileDir": true,
 
   // ========== Telemetry ==========
   "redhat.telemetry.enabled": false,
   "telemetry.telemetryLevel": "off",
-  "postman.telemetry.enabled": false,
   "cody.telemetry.level": "off",
   "database-client.telemetry.usesOnlineServices": false,
 
   // ========== Other ==========
   "keyboard.dispatch": "keyCode",
+  "debug.internalConsoleOptions": "neverOpen",
   "files.maxMemoryForLargeFilesMB": 16392,
   "update.mode": "default",
   "explorer.confirmDelete": false,
   "accessibility.hideAccessibleView": true,
-  "http.proxySupport": "off",
+  "files.exclude": {
+    "**/.yarn": true,
+    "**/.stfolder": true,
+    "**/node_modules": true,
+    "**/.venv": true
+  },
 
   // ========== Extensions ==========
   "extensions.ignoreRecommendations": true,
   "extensions.autoUpdate": "onlyEnabledExtensions",
-  "liveServer.settings.donotShowInfoMsg": true,
 
   // ========== Peacock ==========
   "peacock.affectActivityBar": false,
@@ -223,7 +212,9 @@
 
   // ========== Emmet ==========
   "emmet.triggerExpansionOnTab": true,
-  "files.autoSave": "off",
+
+  // ========== DB Client ==========
+  "database-client.executeCursorSQLByShortcut": false,
 
   // ========== ErrorLens ==========
   "errorLens.replaceLinebreaksSymbol": "",
@@ -302,18 +293,68 @@
     {
       "before": ["L"],
       "commands": [":bnext"]
+    },
+    {
+      "before": ["g", "]"],
+      "commands": ["editor.action.marker.next"],
+      "when": "editorTextFocus"
+    },
+    {
+      "before": ["g", "["],
+      "commands": ["editor.action.marker.prev"],
+      "when": "editorTextFocus"
+    },
+    {
+      "before": ["g", "l"],
+      "commands": ["editor.action.openLink"],
+      "when": "editorTextFocus"
     }
   ],
-
   // To improve performance
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
   },
-  "vim.highlightedyank.duration": 150,
+  "vim.highlightedyank.duration": 200,
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "rgba(255, 255, 255, 0.2)",
 
   // ========== Cody ==========
   "cody.commandHints.enabled": false,
   "cody.autocomplete.enabled": true,
+
+  // ========== Discord ==========
+  "vscord.app.name": "Visual Studio Code",
+  "vscord.status.idle.check": false,
+  "vscord.status.idle.enabled": false,
+  "vscord.status.problems.enabled": false,
+  "vscord.status.details.text.editing": "{workspace}",
+  "vscord.status.details.text.viewing": "{workspace}",
+  "vscord.status.details.text.idle": "Chilling...",
+  "vscord.status.image.large.idle.key": "https://media.tenor.com/VdIKn05yIh8AAAAM/cat-sleep.gif",
+  "vscord.status.image.large.idle.text": "Cat",
+  "vscord.status.buttons.button1.enabled": false,
+  "vscord.status.buttons.button2.enabled": false,
+  "vscord.status.details.enabled": true,
+  "vscord.status.details.text.notInFile": "Chilling...",
+  "vscord.status.image.large.editing.key": "https://media.tenor.com/9-RWXkKEE24AAAAM/yevgeny-ponasenkov.gif",
+  "vscord.status.image.large.editing.text": "Ponasenkov",
+  "vscord.status.image.large.notInFile.key": "https://media.tenor.com/VdIKn05yIh8AAAAM/cat-sleep.gif",
+  "vscord.status.image.large.viewing.key": "https://media.tenor.com/9-RWXkKEE24AAAAM/yevgeny-ponasenkov.gif",
+  "vscord.status.image.large.viewing.text": "Ponasenkov",
+  "vscord.status.image.small.editing.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{lang}.png",
+  "vscord.status.image.small.editing.text": "{LANG}",
+  "vscord.status.image.small.viewing.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{lang}.png",
+  "vscord.status.image.small.viewing.text": "{LANG}",
+  "vscord.status.showElapsedTime": false,
+  "vscord.status.state.idle.enabled": false,
+  "vscord.status.state.text.editing": "{file_name}{file_extension}",
+  "vscord.status.state.text.viewing": "{file_name}{file_extension}",
+
+  // ========== Theme ==========
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    // fix highlighting of default rename tag
+    "editor.linkedEditingBackground": "#00000000"
+  },
+  "workbench.colorTheme": "Tokyo Night"
 }

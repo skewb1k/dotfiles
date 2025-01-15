@@ -1,5 +1,5 @@
 //! VSCode keybindings.json file.
-//! Source: https://github.com/skewb1k/dotfiles
+//! Source: https://github.com/skewb1k/vscode-settings
 //! --------------------------------------------------
 [
   // ========== Vscode related ==========
@@ -195,12 +195,30 @@
     "command": "workbench.action.togglePanel"
   },
   {
+    "key": "f1",
+    "command": "-workbench.action.showCommands"
+  },
+  {
     "key": "f2",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
-    "key": "f1",
-    "command": "-workbench.action.showCommands"
+    "key": "ctrl+m",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-markdown.extension.editing.toggleMath",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-extension.vim_ctrl+m",
+    "when": "editorTextFocus && vim.active && vim.use<C-m> && !inDebugRepl || vim.active && vim.use<C-m> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-m> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "-editor.action.toggleTabFocusMode"
   },
 
   // ========== Zooming ==========
@@ -269,22 +287,6 @@
     "key": "ctrl+shift+/",
     "command": "editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly"
-  },
-
-  // ========== Random Theme Switcher ==========
-  {
-    "key": "ctrl+f12",
-    "command": "randomThemeSwitcher.switchTheme"
-  },
-  {
-    "key": "ctrl+f12",
-    "command": "-editor.action.revealDefinition",
-    "when": "editorHasDefinitionProvider && editorTextFocus && isWeb"
-  },
-  {
-    "key": "ctrl+f12",
-    "command": "-editor.action.goToImplementation",
-    "when": "editorHasImplementationProvider && editorTextFocus"
   },
 
   // ========== hjkl-like navigation ==========
@@ -388,6 +390,10 @@
     "command": "workbench.view.extension.github-cweijan-mysql"
   },
   {
+    "key": "ctrl+shift+w",
+    "command": "workbench.view.extension.github-cweijan-nosql"
+  },
+  {
     "key": "ctrl+shift+d",
     "command": "-workbench.view.debug",
     "when": "viewContainer.workbench.view.debug.enabled"
@@ -475,38 +481,6 @@
     "key": "ctrl+shift+\\",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
-  },
-
-  // ========== hjkl-like navigating between terminals ==========
-  {
-    "key": "ctrl+shift+j",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+l",
-    "command": "workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+h",
-    "command": "workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+k",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+alt+h",
-    "command": "workbench.action.terminal.resizePaneLeft",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "ctrl+alt+l",
-    "command": "workbench.action.terminal.resizePaneRight",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
 
   // ========== hjkl-like multicursor ==========

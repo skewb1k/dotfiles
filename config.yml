@@ -4,3 +4,7 @@
   destination: zsh/.p10k.zsh
 - source: ~/.tmux.conf
   destination: tmux/.tmux.conf
+- source: /mnt/c/Users/skewbik/AppData/Roaming/Code/User/settings.json
+  destination: vscode/settings.jsonc
+- source: /mnt/c/Users/skewbik/AppData/Roaming/Code/User/keybindings.json
+  destination: vscode/keybindings.jsonc
