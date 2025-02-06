@@ -17,7 +17,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
+   # mkdir -p "$(dirname $ZINIT_HOME)"
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
@@ -49,7 +49,7 @@ export LD_LIBRARY_PATH=/usr/local/lib
 # Fix for password store
 export PASSWORD_STORE_GPG_OPTS='--no-throw-keyids'
 
-# bindkey -v
+bindkey -v
 bindkey '^o' autosuggest-accept
 
 # [ -s "$HOME/.svm/svm.sh" ] && source "$HOME/.svm/svm.sh"
@@ -62,10 +62,6 @@ eval "$(zoxide init zsh)"
 
 function __zoxide_cd() {
   cd "$1" && l
-}
-
-function mkdir {
-  command mkdir $1 && cd $1
 }
 
 alias cd=z
@@ -83,6 +79,8 @@ alias vsc="code ."
 alias zshrc="vim ~/.zshrc"
 alias aptu="sudo apt update && sudo apt upgrade"
 alias apti="f() { sudo apt-get install -y $1 };f"
+
+alias genenvexample="sed 's/=.*/=/' .env > .env.example"
 
 # dir's aliases
 alias -g winhome=/mnt/c/Users/skewbik
@@ -102,3 +100,15 @@ fi
 
 
 . "/home/skewbik/.deno/env"
+
+# fnm
+FNM_PATH="/home/skewbik/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/skewbik/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+# git
+alias gac="git add -A && git commit"
+alias gs="git status"
+alias gl="git log --oneline --graph --decorate --all"
