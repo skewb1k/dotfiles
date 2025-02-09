@@ -37,11 +37,6 @@
   },
   {
     "key": "ctrl+p",
-    "command": "workbench.action.quickOpen",
-    "when": "!terminalFocus"
-  },
-  {
-    "key": "ctrl+p",
     "command": "-workbench.action.quickOpen"
   },
   {
@@ -318,12 +313,12 @@
     "when": "inQuickOpen"
   },
   {
-    "key": "ctrl+j",
+    "key": "ctrl+n",
     "command": "selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
-    "key": "ctrl+k",
+    "key": "ctrl+p",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
@@ -419,7 +414,7 @@
 
   // ========== Accept on tab ==========
   {
-    "key": "ctrl+l",
+    "key": "ctrl+y",
     "command": "workbench.action.acceptSelectedQuickOpenItem",
     "when": "inQuickOpen"
   },
@@ -539,5 +534,90 @@
     "key": "f12",
     "command": "-editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus"
-  }
+  },
+  {
+    "key": "ctrl+p",
+    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  // {
+  //   "key": "ctrl+y",
+  //   "command": "acceptSelectedSuggestion",
+  //   "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  // },
+  // {
+  //   "key": "tab",
+  //   "command": "-acceptSelectedSuggestion",
+  //   "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  // },
+  // {
+  //   "key": "ctrl+y",
+  //   "command": "editor.action.inlineSuggest.commit",
+  //   "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  // },
+  // {
+  //   "key": "tab",
+  //   "command": "-editor.action.inlineSuggest.commit",
+  //   "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  // },
+  // {
+  //   "key": "ctrl+y",
+  //   "command": "editor.action.inlineSuggest.commit",
+  //   "when": "inInlineEditsPreviewEditor"
+  // },
+  // {
+  //   "key": "tab",
+  //   "command": "-editor.action.inlineSuggest.commit",
+  //   "when": "inInlineEditsPreviewEditor"
+  // },
+  // {
+  //   "key": "ctrl+y",
+  //   "command": "editor.emmet.action.expandAbbreviation",
+  //   "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+  // },
+  // {
+  //   "key": "tab",
+  //   "command": "-editor.emmet.action.expandAbbreviation",
+  //   "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+  // },
+  // {
+  //   "key": "ctrl+y",
+  //   "command": "cody.supersuggest.accept",
+  //   "when": "cody.activated && cody.supersuggest.active && editorTextFocus"
+  // },
+  // {
+  //   "key": "tab",
+  //   "command": "-cody.supersuggest.accept",
+  //   "when": "cody.activated && cody.supersuggest.active && editorTextFocus"
+  // },
+  // {
+  //   "key": "ctrl+y",
+  //   "command": "insertBestCompletion",
+  //   "when": "atEndOfWord && textInputFocus && !hasOtherSuggestions && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
+  // },
+  // {
+  //   "key": "tab",
+  //   "command": "-insertBestCompletion",
+  //   "when": "atEndOfWord && textInputFocus && !hasOtherSuggestions && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
+  // },
+  // {
+  //   "key": "ctrl+y",
+  //   "command": "insertSnippet",
+  //   "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
+  // },
+  // {
+  //   "key": "tab",
+  //   "command": "-insertSnippet",
+  //   "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
+  // },
+  // {
+  //   "key": "ctrl+y",
+  //   "command": "workbench.action.terminal.acceptSelectedSuggestion",
+  //   "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+  // },
+  // {
+  //   "key": "tab",
+  //   "command": "-workbench.action.terminal.acceptSelectedSuggestion",
+  //   "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+  // }
 ]

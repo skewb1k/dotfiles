@@ -51,6 +51,8 @@ export PASSWORD_STORE_GPG_OPTS='--no-throw-keyids'
 
 bindkey -v
 bindkey '^o' autosuggest-accept
+bindkey -M viins '^P' up-history
+bindkey -M viins '^N' down-history
 
 # [ -s "$HOME/.svm/svm.sh" ] && source "$HOME/.svm/svm.sh"
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
@@ -109,6 +111,5 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 # git
-alias gac="git add -A && git commit"
-alias gs="git status"
+alias gac="git add -A && git commit -v"
 alias gl="git log --oneline --graph --decorate --all"
