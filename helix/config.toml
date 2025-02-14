@@ -1,0 +1,41 @@
+theme = "rose_pine_bg_modified"
+
+[editor]
+line-number = "relative"
+mouse = false
+true-color = true
+end-of-line-diagnostics = "hint"
+auto-info = false
+
+[editor.file-picker]
+hidden = false
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.lsp]
+auto-signature-help = false
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+	
+[keys.normal]
+"A-j" = [ "extend_to_line_bounds", "delete_selection", "paste_after" ]
+"A-k" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
+V = ["goto_first_nonwhitespace", "extend_to_line_end"]
+D = ["ensure_selections_forward", "extend_to_line_end"]
+X = "select_line_above"
+a = ["append_mode", "collapse_selection"]
+L = "goto_line_end"
+H = "goto_line_start"
+Y = "@xy"
+"ret" = "goto_word" 
+
+[keys.insert]
+j = { k = "normal_mode" }
+
+[keys.normal.space]
+x = ":write-buffer-close"
+
+[keys.normal.g]
+h = "hover"

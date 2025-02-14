@@ -33,11 +33,18 @@ with open(yaml_path) as f:
             else:
                 print(f"Destination file {dest_path} does not exist")
         else:
-            dest_path.parent.mkdir(parents=True, exist_ok=True)
-
-            # Copy the file
-            if source_path.exists():
-                shutil.copy2(source_path, dest_path)
-                print(f"Copied {source_path} to {dest_path}")
+            if source_path.is_dir():
+                # Copy directory recursively
+                try:
+                    shutil.copytree(source_path, dest_path, dirs_exist_ok=True)
+                    print(f"Copied directory {source_path} to {dest_path}")
+                except Exception as e:
+                    print(f"Failed to copy directory: {e}")
             else:
-                print(f"Source file {source_path} does not exist")
+                # Copy a single file
+                dest_path.parent.mkdir(parents=True, exist_ok=True)
+                try:
+                    shutil.copy2(source_path, dest_path)
+                    print(f"Copied file {source_path} to {dest_path}")
+                except Exception as e:
+                    print(f"Failed to copy file: {e}")

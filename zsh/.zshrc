@@ -1,4 +1,6 @@
-export PATH="$HOME/go/bin:/usr/local/bin:/usr/bin:/snap/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:/usr/local/bin:/usr/bin:/snap/bin:$PATH"
+
+plugins=(git docker)
 
 # SSH_AUTH_SOCK set to GPG to enable using gpgagent as the ssh agent.
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
@@ -40,7 +42,10 @@ export LC_ALL=en_US.UTF-8
 
 setopt auto_cd
 
+export TERM="xterm-256color"
 export LD_LIBRARY_PATH=/usr/local/lib
+
+export EDITOR="hx"
 
 # P10k customizations
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -72,15 +77,17 @@ alias ...="cd ../.."
 alias ~="cd ~"
 
 alias ccache="sudo rm -rf ~/.cache /tmp"
+alias aptu="sudo apt update && sudo apt upgrade"
+alias apti="f() { sudo apt-get install -y $1 };f"
 
 alias python="python3"
 alias py="python3"
 alias c=clear && printf '\e[3J'
 alias t="tmux"
+alias m="make"
 alias vsc="code ."
-alias zshrc="vim ~/.zshrc"
-alias aptu="sudo apt update && sudo apt upgrade"
-alias apti="f() { sudo apt-get install -y $1 };f"
+alias zshrc="$EDITOR ~/.zshrc"
+alias sourcez="source ~/.zshrc"
 
 alias genenvexample="sed 's/=.*/=/' .env > .env.example"
 
@@ -113,3 +120,7 @@ fi
 # git
 alias gac="git add -A && git commit -v"
 alias gl="git log --oneline --graph --decorate --all"
+alias gs="git status"
+
+# docker
+alias dsp="docker system prune -af && docker volume prune -af"

@@ -19,6 +19,7 @@ cd ~
 # zsh
 curl -O https://raw.githubusercontent.com/skewb1k/dotfiles/refs/heads/main/zsh/.zshrc
 curl -O https://raw.githubusercontent.com/skewb1k/dotfiles/refs/heads/main/zsh/.p10k.zsh
+chsh -s $(which zsh)
 
 # tmux
 curl -O https://raw.githubusercontent.com/skewb1k/dotfiles/refs/heads/main/tmux/.tmux.conf
@@ -26,3 +27,4 @@ curl -O https://raw.githubusercontent.com/skewb1k/dotfiles/refs/heads/main/tmux/
 # docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
+

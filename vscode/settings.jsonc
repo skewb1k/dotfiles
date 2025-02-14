@@ -18,7 +18,7 @@
   "terminal.integrated.fontLigatures": false,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.initialHint": false,
-  "terminal.integrated.tabs.title": "${shellType}",
+  "terminal.integrate.tabs.title": "${shellType}",
   "terminal.integrated.tabs.showActions": "never",
   "terminal.integrated.tabs.description": "${shellType}",
   "terminal.integrated.commandsToSkipShell": [
@@ -35,7 +35,7 @@
   "window.commandCenter": false,
   "window.openFilesInNewWindow": "off",
   "window.customMenuBarAltFocus": false,
-  "window.titleBarStyle": "native",
+  "window.titleBarStyle": "custom",
   "window.title": "${rootName}",
   "window.customTitleBarVisibility": "never",
   "window.zoomLevel": 1,

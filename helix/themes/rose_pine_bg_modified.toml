@@ -1,0 +1,24 @@
+inherits = "rose_pine"
+
+"ui.cursor.match" = { }
+
+[palette]
+base = "#161616"
+surface = "#161616"
+overlay = "#292929"
+muted = "#6e6a86"
+subtle = "#908caa"
+text = "#e0def4"
+love = "#eb6f92"
+love_10 = "#311f30"
+gold = "#f6c177"
+gold_10 = "#30282c"
+rose = "#ebbcba"
+rose_10 = "#2f2834"
+pine = "#31748f"
+pine_10 = "#1a2030"
+foam = "#9ccfd8"
+foam_10 = "#252937"
+iris = "#c4a7e7"
+iris_10 = "#2b2539"
+highlight_low = "#161616"
