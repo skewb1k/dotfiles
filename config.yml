@@ -10,3 +10,6 @@
   destination: vscode/settings.jsonc
 - source: /mnt/c/Users/skewbik/AppData/Roaming/Code/User/keybindings.json
   destination: vscode/keybindings.jsonc
+- source: /mnt/c/Users/skewbik/AppData/Roaming/alacritty
+  destination: alacritty
+  

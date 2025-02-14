@@ -15,6 +15,7 @@ style = "Bold"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font"
+style = "Regular"
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
@@ -26,4 +27,5 @@ decorations = "none"
 [general]
 live_config_reload = true
 
-import = ["~/AppData/Roaming/alacritty/poimandres.toml"]
+import = ["themes/rose_pine.toml"]
+
