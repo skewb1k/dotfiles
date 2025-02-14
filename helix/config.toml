@@ -6,9 +6,12 @@ mouse = false
 true-color = true
 end-of-line-diagnostics = "hint"
 auto-info = false
+continue-comments = false
 
 [editor.file-picker]
 hidden = false
+git-exclude = false
+git-ignore = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -31,11 +34,17 @@ H = "goto_line_start"
 Y = "@xy"
 "ret" = "goto_word" 
 
+[keys.select]
+L = "goto_line_end"
+H = "goto_line_start"
+
 [keys.insert]
 j = { k = "normal_mode" }
 
 [keys.normal.space]
 x = ":write-buffer-close"
+q = ":buffer-close!"
+u = ":reload-all"
 
 [keys.normal.g]
 h = "hover"
