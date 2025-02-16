@@ -1,6 +1,7 @@
 inherits = "rose_pine"
 
-"ui.cursor.match" = { }
+"ui.cursor.match" = { fg = "text" }
+"diff.minus" = "base"
 
 [palette]
 base = "#161616"

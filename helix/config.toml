@@ -7,6 +7,8 @@ true-color = true
 end-of-line-diagnostics = "hint"
 auto-info = false
 continue-comments = false
+bufferline = "multiple"
+# rulers = [120]
 
 [editor.file-picker]
 hidden = false
@@ -18,9 +20,16 @@ insert = "bar"
 
 [editor.lsp]
 auto-signature-help = false
+display-messages = true
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name"]
+
+[editor.soft-wrap]
+enable = false
 	
 [keys.normal]
 "A-j" = [ "extend_to_line_bounds", "delete_selection", "paste_after" ]
@@ -31,8 +40,9 @@ X = "select_line_above"
 a = ["append_mode", "collapse_selection"]
 L = "goto_line_end"
 H = "goto_line_start"
-Y = "@xy"
 "ret" = "goto_word" 
+"C-q" = [":insert-output cat /tmp/helixtmp", "select_all"]
+"C-g" = "@:sh ~/.config/helix/git-show.sh $(pwd) <C-r>%<ret>:n<ret><C-q>:o <C-r>.<ret>:bp<ret>:bc!<ret>"
 
 [keys.select]
 L = "goto_line_end"
@@ -43,7 +53,7 @@ j = { k = "normal_mode" }
 
 [keys.normal.space]
 x = ":write-buffer-close"
-q = ":buffer-close!"
+q = ":bc!"
 u = ":reload-all"
 
 [keys.normal.g]
