@@ -34,13 +34,14 @@ enable = false
 [keys.normal]
 "A-j" = [ "extend_to_line_bounds", "delete_selection", "paste_after" ]
 "A-k" = [ "extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before" ]
+"A-w" = [ ":wa!" ]
 V = ["goto_first_nonwhitespace", "extend_to_line_end"]
 D = ["ensure_selections_forward", "extend_to_line_end"]
 X = "select_line_above"
 a = ["append_mode", "collapse_selection"]
 L = "goto_line_end"
 H = "goto_line_start"
-"ret" = "goto_word" 
+"ret" = "goto_word"
 "C-q" = [":insert-output cat /tmp/helixtmp", "select_all"]
 "C-g" = "@:sh ~/.config/helix/git-show.sh $(pwd) <C-r>%<ret>:n<ret><C-q>:o <C-r>.<ret>:bp<ret>:bc!<ret>"
 

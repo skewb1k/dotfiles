@@ -1,0 +1,18 @@
+[user]
+	email = 101928759+skewb1k@users.noreply.github.com
+	name = skewb1k
+[init]
+	defaultBranch = main
+[core]
+	editor = hx
+	autocrlf = false
+	excludesfile = /home/skewbik/.gitignore_global
+[push]
+	autoSetupRemote = true
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[pull]
+	rebase = false

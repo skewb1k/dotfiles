@@ -1,11 +1,3 @@
-export PATH="$HOME/.local/bin:$HOME/go/bin:/usr/local/bin:/usr/bin:/snap/bin:$PATH"
-
-plugins=(git docker)
-
-# SSH_AUTH_SOCK set to GPG to enable using gpgagent as the ssh agent.
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -13,13 +5,31 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+plugins=(git docker)
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export TERM="xterm-256color"
+export LD_LIBRARY_PATH=/usr/local/lib
+export EDITOR="hx"
+
+export BUN_INSTALL="$HOME/.bun"
+export GOPATH="$HOME/.local/go"
+
+export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$HOME/$GOPATH/bin:/usr/local/bin:/usr/bin:/snap/bin"
+
+# Fix for password store
+export PASSWORD_STORE_GPG_OPTS='--no-throw-keyids'
+
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+
 autoload -Uz compinit && compinit
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
-   # mkdir -p "$(dirname $ZINIT_HOME)"
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
@@ -37,40 +47,35 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
 setopt auto_cd
 
-export TERM="xterm-256color"
-export LD_LIBRARY_PATH=/usr/local/lib
-
-export EDITOR="hx"
-
 # P10k customizations
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
-# Fix for password store
-export PASSWORD_STORE_GPG_OPTS='--no-throw-keyids'
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 bindkey -v
 bindkey '^o' autosuggest-accept
-bindkey -M viins '^P' up-history
-bindkey -M viins '^N' down-history
-
-# [ -s "$HOME/.svm/svm.sh" ] && source "$HOME/.svm/svm.sh"
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^R' history-incremental-search-backward
 
 alias l="eza -a --icons"
 alias lt="eza -aT --icons"
 
-eval "$(zoxide init zsh)"
+# yazi helper https://yazi-rs.github.io/docs/quick-start#shell-wrapper
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
+eval "$(zoxide init zsh)"
 function __zoxide_cd() {
   cd "$1" && l
 }
-
 alias cd=z
 alias ..="cd .."
 alias ...="cd ../.."
@@ -80,42 +85,25 @@ alias ccache="sudo rm -rf ~/.cache /tmp"
 alias aptu="sudo apt update && sudo apt upgrade"
 alias apti="f() { sudo apt-get install -y $1 };f"
 
+alias c=clear && printf '\e[3J'
+
 alias python="python3"
 alias py="python3"
-alias c=clear && printf '\e[3J'
+
 alias t="tmux"
 alias m="make"
 alias vsc="code ."
+
 alias zshrc="$EDITOR ~/.zshrc"
 alias sourcez="source ~/.zshrc"
 
 alias genenvexample="sed 's/=.*/=/' .env > .env.example"
 
-# dir's aliases
+# dirs aliases
 alias -g winhome=/mnt/c/Users/skewbik
 
 # bun completions
 [ -s "/home/skewbik/.bun/_bun" ] && source "/home/skewbik/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Automatically start tmux and restore session
-if [[ -z "$TMUX" ]]; then
-  tmux new-session \; run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh
-fi
-
-
-
-. "/home/skewbik/.deno/env"
-
-# fnm
-FNM_PATH="/home/skewbik/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/skewbik/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
 
 # git
 alias gac="git add -A && git commit -v"

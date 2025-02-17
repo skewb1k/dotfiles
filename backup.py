@@ -6,7 +6,7 @@ import argparse
 parser = argparse.ArgumentParser(description="Script with flags")
 
 parser.add_argument(
-    "-r", "--restore", action="store_true", help="Enable verbose output"
+    "-r", "--restore", action="store_true", help="Enable restore mode"
 )
 
 args = parser.parse_args()
@@ -24,15 +24,40 @@ with open(yaml_path) as f:
         dest_path = script_dir / item["destination"]
 
         if args.restore:
-            source_path.parent.mkdir(parents=True, exist_ok=True)
+            dest_path.parent.mkdir(parents=True, exist_ok=True)
 
-            # Copy the file back to source
-            if dest_path.exists():
-                shutil.copy2(dest_path, source_path)
-                print(f"Restored {dest_path} to {source_path}")
+            # If the source is a directory, we restore the contents of the destination to the source
+            if dest_path.is_dir():
+                # Recursively copy the content back from destination to source
+                for src_file in dest_path.iterdir():
+                    if src_file.is_dir():
+                        shutil.copytree(src_file, source_path / src_file.name, dirs_exist_ok=True)
+                        print(f"Restored directory {src_file} to {source_path / src_file.name}")
+                    else:
+                        # Ensure the parent directory of the destination file exists
+                        (source_path / src_file.name).parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(src_file, source_path / src_file.name)
+                        print(f"Restored file {src_file} to {source_path / src_file.name}")
             else:
-                print(f"Destination file {dest_path} does not exist")
+                # Ensure the parent directory of the destination file exists
+                dest_path.parent.mkdir(parents=True, exist_ok=True)
+                # Restore a single file
+                if dest_path.exists():
+                    shutil.copy2(dest_path, source_path)
+                    print(f"Restored {dest_path} to {source_path}")
+                else:
+                    print(f"Destination file {dest_path} does not exist")
         else:
+            # Delete the destination file or directory before copying
+            if dest_path.exists():
+                if dest_path.is_dir():
+                    shutil.rmtree(dest_path)
+                    print(f"Deleted directory {dest_path}")
+                else:
+                    dest_path.unlink()
+                    print(f"Deleted file {dest_path}")
+
+            # Ensure destination path exists for directories
             if source_path.is_dir():
                 # Copy directory recursively
                 try:

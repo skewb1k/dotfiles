@@ -37,7 +37,6 @@
   "window.customMenuBarAltFocus": false,
   "window.titleBarStyle": "custom",
   "window.title": "${rootName}",
-  "window.customTitleBarVisibility": "never",
   "window.zoomLevel": 1,
   "window.enableMenuBarMnemonics": false,
   // ========== Workbench ==========
