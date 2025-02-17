@@ -16,7 +16,7 @@ export EDITOR="hx"
 export BUN_INSTALL="$HOME/.bun"
 export GOPATH="$HOME/.local/go"
 
-export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$HOME/$GOPATH/bin:/usr/local/bin:/usr/bin:/snap/bin"
+export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/snap/bin"
 
 # Fix for password store
 export PASSWORD_STORE_GPG_OPTS='--no-throw-keyids'

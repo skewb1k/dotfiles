@@ -24,6 +24,10 @@ style = "Regular"
 [window]
 decorations = "none"
 
+[window.padding]
+x = 0
+y = 0
+
 [general]
 live_config_reload = true
 

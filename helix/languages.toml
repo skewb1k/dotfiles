@@ -1,0 +1,9 @@
+[language-server.clangd]
+command = 'clangd'
+args = ['--function-arg-placeholders', '--completion-style=detailed', '--clang-tidy', '--log=verbose']
+
+[[language]]
+name = 'cpp'
+formatter = { command = 'clang-format', args = ['--style=file'] }
+auto-format = true
+language-servers = ['clangd']
