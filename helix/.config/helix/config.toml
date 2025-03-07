@@ -8,6 +8,7 @@ end-of-line-diagnostics = "hint"
 auto-info = false
 continue-comments = false
 bufferline = "multiple"
+# auto-pairs = false
 # rulers = [120]
 
 [editor.file-picker]
@@ -18,6 +19,14 @@ git-ignore = false
 [editor.cursor-shape]
 insert = "bar"
 
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name"]
+right = ["diagnostics", "position", "file-encoding", "file-type"]
+separator = "│"
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "S"
+
 [editor.lsp]
 auto-signature-help = false
 display-messages = true
@@ -25,10 +34,10 @@ display-messages = true
 [editor.inline-diagnostics]
 cursor-line = "warning"
 
-[editor.statusline]
-left = ["mode", "spinner", "version-control", "file-name"]
-
 [editor.soft-wrap]
+enable = false
+
+[editor.smart-tab]
 enable = false
 	
 [keys.normal]
@@ -42,8 +51,11 @@ a = ["append_mode", "collapse_selection"]
 L = "goto_line_end"
 H = "goto_line_start"
 "ret" = "goto_word"
-"C-q" = [":insert-output cat /tmp/helixtmp", "select_all"]
-"C-g" = "@:sh ~/.config/helix/git-show.sh $(pwd) <C-r>%<ret>:n<ret><C-q>:o <C-r>.<ret>:bp<ret>:bc!<ret>"
+# "C-q" = [":insert-output cat /tmp/helixtmp", "select_all"]
+# "C-g" = "@:sh ~/.config/helix/git-show.sh $(pwd) <C-r>%<ret>:n<ret><C-q>:o <C-r>.<ret>:bp<ret>:bc!<ret>"
+
+A-c = "change_selection"
+c = "change_selection_noyank"
 
 [keys.select]
 L = "goto_line_end"

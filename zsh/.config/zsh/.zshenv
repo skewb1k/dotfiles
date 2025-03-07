@@ -1,0 +1,35 @@
+export DOTFILES="$HOME/.dotfiles"
+
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
+export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
+
+# git
+export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"
+export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
+
+# editor
+export EDITOR="hx"
+export SUDO_EDITOR="hx"
+export VISUAL="hx"
+
+# zsh
+export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000                   # Maximum events in history file
+
+# tmux
+export TMUXDOTDIR="$XDG_CONFIG_HOME/tmux"
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export TERM="xterm-256color"
+export LD_LIBRARY_PATH=/usr/local/lib
+
+export BUN_INSTALL="$HOME/.bun"
+export GOPATH="$HOME/.local/go"
+
+export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/snap/bin"
+
+export SCREENSHOT="$HOME/pictures/screenshots"
