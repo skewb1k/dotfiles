@@ -6,7 +6,7 @@
 [core]
 	editor = hx
 	autocrlf = false
-	excludesfile = /home/skewbik/.gitignore_global
+	excludesfile = /home/skewbik/.config/git/.gitignore_global
 [push]
 	autoSetupRemote = true
 [merge]
@@ -16,3 +16,5 @@
 	prompt = false
 [pull]
 	rebase = false
+[commit]
+	template = /home/skewbik/.config/git/.gitmessage
