@@ -9,6 +9,8 @@ autoload -U compinit; compinit
 
 source $ZDOTDIR/cdgit.zsh
 
+source $HOME/.config/local/share/../bin/env
+
 # +---------+
 # | ALIASES |
 # +---------+
@@ -52,3 +54,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # bun completions
 [ -s "/home/skewbik/.bun/_bun" ] && source "/home/skewbik/.bun/_bun"
+
+. "$HOME/.config/local/share/../bin/env"
+
+# eval "$(goenv init -)"

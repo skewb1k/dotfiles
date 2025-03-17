@@ -33,3 +33,7 @@ export GOPATH="$HOME/.local/go"
 export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/snap/bin"
 
 export SCREENSHOT="$HOME/pictures/screenshots"
+
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+export GOPROXY=https://proxy.golang.org,direct

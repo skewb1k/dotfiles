@@ -2,6 +2,15 @@
 command = 'clangd'
 args = ['--function-arg-placeholders', '--completion-style=detailed', '--clang-tidy', '--log=verbose']
 
+[language-server.biome]
+command = "biome" 
+args = ["lsp-proxy"]
+
+[language-server.flow]
+command = "/home/skewbik/dev/seriousbiz/flowtemplates/flow-cli/.out/flow"
+args = ["lsp-proxy"]
+
+
 [[language]]
 name = 'cpp'
 formatter = { command = 'clang-format', args = ['--style=file'] }
@@ -13,44 +22,51 @@ name = "yaml"
 auto-format = true
 formatter = { command = "yamlfmt", args = ["-"] }
 
-[language-server]
-biome = { command = "biome", args = ["lsp-proxy"] }
-
 [[language]]
-name = "javascript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-auto-format = true
+name = "ft"
+file-types = ["ft"]
+roots = []
+injection-regex = "ft"
+scope = "scope.ft"
+language-servers = [ "flow" ]
+language-id = "flow"
 
-[[language]]
-name = "typescript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-indent = { tab-width = 4, unit = "    " }
-auto-format = true
 
-[[language]]
-name = "tsx"
-indent = { tab-width = 4, unit = "    " }
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-auto-format = true
+# [[language]]
+# name = "javascript"
+# language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+# auto-format = true
 
-[[language]]
-name = "jsx"
-auto-format = true
-indent = { tab-width = 4, unit = "    " }
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+# [[language]]
+# name = "typescript"
+# language-servers = [{ name = "typescript-language-server", except-features = [ "format" ] }, "biome", "tailwindcss-ls"]
+# auto-format = true
+
+# [[language]]
+# name = "tsx"
+# auto-format = true
+# language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+
+# [[language]]
+# name = "jsx"
+# auto-format = true
+# language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 
 [[language]]
 name = "json"
-indent = { tab-width = 2, unit = "    " }
 language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]
 
-# [language-server.gopls]
-# command = "gopls"
-# config = { "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, "analyses" = { "nilness" = true, unusedparams = true, unusedwrite = true, useany = true }, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
+[[language]]
+name = "typescript"
+file-types = ["js", "ts", "jsx", "tsx"]
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
 
-# [[language]]
-# name = "go"
-# roots = ["go.work", "go.mod"]
-# auto-format = true
-# comment-token = "//"
-# language-servers = [ "gopls"]
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
+
