@@ -13,9 +13,10 @@
     }
   },
   {
-    "context": "Editor",
+    "context": "VimControl && !menu",
     "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "g p": "pane::ActivatePreviousItem",
+      "g n": "pane::ActivateNextItem"
     }
   }
 ]

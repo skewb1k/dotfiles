@@ -92,6 +92,7 @@
   "scm.diffDecorations": "none",
   "breadcrumbs.enabled": true,
   "breadcrumbs.icons": false,
+
   "breadcrumbs.symbolPath": "off",
   "http.proxySupport": "off",
   // ========== Formatting ==========
@@ -152,6 +153,9 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "files.associations": {
+    "*.js.ft": "javascript"
   },
   // ========== Goto ==========
   "editor.gotoLocation.multipleDeclarations": "goto",
@@ -410,7 +414,7 @@
     // fix highlighting of default rename tag
     "editor.linkedEditingBackground": "#00000000"
   },
-  "workbench.colorTheme": "poimandres",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "database-client.autoSync": true,
   "svelte.enable-ts-plugin": true,
   "workbench.iconTheme": "material-icon-theme",

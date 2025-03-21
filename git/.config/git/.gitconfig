@@ -18,3 +18,5 @@
 	rebase = false
 [commit]
 	template = /home/skewbik/.config/git/.gitmessage
+[url "git@github.com:"]
+	insteadOf = https://github.com/

@@ -36,3 +36,4 @@ alias dsp="docker system prune -af && docker volume prune -af"
 
 alias sp="sudo pacman"
 
+alias sizes="du -ahd 1 | sort -hr"
