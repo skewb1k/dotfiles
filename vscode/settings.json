@@ -400,7 +400,7 @@
   "vscord.status.image.large.editing.text": "Ponasenkov",
   "vscord.status.image.large.notInFile.key": "https://media.tenor.com/VdIKn05yIh8AAAAM/cat-sleep.gif",
   "vscord.status.image.large.viewing.key": "https://media.tenor.com/9-RWXkKEE24AAAAM/yevgeny-ponasenkov.gif",
-  "vscord.status.image.large.viewing.text": "Ponasenkov",
+  "vscord.status.image.large.viewing.tjext": "Ponasenkov",
   "vscord.status.image.small.editing.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{lang}.png",
   "vscord.status.image.small.editing.text": "{LANG}",
   "vscord.status.image.small.viewing.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{lang}.png",
@@ -414,16 +414,16 @@
     // fix highlighting of default rename tag
     "editor.linkedEditingBackground": "#00000000"
   },
-  "workbench.colorTheme": "Gruvbox Dark Hard",
   "database-client.autoSync": true,
   "svelte.enable-ts-plugin": true,
   "workbench.iconTheme": "material-icon-theme",
   "window.confirmSaveUntitledWorkspace": false,
   // "cody.suggestions.mode": "off",
-  "extensions.allowed": {
-    "*": true
-  },
+  // "extensions.allowed": {
+
+  // },
   "tailwindcss-intellisense.trace.server": "verbose",
   "biome_lsp.trace.server": "verbose",
-  "typescript.tsserver.log": "verbose"
+  "typescript.tsserver.log": "verbose",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
 }
