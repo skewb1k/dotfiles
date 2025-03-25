@@ -7,8 +7,6 @@ fi
 
 autoload -U compinit; compinit
 
-source $ZDOTDIR/cdgit.zsh
-
 source $HOME/.config/local/share/../bin/env
 
 # +---------+
