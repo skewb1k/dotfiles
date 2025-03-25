@@ -44,5 +44,5 @@
 
 theme = rose-pine
 background = #161616
-font-family = "JetBrainsMono Nerd Font Mono"
+font-family = "JetBrainsMono NFM"
 font-feature = "-calt, -liga, -dlig"

@@ -43,7 +43,7 @@ gsq() {
 
   git reset --soft HEAD~"$num_commits"
 
-  git commit -m "Squashed last $num_commits commits"
+  gc
 }
 
 
