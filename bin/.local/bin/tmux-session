@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# https://github.com/mislav/dotfiles/blob/master/bin/tmux-session
 # Save and restore the state of tmux sessions and windows.
 #
 # TODO: persist and restore the state & position of panes.
@@ -10,7 +11,7 @@ dump() {
 }
 
 save() {
-  dump > ~/.tmux-session
+  dump > $TMUXDOTDIR/.tmux-session
 }
 
 terminal_size() {
@@ -44,7 +45,7 @@ restore() {
         count=$(( count + 1 ))
       fi
     fi
-  done < ~/.tmux-session
+  done < $TMUXDOTDIR/.tmux-session
 
   echo "restored $count sessions"
 }

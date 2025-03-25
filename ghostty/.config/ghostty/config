@@ -46,3 +46,12 @@ theme = rose-pine
 background = #161616
 font-family = "JetBrainsMono NFM"
 font-feature = "-calt, -liga, -dlig"
+# font-size = 12
+window-padding-balance = true
+window-padding-x = 0
+window-padding-y = 0
+
+shell-integration = zsh
+desktop-notifications = false
+app-notifications = false
+
