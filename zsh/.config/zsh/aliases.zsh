@@ -55,3 +55,6 @@ alias dsp="docker system prune -af && docker volume prune -af"
 alias sp="sudo pacman"
 
 alias lsz="du -ahd 1 | sort -hr"
+
+alias vimdiff='nvim -d'
+
