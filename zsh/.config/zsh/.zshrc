@@ -7,17 +7,10 @@ fi
 
 autoload -U compinit; compinit
 
-source $HOME/.config/local/share/../bin/env
-
 # +---------+
 # | ALIASES |
 # +---------+
 source $ZDOTDIR/aliases.zsh
-
-if [[ -z $DISPLAY && $TTY = /dev/tty1 ]]; then
-	source $ZDOTDIR/sway.zsh
-fi
-
 
 bindkey -v
 bindkey '^o' autosuggest-accept
@@ -52,7 +45,3 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # bun completions
 [ -s "/home/skewbik/.bun/_bun" ] && source "/home/skewbik/.bun/_bun"
-
-. "$HOME/.config/local/share/../bin/env"
-
-# eval "$(goenv init -)"

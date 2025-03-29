@@ -54,4 +54,7 @@ window-padding-y = 0
 shell-integration = zsh
 desktop-notifications = false
 app-notifications = false
+window-decoration = false
+
+gtk-custom-css = ./custom.css
 

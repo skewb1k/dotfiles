@@ -9,6 +9,7 @@ alias py="python3"
 
 alias t="tmux"
 alias m="make"
+alias hx="helix"
 
 alias sourcez="source $ZDOTDIR/.zshrc"
 

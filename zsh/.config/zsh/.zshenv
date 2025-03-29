@@ -10,9 +10,9 @@ export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"
 export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
 
 # editor
-export EDITOR="hx"
-export SUDO_EDITOR="hx"
-export VISUAL="hx"
+export EDITOR="helix"
+export SUDO_EDITOR="helix"
+export VISUAL="helix"
 
 # zsh
 export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
@@ -34,6 +34,5 @@ export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$GOPATH/bin:/usr/local/bin:/usr/b
 
 export SCREENSHOT="$HOME/pictures/screenshots"
 
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-export GOPROXY=https://proxy.golang.org,direct
+export TERMINAL="ghostty"
+export NO_AT_BRIDGE=1
