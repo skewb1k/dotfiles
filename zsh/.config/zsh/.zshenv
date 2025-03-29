@@ -5,6 +5,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
 export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
 
+
 # git
 export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"
 export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
