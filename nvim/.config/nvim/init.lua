@@ -571,6 +571,8 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         gopls = {},
+        nil_ls = {},
+
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -633,7 +635,6 @@ require('lazy').setup({
       }
     end,
   },
-
   { -- Autoformat
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
@@ -668,6 +669,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        nix = { 'nixfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -974,24 +976,24 @@ vim.opt.smartindent = true -- Enable smart indenting for code
 
 require('oil').setup()
 
-vim.api.nvim_command 'autocmd BufNewFile,BufRead *.ft set filetype=ft'
-
-local flow_client = vim.lsp.start_client {
-  name = 'flow-langserver',
-  cmd = { '/home/skewbik/dev/seriousbiz/flowtemplates/flow-cli/.out/flow', 'lsp-proxy' },
-  filetypes = { 'ft' },
-  root_dir = vim.fn.getcwd(),
-  autostart = true,
-}
-
-if not flow_client then
-  vim.notify 'error starting flow lsp'
-  return
-end
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'ft',
-  callback = function()
-    vim.lsp.buf_attach_client(0, flow_client)
-  end,
-})
+-- vim.api.nvim_command 'autocmd BufNewFile,BufRead *.ft set filetype=ft'
+--
+-- local flow_client = vim.lsp.start_client {
+--   name = 'flow-langserver',
+--   cmd = { '/home/skewbik/dev/seriousbiz/flowtemplates/flow-cli/.out/flow', 'lsp-proxy' },
+--   filetypes = { 'ft' },
+--   root_dir = vim.fn.getcwd(),
+--   autostart = true,
+-- }
+--
+-- if not flow_client then
+--   vim.notify 'error starting flow lsp'
+--   return
+-- end
+--
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = 'ft',
+--   callback = function()
+--     vim.lsp.buf_attach_client(0, flow_client)
+--   end,
+-- })
