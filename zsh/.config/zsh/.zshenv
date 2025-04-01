@@ -3,7 +3,6 @@ export DOTFILES="$HOME/.dotfiles"
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
 
-
 # git
 export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"
 export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
@@ -34,4 +33,3 @@ export GOPATH="$HOME/.local/go"
 export SCREENSHOT="$HOME/pictures/screenshots"
 
 export TERMINAL="ghostty"
-export NO_AT_BRIDGE=1
