@@ -1,17 +1,19 @@
-# alias cd=z
+alias cd=z
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ~="cd ~"
+
+alias l="eza -a --icons"
+alias lt="eza -aT --icons"
 
 alias python="python3"
 alias py="python3"
 
 alias t="tmux"
 alias m="make"
+alias v="nvim"
 alias hx="helix"
-
-alias sourcez="source $ZDOTDIR/.zshrc"
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
@@ -52,8 +54,6 @@ alias cdr='cd $(git rev-parse --show-toplevel)'
 
 # docker
 alias dsp="docker system prune -af && docker volume prune -af"
-
-alias sp="sudo pacman"
 
 alias lsz="du -ahd 1 | sort -hr"
 

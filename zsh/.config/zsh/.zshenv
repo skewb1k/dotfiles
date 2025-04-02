@@ -13,23 +13,18 @@ export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
 
 # zsh
-export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
-export HISTSIZE=10000                   # Maximum events for internal history
-export SAVEHIST=10000                   # Maximum events in history file
+export HISTFILE="$ZDOTDIR/.zhistory"    
+export HISTSIZE=20000                  
+export SAVEHIST=20000                 
 
 # tmux
 export TMUXDOTDIR="$XDG_CONFIG_HOME/tmux"
 
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export TERM="xterm-256color"
-export LD_LIBRARY_PATH=/usr/local/lib
+# export TERM="xterm-256color"
 
 export BUN_INSTALL="$HOME/.bun"
 export GOPATH="$HOME/.local/go"
 
-# export PATH="$BUN_INSTALL/bin:$HOME/.local/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/snap/bin"
-
-export SCREENSHOT="$HOME/pictures/screenshots"
+export PATH=$PATH:$GOPATH/bin
 
 export TERMINAL="ghostty"
