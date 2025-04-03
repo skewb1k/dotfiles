@@ -13,7 +13,7 @@ alias py="python3"
 alias t="tmux"
 alias m="make"
 alias v="nvim"
-alias hx="helix"
+# alias hx="helix"
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"

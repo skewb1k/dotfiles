@@ -10,6 +10,7 @@ continue-comments = false
 bufferline = "multiple"
 # auto-pairs = false
 # rulers = [120]
+evil = false
 
 [editor.file-picker]
 hidden = false
@@ -51,8 +52,8 @@ a = ["append_mode", "collapse_selection"]
 L = "goto_line_end"
 H = "goto_line_start"
 "ret" = "goto_word"
-# "C-q" = [":insert-output cat /tmp/helixtmp", "select_all"]
-# "C-g" = "@:sh ~/.config/helix/git-show.sh $(pwd) <C-r>%<ret>:n<ret><C-q>:o <C-r>.<ret>:bp<ret>:bc!<ret>"
+"C-q" = [":insert-output cat /tmp/helixtmp", "select_all"]
+"C-g" = "@:sh ~/.config/helix/git-show.sh $(pwd) <C-r>%<ret>:n<ret><C-q>:o <C-r>.<ret>:bp<ret>:bc!<ret>"
 
 A-c = "change_selection"
 c = "change_selection_noyank"

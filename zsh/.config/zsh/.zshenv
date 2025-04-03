@@ -22,9 +22,11 @@ export TMUXDOTDIR="$XDG_CONFIG_HOME/tmux"
 
 # export TERM="xterm-256color"
 
-export BUN_INSTALL="$HOME/.bun"
 export GOPATH="$HOME/.local/go"
 
 export PATH=$PATH:$GOPATH/bin
 
 export TERMINAL="ghostty"
+
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

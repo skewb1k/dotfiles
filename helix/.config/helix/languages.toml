@@ -18,9 +18,7 @@ config = { "gofumpt" = true, "local" = "goimports", "semanticTokens" = true, "st
 command = "golangci-lint-langserver"
 
 [language-server.golangci-lint-lsp.config]
-command = ["golangci-lint", "run",  "--issues-exit-code=1"]
-
-
+command = ["golangci-lint", "run", "--output.json.path", "stdout", "--show-stats=false", "--issues-exit-code=1"]
 
 [[language]]
 name = 'cpp'
@@ -83,6 +81,6 @@ language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
 
 [[language]]
 name = "go"
-roots = ["go.work", "go.mod"]
 auto-format = true
 language-servers = [ "gopls", "golangci-lint-lsp" ]
+# language-servers = [ "gopls" ]
