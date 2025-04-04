@@ -4,8 +4,10 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ~="cd ~"
 
-alias l="eza -a --icons"
-alias lt="eza -aT --icons"
+alias l="eza --icons"
+alias la="eza -a --icons"
+alias lt="eza -T --icons"
+alias lta="eza -aT --icons"
 
 alias python="python3"
 alias py="python3"
