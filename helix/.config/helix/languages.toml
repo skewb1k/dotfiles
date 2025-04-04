@@ -41,35 +41,40 @@ language-servers = [ "flow" ]
 language-id = "flow"
 
 
-# [[language]]
-# name = "javascript"
-# language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-# auto-format = true
-
-# [[language]]
-# name = "typescript"
-# language-servers = [{ name = "typescript-language-server", except-features = [ "format" ] }, "biome", "tailwindcss-ls"]
-# auto-format = true
-
-# [[language]]
-# name = "tsx"
-# auto-format = true
-# language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-
-# [[language]]
-# name = "jsx"
-# auto-format = true
-# language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-
 [[language]]
-name = "json"
-language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]
+name = "javascript"
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
 
 [[language]]
 name = "typescript"
-file-types = ["js", "ts", "jsx", "tsx"]
+language-servers = [{ name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
+
+[[language]]
+name = "tsx"
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+
+[[language]]
+name = "jsx"
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+
+[[language]]
+indent = { tab-width = 4, unit = "    " }
+name = "json"
+language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]
+
+# [[language]]
+# name = "typescript"
+# file-types = ["js", "ts", "jsx", "tsx"]
+# indent = { tab-width = 4, unit = "    " }
+# auto-format = true
 
 [[language]]
 name = "html"

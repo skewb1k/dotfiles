@@ -15,8 +15,15 @@ alias m="make"
 alias v="nvim"
 # alias hx="helix"
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+# yazi helper https://yazi-rs.github.io/docs/quick-start#shell-wrapper
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # git
 alias g='git'
@@ -53,6 +60,7 @@ gsq() {
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
 # docker
+alias d="docker"
 alias dsp="docker system prune -af && docker volume prune -af"
 
 alias lsz="du -ahd 1 | sort -hr"
