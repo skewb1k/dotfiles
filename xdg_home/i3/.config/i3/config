@@ -170,6 +170,6 @@ default_border pixel 0
 bindsym $mod+x exec playerctl -p spotify play-pause
 bindsym $mod+c exec playerctl -p spotify next
 
-exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle' -option ctrl:nocaps "
+exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'"
 # exec --no-startup-id "./screens.sh"
 
