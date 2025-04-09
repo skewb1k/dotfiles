@@ -28,7 +28,6 @@ function y() {
 }
 
 # git
-alias g='git'
 alias gp='git push'
 alias gb="git branch"
 alias gd="git diff"

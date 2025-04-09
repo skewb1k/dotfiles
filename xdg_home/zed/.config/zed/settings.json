@@ -7,15 +7,22 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
   "hover_popover_enabled": false,
   "icon_theme": "Material Icon Theme",
   "features": {
-    "edit_prediction_provider": "none"
+    "edit_prediction_provider": "copilot"
   },
   "vim_mode": true,
   "ui_font_size": 20,
   "selection_highlight": false,
-  "buffer_font_size": 16,
+  "buffer_font_size": 18,
   "remove_trailing_whitespace_on_save": true,
   "ui_font_features": {
     "calt": false
@@ -54,17 +61,23 @@
     "button": false
   },
   "terminal": {
-    "dock": "left",
+    "dock": "bottom",
     "font_family": "JetBrainsMono Nerd Font",
     "font_features": null,
     "font_size": null,
-    "line_height": "comfortable"
+    "line_height": "standard"
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_line_height": "standard",
   "theme": {
     "mode": "dark",
     "light": "Rosé Pine",
-    "dark": "Rosé Pine"
+    "dark": "poimandres (no italics)"
   },
-  "auto_update": false
+  "auto_update": false,
+  "experimental.theme_overrides": {
+    "editor.document_highlight.read_background": "#00000000",
+    "editor.document_highlight.write_background": "#00000000",
+    "border": "#00000000"
+  }
 }

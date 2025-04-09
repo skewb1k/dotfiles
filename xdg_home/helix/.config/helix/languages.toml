@@ -12,7 +12,8 @@ args = ["lsp-proxy"]
 
 [language-server.gopls]
 command = "gopls"
-config = { "gofumpt" = true, "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
+# config = { "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
+config = { "gofumpt" = true, "local" = "goimports" }
 
 [language-server.golangci-lint-lsp]
 command = "golangci-lint-langserver"
@@ -88,4 +89,3 @@ language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
 name = "go"
 auto-format = true
 language-servers = [ "gopls", "golangci-lint-lsp" ]
-# language-servers = [ "gopls" ]
