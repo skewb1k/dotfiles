@@ -5,11 +5,11 @@
   // ========== Font ==========
   // "editor.fontFamily": "FiraCode NF",
   // "editor.fontFamily": "ITC Kabel Std",
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   // "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
   "editor.fontLigatures": false,
-  "editor.fontSize": 15,
-  "editor.fontWeight": "bold",
+  "editor.fontSize": 14,
+  // "editor.fontWeight": "bold",
   "editor.fontVariations": true,
   // "editor.letterSpacing": 0.3,
   // ========== Terminal ==========
@@ -66,8 +66,8 @@
   "editor.inlineSuggest.suppressSuggestions": true,
   "editor.matchBrackets": "never",
   "editor.guides.highlightActiveIndentation": false,
+  "editor.guides.indentation": false,
   "editor.scrollBeyondLastLine": false,
-  "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.quickSuggestionsDelay": 0,
   "editor.inlayHints.enabled": "off",
   "editor.codeLens": false,
@@ -75,8 +75,8 @@
   "editor.lineNumbers": "relative",
   "editor.mouseWheelScrollSensitivity": 2,
   "editor.lightbulb.enabled": "off",
-  "editor.cursorBlinking": "smooth",
-  "editor.maxTokenizationLineLength": 1000,
+  "editor.occurrencesHighlight": "off",
+  "editor.cursorBlinking": "solid",
   "editor.linkedEditing": true,
   "editor.parameterHints.enabled": false,
   "editor.showFoldingControls": "never",
@@ -92,7 +92,6 @@
   "scm.diffDecorations": "none",
   "breadcrumbs.enabled": true,
   "breadcrumbs.icons": false,
-
   "breadcrumbs.symbolPath": "off",
   "http.proxySupport": "off",
   // ========== Formatting ==========
@@ -179,7 +178,7 @@
   "keyboard.dispatch": "keyCode",
   "debug.internalConsoleOptions": "neverOpen",
   "files.maxMemoryForLargeFilesMB": 16392,
-  "update.mode": "default",
+  "update.mode": "none",
   "explorer.confirmDelete": false,
   "accessibility.hideAccessibleView": true,
   // ========== Extensions ==========
@@ -218,7 +217,7 @@
   "vim.normalModeKeyBindings": [
     {
       "before": [
-        "g",
+        "leader",
         "r"
       ],
       "commands": [
@@ -256,28 +255,10 @@
     {
       "before": [
         "leader",
-        "r"
-      ],
-      "commands": [
-        "workbench.action.openRecent"
-      ]
-    },
-    {
-      "before": [
-        "leader",
         "o"
       ],
       "commands": [
         "workbench.action.files.openFolder"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "b"
-      ],
-      "commands": [
-        "extension.vim_ctrl+6"
       ]
     },
     {
@@ -292,7 +273,7 @@
     {
       "before": [
         "leader",
-        "p"
+        "f"
       ],
       "commands": [
         "workbench.action.quickOpen"
@@ -327,18 +308,20 @@
     },
     {
       "before": [
-        "H"
+        "g",
+        "p"
       ],
       "commands": [
-        ":bprevious"
+        "workbench.action.previousEditor"
       ]
     },
     {
       "before": [
-        "L"
+        "g",
+        "n"
       ],
       "commands": [
-        ":bnext"
+        "workbench.action.nextEditor"
       ]
     },
     {
@@ -411,7 +394,7 @@
   "vscord.status.state.text.viewing": "{file_name}{file_extension}",
   "vscord.behaviour.suppressNotifications": true,
   "workbench.colorCustomizations": {
-    // fix highlighting of default rename tag
+    // fix highlighting of rename tag
     "editor.linkedEditingBackground": "#00000000"
   },
   "database-client.autoSync": true,
@@ -420,10 +403,9 @@
   "window.confirmSaveUntitledWorkspace": false,
   // "cody.suggestions.mode": "off",
   // "extensions.allowed": {
-
   // },
-  "tailwindcss-intellisense.trace.server": "verbose",
-  "biome_lsp.trace.server": "verbose",
-  "typescript.tsserver.log": "verbose",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "poimandres-noitalics",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "editor.selectionHighlight": false,
+  "extensions.autoCheckUpdates": false,
 }
