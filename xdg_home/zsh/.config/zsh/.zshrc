@@ -13,7 +13,6 @@ bindkey -v
 bindkey '^o' autosuggest-accept
 bindkey '^P' up-history
 bindkey '^N' down-history
-bindkey '^R' history-incremental-search-backward
 
 eval "$(zoxide init zsh)"
 function __zoxide_cd() {
