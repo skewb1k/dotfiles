@@ -10,7 +10,7 @@ continue-comments = false
 bufferline = "multiple"
 # auto-pairs = false
 # rulers = [120]
-evil = false
+# evil = false
 
 [editor.file-picker]
 hidden = false

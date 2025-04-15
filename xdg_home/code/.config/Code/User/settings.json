@@ -97,11 +97,26 @@
   // ========== Formatting ==========
   "editor.formatOnPaste": false,
   "go.useLanguageServer": true,
+  "go.lintTool": "golangci-lint",
+  // "go.lintFlags": [
+  //   "--fast-only"
+  // ],
+  // "go.formatTool": "custom",
+  // "go.alternateTools": {
+  //   "customFormatter": "golangci-lint"
+  // },
+  // "go.formatFlags": [
+  //   "fmt",
+  //   "--stdin"
+  // ],
   "gopls": {
     "formatting.gofumpt": true
   },
-  "go.lintTool": "golangci-lint",
   "go.showWelcome": false,
+  "go.lintFlags": [
+    "--config=.golangci.yml"
+  ],
+  "go.formatTool": "goimports",
   "go.toolsManagement.autoUpdate": true,
   "files.autoSave": "off",
   "editor.formatOnSave": true,
@@ -111,9 +126,6 @@
   "makefile.configureOnOpen": false,
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[go]": {
-    "editor.defaultFormatter": "golang.go"
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -152,9 +164,6 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  },
-  "files.associations": {
-    "*.js.ft": "javascript"
   },
   // ========== Goto ==========
   "editor.gotoLocation.multipleDeclarations": "goto",
@@ -404,7 +413,7 @@
   // "cody.suggestions.mode": "off",
   // "extensions.allowed": {
   // },
-  "workbench.colorTheme": "poimandres-noitalics",
+  "workbench.colorTheme": "Rosé Pine (no italics)",
   "github.copilot.nextEditSuggestions.enabled": true,
   "editor.selectionHighlight": false,
   "extensions.autoCheckUpdates": false,

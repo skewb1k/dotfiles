@@ -13,7 +13,7 @@ args = ["lsp-proxy"]
 [language-server.gopls]
 command = "gopls"
 # config = { "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
-config = { "gofumpt" = true, "local" = "goimports" }
+config = { "gofumpt" = true, "local" = "goimports", "completeFunctionCalls" = false }
 
 [language-server.golangci-lint-lsp]
 command = "golangci-lint-langserver"
@@ -66,11 +66,6 @@ indent = { tab-width = 4, unit = "    " }
 auto-format = true
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
 
-[[language]]
-indent = { tab-width = 4, unit = "    " }
-name = "json"
-language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]
-
 # [[language]]
 # name = "typescript"
 # file-types = ["js", "ts", "jsx", "tsx"]
@@ -89,3 +84,5 @@ language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
 name = "go"
 auto-format = true
 language-servers = [ "gopls", "golangci-lint-lsp" ]
+formatter = { command = "golangci-lint", args = [ "fmt" ,"--stdin" ] }
+

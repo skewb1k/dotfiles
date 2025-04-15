@@ -19,6 +19,7 @@
   "features": {
     "edit_prediction_provider": "copilot"
   },
+  "show_completion_documentation": false,
   "vim_mode": true,
   "ui_font_size": 20,
   "selection_highlight": false,
@@ -58,7 +59,10 @@
   },
   "project_panel": {
     "auto_reveal_entries": false,
-    "button": false
+    "button": false,
+    "indent_guides": {
+      "show": "never"
+    }
   },
   "terminal": {
     "dock": "bottom",
@@ -67,17 +71,24 @@
     "font_size": null,
     "line_height": "standard"
   },
+  "lsp_highlight_debounce": 99999,
+  "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "completeFunctionCalls": false
+      }
+    }
+  },
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_line_height": "standard",
   "theme": {
     "mode": "dark",
     "light": "Rosé Pine",
-    "dark": "poimandres (no italics)"
+    "dark": "Rosé Pine Moon"
   },
+  "cursor_blink": false,
   "auto_update": false,
   "experimental.theme_overrides": {
-    "editor.document_highlight.read_background": "#00000000",
-    "editor.document_highlight.write_background": "#00000000",
     "border": "#00000000"
   }
 }
