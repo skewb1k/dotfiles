@@ -1,18 +1,19 @@
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
+-- NOTE: You can change these options as you wish!
+--  For more options, you can see `:help option-list`
 
 -- Make line numbers default
 vim.opt.number = true
 vim.opt.relativenumber = true
+-- You can also add relative line numbers, to help with jumping.
+--  Experiment for yourself to see if you like it!
+-- vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -24,16 +25,12 @@ vim.opt.showmode = false
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
+-- vim.schedule(function()
+--   vim.opt.clipboard = 'unnamedplus'
+-- end)
 
 -- Enable break indent
 vim.opt.breakindent = true
-vim.opt.langmap =
-  'ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz'
-
--- Save undo history
 vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
@@ -43,10 +40,19 @@ vim.opt.smartcase = true
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
+vim.opt.expandtab = false -- Use real tabs
+vim.opt.tabstop = 4 -- Display tabs as 4 spaces wide
+vim.opt.shiftwidth = 4 -- Indent with 4 spaces (when using >>, etc.)
+vim.opt.softtabstop = 4 -- Tab key acts like 4 spaces, but inserts a tab
+vim.opt.autoindent = true -- Keep indent from previous line
+vim.opt.smartindent = true -- Enable smart indenting for code
+
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 500
 
 -- Decrease mapped sequence wait time
+vim.opt.wrap = false
+
 vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
@@ -67,6 +73,11 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.opt.confirm = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -100,6 +111,17 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+vim.keymap.set('n', '<Leader>y', '"+y', { noremap = true, silent = true })
+vim.keymap.set('v', '<Leader>y', '"+y', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>p', '"+p', { noremap = true, silent = true })
+vim.keymap.set('v', '<Leader>p', '"+p', { noremap = true, silent = true })
+
+-- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
+-- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
+-- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
+-- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
+-- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -258,7 +280,6 @@ require('lazy').setup({
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for installation instructions
@@ -374,82 +395,6 @@ require('lazy').setup({
     end,
   },
 
-  {
-    'romgrk/barbar.nvim',
-    dependencies = {
-      'lewis6991/gitsigns.nvim',
-      'nvim-tree/nvim-web-devicons',
-    },
-    init = function()
-      vim.g.barbar_auto_setup = false
-    end,
-    opts = {
-      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-      -- animation = true,
-      -- insert_at_start = true,
-      -- …etc.
-    },
-    config = function()
-      local map = vim.api.nvim_set_keymap
-      local opts = { noremap = true, silent = true }
-
-      -- Move to previous/next
-      map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-      map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
-
-      -- Re-order to previous/next
-      map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
-      map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
-
-      -- Goto buffer in position...
-      map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
-      map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
-      map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
-      map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
-      map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
-      map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
-      map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
-      map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
-      map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
-      map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
-
-      -- Pin/unpin buffer
-      -- map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
-
-      -- Goto pinned/unpinned buffer
-      --                 :BufferGotoPinned
-      --                 :BufferGotoUnpinned
-
-      -- Close buffer
-      map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
-
-      -- Wipeout buffer
-      --                 :BufferWipeout
-
-      -- Close commands
-      --                 :BufferCloseAllButCurrent
-      --                 :BufferCloseAllButPinned
-      --                 :BufferCloseAllButCurrentOrPinned
-      --                 :BufferCloseBuffersLeft
-      --                 :BufferCloseBuffersRight
-
-      -- Magic buffer-picking mode
-      map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
-      map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
-
-      -- Sort automatically by...
-      -- map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
-      -- map('n', '<Space>bn', '<Cmd>BufferOrderByName<CR>', opts)
-      -- map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
-      -- map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
-      -- map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
-
-      -- Other:
-      -- :BarbarEnable - enables barbar (enabled by default)
-      -- :BarbarDisable - very bad command, should never be used
-    end,
-  },
-
   -- LSP Plugins
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -460,6 +405,60 @@ require('lazy').setup({
       library = {
         -- Load luvit types when the `vim.uv` word is found
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+      },
+    },
+  },
+  {
+    'folke/trouble.nvim',
+    opts = {
+      modes = {
+        mydiags = {
+          mode = 'workspace_', -- inherit from diagnostics mode
+          filter = {
+            any = {
+              buf = 0, -- current buffer
+              {
+                -- limit to files in the current project
+                function(item)
+                  return item.filename:find((vim.loop or vim.uv).cwd(), 1, true)
+                end,
+              },
+            },
+          },
+        },
+      },
+    }, -- for default options, refer to the configuration section for custom setup.
+    cmd = 'Trouble',
+    keys = {
+      {
+        '<leader>xx',
+        '<cmd>Trouble diagnostics toggle<cr>',
+        desc = 'Diagnostics (Trouble)',
+      },
+      {
+        '<leader>xX',
+        '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
+        desc = 'Buffer Diagnostics (Trouble)',
+      },
+      {
+        '<leader>cs',
+        '<cmd>Trouble symbols toggle focus=false<cr>',
+        desc = 'Symbols (Trouble)',
+      },
+      {
+        '<leader>cl',
+        '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
+        desc = 'LSP Definitions / references / ... (Trouble)',
+      },
+      {
+        '<leader>xL',
+        '<cmd>Trouble loclist toggle<cr>',
+        desc = 'Location List (Trouble)',
+      },
+      {
+        '<leader>xQ',
+        '<cmd>Trouble qflist toggle<cr>',
+        desc = 'Quickfix List (Trouble)',
       },
     },
   },
@@ -510,10 +509,39 @@ require('lazy').setup({
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
 
-      -- Allows extra capabilities provided by nvim-cmp
-      'hrsh7th/cmp-nvim-lsp',
+      -- Allows extra capabilities provided by blink.cmp
+      'saghen/blink.cmp',
     },
     config = function()
+      -- Brief aside: **What is LSP?**
+      --
+      -- LSP is an initialism you've probably heard, but might not understand what it is.
+      --
+      -- LSP stands for Language Server Protocol. It's a protocol that helps editors
+      -- and language tooling communicate in a standardized fashion.
+      --
+      -- In general, you have a "server" which is some tool built to understand a particular
+      -- language (such as `gopls`, `lua_ls`, `rust_analyzer`, etc.). These Language Servers
+      -- (sometimes called LSP servers, but that's kind of like ATM Machine) are standalone
+      -- processes that communicate with some "client" - in this case, Neovim!
+      --
+      -- LSP provides Neovim with features like:
+      --  - Go to definition
+      --  - Find references
+      --  - Autocompletion
+      --  - Symbol Search
+      --  - and more!
+      --
+      -- Thus, Language Servers are external tools that must be installed separately from
+      -- Neovim. This is where `mason` and related plugins come into play.
+      --
+      -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
+      -- and elegantly composed help section, `:help lsp-vs-treesitter`
+
+      --  This function gets run when an LSP attaches to a particular buffer.
+      --    That is to say, every time a new file is opened that is associated with
+      --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
+      --    function will be executed to configure the current buffer
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -522,42 +550,42 @@ require('lazy').setup({
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          -- Jump to the definition of the word under your cursor.
-          --  This is where a variable was first declared, or where a function is defined, etc.
-          --  To jump back, press <C-t>.
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          -- Rename the variable under your cursor.
+          --  Most Language Servers support renaming across files, etc.
+          map('<leader>r', vim.lsp.buf.rename, '[R]e[n]ame')
+
+          -- Execute a code action, usually your cursor needs to be on top of an error
+          -- or a suggestion from your LSP for this to activate.
+          map('<leader>a', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
 
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
-          -- Jump to the type of the word under your cursor.
-          --  Useful when you're not sure what type a variable is and you want to see
-          --  the definition of its *type*, not where it was *defined*.
-          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-
-          -- Fuzzy find all the symbols in your current document.
-          --  Symbols are things like variables, functions, types, etc.
-          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-
-          -- Fuzzy find all the symbols in your current workspace.
-          --  Similar to document symbols, except searches over your entire project.
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-
-          -- Rename the variable under your cursor.
-          --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-
-          -- Execute a code action, usually your cursor needs to be on top of an error
-          -- or a suggestion from your LSP for this to activate.
-          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+          -- Jump to the definition of the word under your cursor.
+          --  This is where a variable was first declared, or where a function is defined, etc.
+          --  To jump back, press <C-t>.
+          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+          -- Fuzzy find all the symbols in your current document.
+          --  Symbols are things like variables, functions, types, etc.
+          map('<leader>S', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
+
+          -- Fuzzy find all the symbols in your current workspace.
+          --  Similar to document symbols, except searches over your entire project.
+          map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
+
+          -- Jump to the type of the word under your cursor.
+          --  Useful when you're not sure what type a variable is and you want to see
+          --  the definition of its *type*, not where it was *defined*.
+          map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
@@ -619,14 +647,6 @@ require('lazy').setup({
         severity_sort = true,
         float = { border = 'rounded', source = 'if_many' },
         underline = { severity = vim.diagnostic.severity.ERROR },
-        signs = vim.g.have_nerd_font and {
-          text = {
-            [vim.diagnostic.severity.ERROR] = '󰅚 ',
-            [vim.diagnostic.severity.WARN] = '󰀪 ',
-            [vim.diagnostic.severity.INFO] = '󰋽 ',
-            [vim.diagnostic.severity.HINT] = '󰌶 ',
-          },
-        } or {},
         virtual_text = {
           source = 'if_many',
           spacing = 2,
@@ -644,10 +664,9 @@ require('lazy').setup({
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
-      --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-      --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
+      --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -659,10 +678,28 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
-        gopls = {},
-        -- nil_ls = {},
-
+        -- clangd = {},
+        -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+        gopls = {
+          settings = {
+            gopls = {
+              gofumpt = true,
+            },
+          },
+          --
+          on_attach = function(client, bufnr)
+            -- Auto format on save
+            vim.cmd [[autocmd BufWritePre *.go lua vim.lsp.buf.format()]]
+            -- Auto import sort on save
+            --vim.api.nvim_create_autocmd('BufWritePre',
+            --    { pattern = '*.go', callback = function() vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true }) end })
+          end,
+        },
+        golangci_lint_ls = {
+          cmd = { 'golangci-lint-langserver' },
+          init_options = { command = { 'golangci-lint', 'run', '--output.json.path', 'stdout', '--show-stats=false', '--issues-exit-code=1' } },
+          root_dir = require('lspconfig').util.root_pattern('.golangci.yml', '.golangci.yaml', '.golangci.toml', '.golangci.json', 'go.work', 'go.mod', '.git'),
+        },
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -725,6 +762,7 @@ require('lazy').setup({
       }
     end,
   },
+
   { -- Autoformat
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
@@ -746,20 +784,17 @@ require('lazy').setup({
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
-        local lsp_format_opt
         if disable_filetypes[vim.bo[bufnr].filetype] then
-          lsp_format_opt = 'never'
+          return nil
         else
-          lsp_format_opt = 'fallback'
+          return {
+            timeout_ms = 500,
+            lsp_format = 'fallback',
+          }
         end
-        return {
-          timeout_ms = 500,
-          lsp_format = lsp_format_opt,
-        }
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        nix = { 'nixfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -770,12 +805,14 @@ require('lazy').setup({
   },
 
   { -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
+    'saghen/blink.cmp',
+    event = 'VimEnter',
+    version = '1.*',
     dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
+      -- Snippet Engine
       {
         'L3MON4D3/LuaSnip',
+        version = '2.*',
         build = (function()
           -- Build Step is needed for regex support in snippets.
           -- This step is not supported in many windows environments.
@@ -796,95 +833,74 @@ require('lazy').setup({
           --   end,
           -- },
         },
+        opts = {},
       },
-      'saadparwaiz1/cmp_luasnip',
-
-      -- Adds other completion capabilities.
-      --  nvim-cmp does not ship with all sources by default. They are split
-      --  into multiple repos for maintenance purposes.
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-nvim-lsp-signature-help',
+      'folke/lazydev.nvim',
     },
-    config = function()
-      -- See `:help cmp`
-      local cmp = require 'cmp'
-      local luasnip = require 'luasnip'
-      luasnip.config.setup {}
-
-      cmp.setup {
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
-        },
-        completion = { completeopt = 'menu,menuone,noinsert' },
-
-        -- For an understanding of why these mappings were
-        -- chosen, you will need to read `:help ins-completion`
+    --- @module 'blink.cmp'
+    --- @type blink.cmp.Config
+    opts = {
+      keymap = {
+        -- 'default' (recommended) for mappings similar to built-in completions
+        --   <c-y> to accept ([y]es) the completion.
+        --    This will auto-import if your LSP supports it.
+        --    This will expand snippets if the LSP sent a snippet.
+        -- 'super-tab' for tab to accept
+        -- 'enter' for enter to accept
+        -- 'none' for no mappings
+        --
+        -- For an understanding of why the 'default' preset is recommended,
+        -- you will need to read `:help ins-completion`
         --
         -- No, but seriously. Please read `:help ins-completion`, it is really good!
-        mapping = cmp.mapping.preset.insert {
-          -- Select the [n]ext item
-          ['<C-n>'] = cmp.mapping.select_next_item(),
-          -- Select the [p]revious item
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
+        --
+        -- All presets have the following mappings:
+        -- <tab>/<s-tab>: move to right/left of your snippet expansion
+        -- <c-space>: Open menu or open docs if already open
+        -- <c-n>/<c-p> or <up>/<down>: Select next/previous item
+        -- <c-e>: Hide menu
+        -- <c-k>: Toggle signature help
+        --
+        -- See :h blink-cmp-config-keymap for defining your own keymap
+        preset = 'default',
 
-          -- Scroll the documentation window [b]ack / [f]orward
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
+        --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+      },
 
-          -- Accept ([y]es) the completion.
-          --  This will auto-import if your LSP supports it.
-          --  This will expand snippets if the LSP sent a snippet.
-          ['<C-y>'] = cmp.mapping.confirm { select = true },
+      appearance = {
+        -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+        -- Adjusts spacing to ensure icons are aligned
+        nerd_font_variant = 'mono',
+      },
 
-          -- If you prefer more traditional completion keymaps,
-          -- you can uncomment the following lines
-          --['<CR>'] = cmp.mapping.confirm { select = true },
-          --['<Tab>'] = cmp.mapping.select_next_item(),
-          --['<S-Tab>'] = cmp.mapping.select_prev_item(),
+      completion = {
+        -- By default, you may press `<c-space>` to show the documentation.
+        -- Optionally, set `auto_show = true` to show the documentation after a delay.
+        documentation = { auto_show = false, auto_show_delay_ms = 500 },
+      },
 
-          -- Manually trigger a completion from nvim-cmp.
-          --  Generally you don't need this, because nvim-cmp will display
-          --  completions whenever it has completion options available.
-          ['<C-Space>'] = cmp.mapping.complete {},
-
-          -- Think of <c-l> as moving to the right of your snippet expansion.
-          --  So if you have a snippet that's like:
-          --  function $name($args)
-          --    $body
-          --  end
-          --
-          -- <c-l> will move you to the right of each of the expansion locations.
-          -- <c-h> is similar, except moving you backwards.
-          ['<C-l>'] = cmp.mapping(function()
-            if luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            end
-          end, { 'i', 's' }),
-          ['<C-h>'] = cmp.mapping(function()
-            if luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            end
-          end, { 'i', 's' }),
-
-          -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-          --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'lazydev' },
+        providers = {
+          lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
         },
-        sources = {
-          {
-            name = 'lazydev',
-            -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
-            group_index = 0,
-          },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
-          { name = 'nvim_lsp_signature_help' },
-        },
-      }
-    end,
+      },
+
+      snippets = { preset = 'luasnip' },
+
+      -- Blink.cmp includes an optional, recommended rust fuzzy matcher,
+      -- which automatically downloads a prebuilt binary when enabled.
+      --
+      -- By default, we use the Lua implementation instead, but you may enable
+      -- the rust implementation via `'prefer_rust_with_warning'`
+      --
+      -- See :h blink-cmp-config-fuzzy for more information
+      fuzzy = { implementation = 'lua' },
+
+      -- Shows a signature help window while you type arguments for a function
+      signature = { enabled = true },
+    },
   },
 
   { -- You can easily change to a different colorscheme.
@@ -905,39 +921,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-    end,
-  },
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    config = function()
-      require('rose-pine').setup {
-        variant = 'auto', -- auto, main, moon, or dawn
-        dark_variant = 'main', -- main, moon, or dawn
-        dim_inactive_windows = false,
-        extend_background_behind_borders = true,
-
-        enable = {
-          terminal = true,
-          legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-          migrations = true, -- Handle deprecated options automatically
-        },
-
-        styles = {
-          bold = true,
-          italic = false,
-          transparency = false,
-        },
-
-        palette = {
-          -- Override the builtin palette per variant
-          -- moon = {
-          --     base = '#18191a',
-          --     overlay = '#363738',
-          -- },
-        },
-      }
-      vim.cmd.colorscheme 'rose-pine'
+      vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
 
@@ -1054,36 +1038,3 @@ require('lazy').setup({
     },
   },
 })
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
-vim.opt.expandtab = false -- Use real tabs
-vim.opt.tabstop = 4 -- Display tabs as 4 spaces wide
-vim.opt.shiftwidth = 4 -- Indent with 4 spaces (when using >>, etc.)
-vim.opt.softtabstop = 4 -- Tab key acts like 4 spaces, but inserts a tab
-vim.opt.autoindent = true -- Keep indent from previous line
-vim.opt.smartindent = true -- Enable smart indenting for code
-
-require('oil').setup()
-
--- vim.api.nvim_command 'autocmd BufNewFile,BufRead *.ft set filetype=ft'
---
--- local flow_client = vim.lsp.start_client {
---   name = 'flow-langserver',
---   cmd = { '/home/skewbik/dev/seriousbiz/flowtemplates/flow-cli/.out/flow', 'lsp-proxy' },
---   filetypes = { 'ft' },
---   root_dir = vim.fn.getcwd(),
---   autostart = true,
--- }
---
--- if not flow_client then
---   vim.notify 'error starting flow lsp'
---   return
--- end
---
--- vim.api.nvim_create_autocmd('FileType', {
---   pattern = 'ft',
---   callback = function()
---     vim.lsp.buf_attach_client(0, flow_client)
---   end,
--- })
