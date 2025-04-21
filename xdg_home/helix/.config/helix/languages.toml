@@ -15,6 +15,10 @@ command = "gopls"
 # config = { "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
 config = { "gofumpt" = true, "local" = "goimports", "completeFunctionCalls" = false }
 
+[language-server.pylsp.config.pylsp]
+plugins.ruff.enabled = true
+plugins.isort.enabled = true
+
 [language-server.golangci-lint-lsp]
 command = "golangci-lint-langserver"
 
@@ -30,7 +34,7 @@ language-servers = ['clangd']
 [[language]]
 name = "yaml"
 auto-format = true
-formatter = { command = "yamlfmt", args = ["-"] }
+formatter = { command = "yamlfmt", args = ["-" ] }
 
 [[language]]
 name = "ft"
@@ -86,3 +90,7 @@ auto-format = true
 language-servers = [ "gopls", "golangci-lint-lsp" ]
 formatter = { command = "golangci-lint", args = [ "fmt" ,"--stdin" ] }
 
+
+[[language]]
+name = "python"
+auto-format = true

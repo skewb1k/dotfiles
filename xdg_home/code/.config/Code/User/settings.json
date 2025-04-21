@@ -413,7 +413,7 @@
   // "cody.suggestions.mode": "off",
   // "extensions.allowed": {
   // },
-  "workbench.colorTheme": "Rosé Pine (no italics)",
+  "workbench.colorTheme": "poimandres",
   "github.copilot.nextEditSuggestions.enabled": true,
   "editor.selectionHighlight": false,
   "extensions.autoCheckUpdates": false,
