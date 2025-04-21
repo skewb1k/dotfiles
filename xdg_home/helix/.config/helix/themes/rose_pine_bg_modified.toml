@@ -4,8 +4,8 @@ inherits = "rose_pine"
 # "diff.minus" = "base"
 
 [palette]
-base = "#161616"
-surface = "#161616"
+base = "#141415"
+surface = "#141415"
 overlay = "#292929"
 muted = "#6e6a86"
 subtle = "#908caa"

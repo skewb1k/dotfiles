@@ -43,7 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 
 theme = rose-pine
-background = #161616
+background = #141415
 font-family = "JetBrainsMono NFM"
 font-feature = "-calt, -liga, -dlig"
 font-size = 13.5

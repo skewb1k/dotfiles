@@ -185,7 +185,7 @@ bar {
         # Text color of status bar
         statusline #ffffff
         # Background of status bar
-        background #323232
+        background #262626
     }
     font pango:DejaVu Sans Mono 8
 }
