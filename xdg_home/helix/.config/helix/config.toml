@@ -59,9 +59,6 @@ x = ":write-buffer-close"
 q = ":bc!"
 u = ":reload-all"
 
-[keys.normal.g]
-h = "hover"
-
 [keys.normal]
 "A-w" = [":wa!"]
 "ret" = "goto_word"
@@ -184,15 +181,11 @@ G = [
 ]
 # w = ["move_next_word_start", "yank", "collapse_selection", "normal_mode", "move_prev_word_start"]
 # W = ["move_next_long_word_start", "yank", "collapse_selection", "normal_mode", "move_prev_long_word_start"]
-g = { g = [
-  "select_mode",
-  "extend_to_line_bounds",
-  "goto_file_start",
-  "extend_to_line_bounds",
-  "yank",
-  "collapse_selection",
-  "normal_mode",
-] }
+
+[keys.normal.g]
+h = "hover"
+g = [ "select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank", "collapse_selection", "normal_mode", ]
+c = { c = "toggle_comments" }
 
 [keys.insert]
 # Escape the madness! No more fighting with the cursor! Or with multiple cursors!
@@ -218,6 +211,9 @@ U = ["switch_to_uppercase", "collapse_selection", "normal_mode"]
 # Visual-mode specific muscle memory
 i = "select_textobject_inner"
 a = "select_textobject_around"
+
+[keys.select.g]
+c = "toggle_comments"
 
 # # Some extra binds to allow us to insert/append in select mode because it's nice with multiple cursors
 # tab = ["insert_mode", "collapse_selection"] # tab is read by most terminal editors as "C-i"

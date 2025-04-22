@@ -86,9 +86,6 @@ vim.opt.confirm = true
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -118,6 +115,9 @@ vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, silent = true })
 vim.keymap.set('v', '<leader>p', '"+p', { noremap = true, silent = true })
 
 vim.keymap.set('i', 'jk', '<esc>')
+
+vim.keymap.set('n', 'gn', 'gt', { noremap = true })
+vim.keymap.set('n', 'gp', 'gT', { noremap = true })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
@@ -221,7 +221,7 @@ require('lazy').setup({
     opts = {
       -- delay between pressing a key and opening which-key (milliseconds)
       -- this setting is independent of vim.opt.timeoutlen
-      delay = 300,
+      delay = 500,
       icons = {
         -- set icon mappings to true if you have a Nerd Font
         mappings = vim.g.have_nerd_font,
@@ -433,35 +433,35 @@ require('lazy').setup({
     cmd = 'Trouble',
     keys = {
       {
-        '<leader>xx',
+        '<leader>D',
         '<cmd>Trouble diagnostics toggle<cr>',
         desc = 'Diagnostics (Trouble)',
       },
-      {
-        '<leader>xX',
-        '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
-        desc = 'Buffer Diagnostics (Trouble)',
-      },
-      {
-        '<leader>cs',
-        '<cmd>Trouble symbols toggle focus=false<cr>',
-        desc = 'Symbols (Trouble)',
-      },
-      {
-        '<leader>cl',
-        '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
-        desc = 'LSP Definitions / references / ... (Trouble)',
-      },
-      {
-        '<leader>xL',
-        '<cmd>Trouble loclist toggle<cr>',
-        desc = 'Location List (Trouble)',
-      },
-      {
-        '<leader>xQ',
-        '<cmd>Trouble qflist toggle<cr>',
-        desc = 'Quickfix List (Trouble)',
-      },
+      -- {
+      --   '<leader>xX',
+      --   '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
+      --   desc = 'Buffer Diagnostics (Trouble)',
+      -- },
+      -- {
+      --   '<leader>cs',
+      --   '<cmd>Trouble symbols toggle focus=false<cr>',
+      --   desc = 'Symbols (Trouble)',
+      -- },
+      -- {
+      --   '<leader>cl',
+      --   '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
+      --   desc = 'LSP Definitions / references / ... (Trouble)',
+      -- },
+      -- {
+      --   '<leader>xL',
+      --   '<cmd>Trouble loclist toggle<cr>',
+      --   desc = 'Location List (Trouble)',
+      -- },
+      -- {
+      --   '<leader>xQ',
+      --   '<cmd>Trouble qflist toggle<cr>',
+      --   desc = 'Quickfix List (Trouble)',
+      -- },
     },
   },
   {
@@ -758,6 +758,9 @@ require('lazy').setup({
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+            server.on_attach = function(client, bufnr)
+              require('workspace-diagnostics').populate_workspace_diagnostics(client, bufnr)
+            end
             require('lspconfig')[server_name].setup(server)
           end,
         },
@@ -894,7 +897,15 @@ require('lazy').setup({
       signature = { enabled = true },
     },
   },
-
+  {
+    'vyfor/cord.nvim',
+    build = ':Cord update',
+    opts = {
+      text = {
+        workspace = '',
+      },
+    },
+  },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
@@ -935,6 +946,20 @@ require('lazy').setup({
           italic = false,
         },
       }
+    end,
+  },
+  {
+    'artemave/workspace-diagnostics.nvim',
+    name = 'workspace-diagnostics',
+    config = function()
+      vim.api.nvim_set_keymap('n', '<space>x', '', {
+        noremap = true,
+        callback = function()
+          for _, client in ipairs(vim.lsp.get_clients()) do
+            require('workspace-diagnostics').populate_workspace_diagnostics(client, 0)
+          end
+        end,
+      })
     end,
   },
 
