@@ -26,5 +26,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $ZDOTDIR/.p10k.zsh
 
+
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"

@@ -14,7 +14,7 @@ alias py="python3"
 
 alias t="tmux"
 alias m="make"
-alias v="nvim"
+alias nv="nvim ."
 
 # yazi helper https://yazi-rs.github.io/docs/quick-start#shell-wrapper
 function y() {

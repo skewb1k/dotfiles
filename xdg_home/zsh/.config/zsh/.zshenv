@@ -8,9 +8,9 @@ export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"
 export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
 
 # editor
-export EDITOR="hx"
-export SUDO_EDITOR="hx"
-export VISUAL="hx"
+export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
+export VISUAL="nvim"
 
 # zsh
 export HISTFILE="$ZDOTDIR/.zhistory"    
