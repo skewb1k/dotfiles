@@ -9,7 +9,7 @@ vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
-vim.o.winborder = 'rounded'
+-- vim.o.winborder = 'rounded'
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -93,10 +93,12 @@ vim.keymap.set('v', '<leader>p', '"+p', { noremap = true, silent = true })
 
 vim.keymap.set('i', 'jk', '<esc>')
 
-vim.keymap.set('n', 'gn', 'gt', { noremap = true })
-vim.keymap.set('n', 'gp', 'gT', { noremap = true })
+vim.keymap.set('n', 'gn', '<CMD>tabn<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', 'gp', '<CMD>tabp<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<C-s>', 'm`', { noremap = true })
+
+vim.keymap.set('n', '<leader>e', '<CMD>lua vim.diagnostic.open_float()<CR>')
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
@@ -130,18 +132,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Configure and install plugins ]]
---
---  To check the current status of your plugins, run
---    :Lazy
---
---  You can press `?` in this menu for help. Use `:q` to close the window
---
---  To update plugins you can run
---    :Lazy update
---
-require('lazy').setup({
+require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'norcalli/nvim-colorizer.lua',
 
   require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'plugins.mini',
@@ -149,6 +142,7 @@ require('lazy').setup({
   require 'plugins.cord',
   require 'plugins.conform',
   require 'plugins.lsp-config',
+  require 'plugins.leap',
   require 'plugins.blink',
   require 'plugins.themes',
   require 'plugins.todo-comments',
@@ -157,4 +151,4 @@ require('lazy').setup({
   require 'plugins.which-key',
   require 'plugins.oil',
   require 'plugins.treesitter',
-}, {})
+}

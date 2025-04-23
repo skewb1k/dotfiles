@@ -7,6 +7,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"
 export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
 
+export TERM=xterm-256color
+
 # editor
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"

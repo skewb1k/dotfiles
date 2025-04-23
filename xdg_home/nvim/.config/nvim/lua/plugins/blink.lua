@@ -71,8 +71,8 @@ return {
 
       completion = {
         documentation = { auto_show = true, auto_show_delay_ms = 300 },
-        -- menu = { border = 'rounded' },
-        -- documentation = { window = { border = 'rounded' } },
+        menu = { border = 'rounded' },
+        documentation = { window = { border = 'rounded' } },
       },
 
       sources = {
@@ -96,7 +96,7 @@ return {
       -- Shows a signature help window while you type arguments for a function
       signature = {
         enabled = true,
-        -- window = { border = 'rounded' },
+        window = { border = 'rounded' },
       },
     },
   },

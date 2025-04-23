@@ -6,7 +6,7 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       require('tokyonight').setup {
         styles = {
-          comments = { italic = false }, -- Disable italics in comments
+          italic = false,
         },
       }
     end,
@@ -14,7 +14,11 @@ return {
   {
     'vague2k/vague.nvim',
     config = function()
-      require('vague').setup {}
+      require('vague').setup {
+        style = {
+          italic = false,
+        },
+      }
       vim.cmd.colorscheme 'vague'
     end,
   },
@@ -23,7 +27,6 @@ return {
     name = 'rose-pine',
     config = function()
       require('rose-pine').setup {
-        disable_background = true,
         styles = {
           italic = false,
         },
