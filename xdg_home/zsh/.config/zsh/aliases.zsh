@@ -59,6 +59,8 @@ gsq() {
 
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
+alias f='fzf --print0 | xargs -0 -o nvim'
+
 # docker
 alias d="docker"
 alias dsp="docker system prune -af && docker volume prune -af"

@@ -23,6 +23,7 @@ return {
 
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
+      'workspace-diagnostics',
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -135,9 +136,6 @@ return {
         },
       }
 
-      vim.lsp.config = {
-        border = {},
-      }
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
       --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
@@ -156,6 +154,22 @@ return {
       local servers = {
         -- clangd = {},
         -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+        sqls = {
+          on_attach = function(client, bufnr)
+            require('sqls').on_attach(client, bufnr) -- require sqls.nvim
+            client.server_capabilities.documentFormattingProvider = false
+          end,
+          settings = {
+            sqls = {
+              connections = {
+                {
+                  driver = 'postgresql',
+                  dataSourceName = 'host=127.0.0.1 port=5432 user=postgres password=postgres dbname=postgres sslmode=disable',
+                },
+              },
+            },
+          },
+        },
         gopls = {
           -- root_dir = require('lspconfig').util.root_pattern('go.work', 'go.mod'),
           filetypes = { 'go', 'gomod' },
@@ -201,7 +215,26 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
+        yamlls = {
+          on_attach = function(client, bufnr)
+            client.server_capabilities.documentFormattingProvider = true
+          end,
+          flags = lsp_flags,
+          capabilities = capabilities,
+          settings = {
+            yaml = {
+              format = {
+                enable = true,
+              },
+              schemaStore = {
+                enable = true,
+              },
+            },
+          },
+        },
+        jsonls = {},
+        taplo = {},
         --
 
         lua_ls = {
@@ -256,7 +289,7 @@ return {
                 existing_on_attach(client, bufnr)
               end
 
-              require('workspace-diagnostics').populate_workspace_diagnostics(client, bufnr)
+              -- require('workspace-diagnostics').populate_workspace_diagnostics(client, bufnr)
             end
 
             require('lspconfig')[server_name].setup(server)

@@ -135,6 +135,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'norcalli/nvim-colorizer.lua',
+  'nanotee/sqls.nvim',
+  {
+    'artemave/workspace-diagnostics.nvim',
+    name = 'workspace-diagnostics',
+  },
 
   require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'plugins.mini',
@@ -146,7 +151,6 @@ require('lazy').setup {
   require 'plugins.blink',
   require 'plugins.themes',
   require 'plugins.todo-comments',
-  require 'plugins.workspace-diagnostics',
   require 'plugins.telescope',
   require 'plugins.which-key',
   require 'plugins.oil',

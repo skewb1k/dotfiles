@@ -22,7 +22,7 @@ return {
     cmd = 'Trouble',
     keys = {
       {
-        '<leader>d',
+        '<leader>D',
         '<cmd>Trouble diagnostics toggle<cr>',
         desc = 'Diagnostics (Trouble)',
       },
