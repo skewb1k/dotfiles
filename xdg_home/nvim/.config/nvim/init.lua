@@ -40,10 +40,6 @@ vim.opt.softtabstop = 4 -- Tab key acts like 4 spaces, but inserts a tab
 vim.opt.autoindent = true -- Keep indent from previous line
 vim.opt.smartindent = true -- Enable smart indenting for code
 
--- Decrease update time
-vim.opt.updatetime = 500
-
--- Decrease mapped sequence wait time
 vim.opt.wrap = false
 
 vim.opt.timeoutlen = 300
@@ -66,48 +62,44 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
+local map = vim.keymap.set
 
--- Clear highlights on search when pressing <Esc> in normal mode
---  See `:help hlsearch`
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+---@param lhs string
+---@param rhs string|function
+---@param opts? vim.keymap.set.Opts
+function Nmap(lhs, rhs, opts)
+  map({ 'n', 'v', 'x', 'o' }, lhs, rhs, opts)
+end
 
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
---
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+map('n', '<Esc>', '<cmd>nohlsearch<CR>')
+map('i', 'jk', '<esc>')
+map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+Nmap('<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+Nmap('<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+Nmap('<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+Nmap('<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<leader>y', '"+y', { noremap = true, silent = true })
-vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, silent = true })
-vim.keymap.set('v', '<leader>p', '"+p', { noremap = true, silent = true })
+Nmap('<leader>y', '"+y', { noremap = true, silent = true })
+Nmap('<leader>p', '"+p', { noremap = true, silent = true })
 
-vim.keymap.set('i', 'jk', '<esc>')
+Nmap('gn', '<cmd>tabn<cr>', { noremap = true, silent = true })
+Nmap('gp', '<cmd>tabp<cr>', { noremap = true, silent = true })
 
-vim.keymap.set('n', 'gn', '<CMD>tabn<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', 'gp', '<CMD>tabp<CR>', { noremap = true, silent = true })
+Nmap('<C-u>', '<C-u>zz', { noremap = true, silent = true })
+Nmap('<C-d>', '<C-d>zz', { noremap = true, silent = true })
+Nmap('<C-f>', '<C-f>zz', { noremap = true, silent = true })
+Nmap('<C-b>', '<C-b>zz', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<C-s>', 'm`', { noremap = true })
+Nmap('<C-s>', 'm`', { noremap = true, desc = 'mark [S]ave point' })
 
-vim.keymap.set('n', '<leader>e', '<CMD>lua vim.diagnostic.open_float()<CR>')
+-- buffers
+Nmap('[b', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
+Nmap(']b', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
+Nmap('<leader>`', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 
--- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
--- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
--- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
--- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
--- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
-
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
+Nmap('<leader>l', '<cmd>Lazy<cr>')
+Nmap('<leader>m', '<cmd>Mason<cr>')
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -121,7 +113,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- [[ Install `lazy.nvim` plugin manager ]]
---    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -133,26 +124,20 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
+  require 'plugins.themes'(),
+
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'norcalli/nvim-colorizer.lua',
-  'nanotee/sqls.nvim',
-  {
-    'artemave/workspace-diagnostics.nvim',
-    name = 'workspace-diagnostics',
-  },
 
   require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'plugins.mini',
-  require 'plugins.trouble',
   require 'plugins.cord',
   require 'plugins.conform',
   require 'plugins.lsp-config',
-  require 'plugins.leap',
+  -- require 'plugins.leap',
   require 'plugins.blink',
-  require 'plugins.themes',
   require 'plugins.todo-comments',
   require 'plugins.telescope',
-  require 'plugins.which-key',
   require 'plugins.oil',
   require 'plugins.treesitter',
 }

@@ -1,8 +1,9 @@
-return {
+local theme_priority = 1000
+
+local themes = {
   {
-    'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
+    name = 'folke/tokyonight.nvim',
+    setup = function()
       ---@diagnostic disable-next-line: missing-fields
       require('tokyonight').setup {
         styles = {
@@ -11,12 +12,13 @@ return {
       }
     end,
   },
+  { name = 'blazkowolf/gruber-darker.nvim' },
+  { name = 'ellisonleao/gruvbox.nvim' },
   {
-    'vague2k/vague.nvim',
-    config = function()
+    name = 'vague2k/vague.nvim',
+    setup = function()
       require('vague').setup {
         style = {
-          -- "none" is the same thing as default. But "italic" and "bold" are also valid options
           boolean = 'bold',
           number = 'none',
           float = 'none',
@@ -28,15 +30,11 @@ return {
           operators = 'none',
           strings = 'none',
           variables = 'none',
-
-          -- keywords
           keywords = 'none',
           keyword_return = 'none',
           keywords_loop = 'none',
           keywords_label = 'none',
           keywords_exception = 'none',
-
-          -- builtin
           builtin_constants = 'bold',
           builtin_functions = 'none',
           builtin_types = 'bold',
@@ -47,9 +45,9 @@ return {
     end,
   },
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    config = function()
+    name = 'rose-pine/neovim',
+    as = 'rose-pine',
+    setup = function()
       require('rose-pine').setup {
         styles = {
           italic = false,
@@ -58,3 +56,26 @@ return {
     end,
   },
 }
+
+return function()
+  local plugins = {}
+
+  for _, theme in ipairs(themes) do
+    local plugin = {
+      theme.name,
+      priority = theme_priority,
+    }
+
+    if theme.setup then
+      plugin.config = theme.setup
+    end
+
+    if theme.as then
+      plugin.name = theme.as
+    end
+
+    table.insert(plugins, plugin)
+  end
+
+  return plugins
+end
