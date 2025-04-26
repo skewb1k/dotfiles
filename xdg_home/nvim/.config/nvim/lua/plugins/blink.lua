@@ -71,7 +71,9 @@ return {
 
       completion = {
         documentation = { auto_show = true, auto_show_delay_ms = 300, window = { border = 'rounded' } },
-        menu = { border = 'rounded' },
+        menu = {
+          border = 'rounded',
+        },
       },
 
       sources = {

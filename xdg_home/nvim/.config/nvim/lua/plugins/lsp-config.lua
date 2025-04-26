@@ -33,21 +33,17 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          local map = function(keys, func, desc, mode)
-            mode = mode or 'n'
-            vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+          local map = function(keys, func, desc)
+            Nmap(keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
           map('<leader>r', vim.lsp.buf.rename, '[R]e[n]ame')
-          map('<leader>a', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
+          map('<leader>a', vim.lsp.buf.code_action, '[G]oto Code [A]ction')
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
           map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
           map('K', function()
             vim.lsp.buf.hover { border = 'rounded', max_height = 25, max_width = 120 }
-
-            -- try to open error details
-            vim.diagnostic.open_float()
           end, 'Hover')
 
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')

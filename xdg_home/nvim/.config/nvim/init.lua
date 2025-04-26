@@ -90,10 +90,11 @@ Nmap('<C-b>', '<C-b>zz', { noremap = true, silent = true })
 
 Nmap('<C-s>', 'm`', { noremap = true, desc = 'mark [S]ave point' })
 
+Nmap('<leader>e', vim.diagnostic.open_float)
+
 -- buffers
 Nmap('gn', '<cmd>bprev<cr>', { noremap = true, silent = true })
 Nmap('gp', '<cmd>bnext<cr>', { noremap = true, silent = true })
-Nmap('<leader>`', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 
 Nmap('<leader>l', '<cmd>Lazy<cr>')
 Nmap('<leader>m', '<cmd>Mason<cr>')
