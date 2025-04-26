@@ -85,8 +85,6 @@ Nmap('<leader>p', '"+p', { noremap = true, silent = true })
 
 Nmap('<C-u>', '<C-u>zz', { noremap = true, silent = true })
 Nmap('<C-d>', '<C-d>zz', { noremap = true, silent = true })
-Nmap('<C-f>', '<C-f>zz', { noremap = true, silent = true })
-Nmap('<C-b>', '<C-b>zz', { noremap = true, silent = true })
 
 Nmap('<C-s>', 'm`', { noremap = true, desc = 'mark [S]ave point' })
 
@@ -129,6 +127,7 @@ require('lazy').setup {
 
   require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'plugins.mini',
+  require 'plugins.diffview',
   require 'plugins.cord',
   require 'plugins.conform',
   require 'plugins.lsp-config',

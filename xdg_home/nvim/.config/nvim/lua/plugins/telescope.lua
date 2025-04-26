@@ -58,7 +58,9 @@ return {
       Nmap('<leader>f', builtin.find_files, { desc = '[S]earch [F]iles' })
       Nmap('<leader>*', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       Nmap('<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-      Nmap('<leader>d', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+      Nmap('<leader>d', function()
+        builtin.diagnostics { sort_by = 'severity' }
+      end, { desc = '[S]earch [D]iagnostics' })
       Nmap('<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       Nmap('<leader>b', builtin.buffers, { desc = '[ ] Find existing buffers' })
       Nmap("<leader>'", builtin.resume, { desc = 'Resume last Telescope list' })
