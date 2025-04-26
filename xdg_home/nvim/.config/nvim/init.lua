@@ -83,9 +83,6 @@ Nmap('<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 Nmap('<leader>y', '"+y', { noremap = true, silent = true })
 Nmap('<leader>p', '"+p', { noremap = true, silent = true })
 
-Nmap('gn', '<cmd>tabn<cr>', { noremap = true, silent = true })
-Nmap('gp', '<cmd>tabp<cr>', { noremap = true, silent = true })
-
 Nmap('<C-u>', '<C-u>zz', { noremap = true, silent = true })
 Nmap('<C-d>', '<C-d>zz', { noremap = true, silent = true })
 Nmap('<C-f>', '<C-f>zz', { noremap = true, silent = true })
@@ -94,8 +91,8 @@ Nmap('<C-b>', '<C-b>zz', { noremap = true, silent = true })
 Nmap('<C-s>', 'm`', { noremap = true, desc = 'mark [S]ave point' })
 
 -- buffers
-Nmap('[b', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
-Nmap(']b', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
+Nmap('gn', '<cmd>bprev<cr>', { noremap = true, silent = true })
+Nmap('gp', '<cmd>bnext<cr>', { noremap = true, silent = true })
 Nmap('<leader>`', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 
 Nmap('<leader>l', '<cmd>Lazy<cr>')
