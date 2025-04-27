@@ -11,8 +11,7 @@ vim.opt.mouse = 'a'
 
 -- vim.o.winborder = 'rounded'
 
--- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
+-- vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -68,7 +67,19 @@ local map = vim.keymap.set
 ---@param rhs string|function
 ---@param opts? vim.keymap.set.Opts
 function Nmap(lhs, rhs, opts)
-  map({ 'n', 'v', 'x', 'o' }, lhs, rhs, opts)
+  local default_modes = { 'n', 'v', 'x', 'o' }
+  local modes = default_modes
+
+  if opts and opts.mode then
+    if type(opts.mode) == 'string' then
+      modes = vim.list_extend(default_modes, { opts.mode })
+    elseif type(opts.mode) == 'table' then
+      modes = vim.list_extend(default_modes, opts.mode)
+    end
+    opts.mode = nil
+  end
+
+  map(modes, lhs, rhs, opts)
 end
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')

@@ -1,4 +1,4 @@
-local theme_priority = 1000
+local default_theme = 'vague'
 
 local themes = {
   {
@@ -16,6 +16,7 @@ local themes = {
   { name = 'ellisonleao/gruvbox.nvim' },
   {
     name = 'vague2k/vague.nvim',
+    as = 'vague',
     setup = function()
       require('vague').setup {
         style = {
@@ -41,8 +42,11 @@ local themes = {
           builtin_variables = 'none',
         },
       }
-      vim.cmd.colorscheme 'vague'
+
+      vim.cmd.colorscheme(default_theme)
+      vim.cmd ':hi statusline guibg=NONE'
     end,
+    afterSetup = function() end,
   },
   {
     name = 'rose-pine/neovim',
@@ -60,10 +64,12 @@ local themes = {
 return function()
   local plugins = {}
 
+  -- Iterate through themes and load the default theme immediately, others lazily
   for _, theme in ipairs(themes) do
     local plugin = {
       theme.name,
-      priority = theme_priority,
+      lazy = theme.as ~= default_theme, -- Lazy load all except the default theme
+      priority = 1000,
     }
 
     if theme.setup then
