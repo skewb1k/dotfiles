@@ -4,10 +4,12 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ~="cd ~"
 
-alias l="eza --icons"
-alias la="eza -a --icons"
-alias lt="eza -T --icons"
-alias lta="eza -aT --icons"
+if [[ -n $ZSH_VERSION ]] && command -v eza >/dev/null 2>&1; then
+  alias l="eza --icons"
+  alias la="eza -a --icons"
+  alias lt="eza -T --icons"
+  alias lta="eza -aT --icons"
+fi
 
 alias python="python3"
 alias py="python3"
@@ -18,12 +20,12 @@ alias nv="nvim ."
 
 # yazi helper https://yazi-rs.github.io/docs/quick-start#shell-wrapper
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+	cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 # git
@@ -67,5 +69,6 @@ alias dsp="docker system prune -af && docker volume prune -af"
 
 alias lsz="du -ahd 1 | sort -hr"
 
-alias vimdiff='nvim -d'
-
+if [[ -n $ZSH_VERSION ]] && command -v nvim >/dev/null 2>&1; then
+  alias vimdiff='nvim -d'
+fi

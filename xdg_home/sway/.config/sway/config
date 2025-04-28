@@ -1,4 +1,3 @@
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
 set $left h
@@ -56,14 +55,8 @@ output HDMI-A-1 mode 1920x1080@75Hz transform 90 pos 2560,0
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
-#
+
 # Workspaces:
-#
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -185,7 +178,7 @@ bar {
         # Text color of status bar
         statusline #ffffff
         # Background of status bar
-        background #262626
+        background #141415
     }
     font pango:DejaVu Sans Mono 8
 }
@@ -197,8 +190,8 @@ bindsym $mod+c exec playerctl -p spotify next
 
 
 exec swayidle -w \
-	timeout 1800 'swaylock -f' \
-	timeout 1805 'swaymsg "output * power off"' \
+	timeout 900 'swaylock -f' \
+	timeout 905 'swaymsg "output * power off"' \
 		resume 'swaymsg "output * power on"'
 
 include /etc/sway/config.d/*

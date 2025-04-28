@@ -42,11 +42,13 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
+# theme = vague
 theme = rose-pine
 background = #141415
 font-family = "JetBrainsMono NFM"
+# font-family = "FiraCode Nerd Font"
 font-feature = "-calt, -liga, -dlig"
-font-size = 13.5
+font-size = 18
 window-padding-balance = true
 window-padding-x = 0
 window-padding-y = 0
@@ -55,6 +57,8 @@ shell-integration = zsh
 desktop-notifications = false
 app-notifications = false
 window-decoration = false
+gtk-titlebar=false
 
 gtk-custom-css = ./custom.css
 
+command = ~/.local/bin/tmux-autoattach

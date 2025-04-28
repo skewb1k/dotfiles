@@ -10,7 +10,7 @@ autoload -U compinit; compinit
 source $ZDOTDIR/aliases.zsh
 
 bindkey -v
-bindkey '^o' autosuggest-accept
+bindkey '^O' autosuggest-accept
 bindkey '^P' up-history
 bindkey '^N' down-history
 

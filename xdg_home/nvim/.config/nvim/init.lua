@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.o.termguicolors = true
+
 vim.g.have_nerd_font = true
 
 vim.opt.number = true
@@ -94,6 +96,8 @@ Nmap('<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 Nmap('<leader>y', '"+y', { noremap = true, silent = true })
 Nmap('<leader>p', '"+p', { noremap = true, silent = true })
 
+Nmap('<leader>w', '<cmd>wa<cr>', { noremap = true, silent = true })
+
 Nmap('<C-u>', '<C-u>zz', { noremap = true, silent = true })
 Nmap('<C-d>', '<C-d>zz', { noremap = true, silent = true })
 
@@ -118,7 +122,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
 -- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -134,10 +137,10 @@ require('lazy').setup {
   require 'plugins.themes'(),
 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'norcalli/nvim-colorizer.lua',
 
   require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'plugins.mini',
+  require 'plugins.colorizer',
   require 'plugins.diffview',
   require 'plugins.cord',
   require 'plugins.conform',
