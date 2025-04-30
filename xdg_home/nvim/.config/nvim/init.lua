@@ -98,8 +98,8 @@ Nmap('<leader>p', '"+p', { noremap = true, silent = true })
 
 Nmap('<leader>w', '<cmd>wa<cr>', { noremap = true, silent = true })
 
-Nmap('<C-u>', '<C-u>zz', { noremap = true, silent = true })
-Nmap('<C-d>', '<C-d>zz', { noremap = true, silent = true })
+-- Nmap('<C-u>', '<C-u>zz', { noremap = true, silent = true })
+-- Nmap('<C-d>', '<C-d>zz', { noremap = true, silent = true })
 
 Nmap('<C-s>', 'm`', { noremap = true, desc = 'mark [S]ave point' })
 
@@ -147,6 +147,7 @@ require('lazy').setup {
   require 'plugins.lsp-config',
   -- require 'plugins.leap',
   require 'plugins.blink',
+  require 'plugins.harpoon',
   require 'plugins.todo-comments',
   require 'plugins.telescope',
   require 'plugins.oil',

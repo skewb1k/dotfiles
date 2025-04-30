@@ -33,7 +33,7 @@ alias gp='git push'
 alias gb="git branch"
 alias gd="git diff"
 alias gc="git add -A && git commit -v"
-alias gl="git log --oneline --graph --decorate --all"
+alias gl="git log --oneline --graph --decorate --all -n 20"
 alias gs="git status"
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "[WIP]: $(date)"'
 

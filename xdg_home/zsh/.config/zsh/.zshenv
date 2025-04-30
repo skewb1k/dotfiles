@@ -2,6 +2,7 @@ export DOTFILES="$HOME/.dotfiles"
 
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
+export XDG_PICTURES_DIR=$HOME/pictures
 
 # git
 export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"

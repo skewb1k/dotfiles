@@ -3,22 +3,23 @@ local default_theme = 'vague'
 local themes = {
   {
     name = 'folke/tokyonight.nvim',
-    setup = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          italic = false,
-        },
-      }
-    end,
+    as = 'tokyonight',
+    opts = {
+      styles = {
+        italic = false,
+      },
+    },
   },
-  { name = 'blazkowolf/gruber-darker.nvim' },
-  { name = 'ellisonleao/gruvbox.nvim' },
+  {
+    name = 'ellisonleao/gruvbox.nvim',
+    as = 'gruvbox',
+  },
   {
     name = 'vague2k/vague.nvim',
     as = 'vague',
-    setup = function()
-      require('vague').setup {
+    config = function()
+      local theme = require 'vague'
+      theme.setup {
         style = {
           boolean = 'bold',
           number = 'none',
@@ -42,43 +43,59 @@ local themes = {
           builtin_variables = 'none',
         },
       }
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        pattern = '*',
+        callback = function()
+          if vim.g.colors_name ~= 'vague' then
+            return
+          end
+          local c = theme.get_palette()
 
-      vim.cmd.colorscheme(default_theme)
-      vim.cmd ':hi statusline guibg=NONE'
+          -- Now you can use the colors dynamically
+          vim.api.nvim_set_hl(0, 'StatusLine', {
+            fg = c.fg,
+            bg = c.bg,
+          })
+        end,
+      })
     end,
-    afterSetup = function() end,
   },
   {
     name = 'rose-pine/neovim',
     as = 'rose-pine',
-    setup = function()
-      require('rose-pine').setup {
-        styles = {
-          italic = false,
-        },
-      }
-    end,
+    opts = {
+      styles = {
+        italic = false,
+      },
+    },
   },
 }
 
 return function()
   local plugins = {}
 
-  -- Iterate through themes and load the default theme immediately, others lazily
   for _, theme in ipairs(themes) do
+    local is_default = theme.as == default_theme
+
     local plugin = {
       theme.name,
-      lazy = theme.as ~= default_theme, -- Lazy load all except the default theme
+      name = theme.as,
+      lazy = not is_default,
       priority = 1000,
+      config = function()
+        if theme.opts then
+          require(theme.as).setup(theme.opts)
+        end
+
+        if theme.config then
+          theme.config()
+        end
+
+        if is_default then
+          vim.cmd.colorscheme(default_theme)
+        end
+      end,
     }
-
-    if theme.setup then
-      plugin.config = theme.setup
-    end
-
-    if theme.as then
-      plugin.name = theme.as
-    end
 
     table.insert(plugins, plugin)
   end

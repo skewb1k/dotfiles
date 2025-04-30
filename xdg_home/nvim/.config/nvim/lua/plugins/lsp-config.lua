@@ -38,7 +38,7 @@ return {
           end
 
           map('<leader>r', vim.lsp.buf.rename, '[R]e[n]ame')
-          vim.keymap.set({ 'n', 'v', 'x', 'o', 'i' }, '<C-a>', vim.lsp.buf.code_action)
+          vim.keymap.set({ 'n', 'v', 'x', 'o', 'i' }, '<C-A>', vim.lsp.buf.code_action)
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
           map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
