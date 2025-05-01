@@ -4,10 +4,9 @@ fi
 
 autoload -U compinit; compinit
 
-# +---------+
-# | ALIASES |
-# +---------+
 source $ZDOTDIR/aliases.zsh
+
+source $XDG_CONFIG_HOME/fzf/.fzfrc
 
 bindkey -v
 bindkey '^O' autosuggest-accept
