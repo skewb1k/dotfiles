@@ -140,6 +140,7 @@ require('lazy').setup {
   'tjdevries/templ.nvim',
 
   require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'plugins.dial',
   require 'plugins.mini',
   require 'plugins.colorizer',
   require 'plugins.diffview',

@@ -4,11 +4,14 @@ fi
 
 autoload -U compinit; compinit
 
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+export ZVM_VI_HIGHLIGHT_BACKGROUND=cyan
+
 source $ZDOTDIR/aliases.zsh
 
 source $XDG_CONFIG_HOME/fzf/.fzfrc
 
-bindkey -v
+# bindkey -v
 bindkey '^O' autosuggest-accept
 bindkey '^P' up-history
 bindkey '^N' down-history

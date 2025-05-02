@@ -6,6 +6,9 @@ return {
       text = {
         workspace = '',
       },
+      idle = {
+        enabled = false,
+      },
     },
   },
 }
