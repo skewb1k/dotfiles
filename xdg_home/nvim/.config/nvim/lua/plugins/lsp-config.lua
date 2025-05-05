@@ -85,21 +85,21 @@ return {
 
       local servers = {
         clangd = {},
-        sqls = {
-          on_attach = function(client, bufnr)
-            client.server_capabilities.documentFormattingProvider = false
-          end,
-          settings = {
-            sqls = {
-              connections = {
-                {
-                  driver = 'postgresql',
-                  dataSourceName = 'host=127.0.0.1 port=5432 user=postgres password=postgres dbname=postgres sslmode=disable',
-                },
-              },
-            },
-          },
-        },
+        -- sqls = {
+        --   on_attach = function(client, bufnr)
+        --     client.server_capabilities.documentFormattingProvider = false
+        --   end,
+        --   settings = {
+        --     sqls = {
+        --       connections = {
+        --         {
+        --           driver = 'postgresql',
+        --           dataSourceName = 'host=127.0.0.1 port=5432 user=postgres password=postgres dbname=postgres sslmode=disable',
+        --         },
+        --       },
+        --     },
+        --   },
+        -- },
         gopls = {
           filetypes = { 'go', 'gomod' },
           settings = {
@@ -131,6 +131,10 @@ return {
             })
           end,
         },
+        sqruff = {
+          cmd = { 'sqruff', 'fix' },
+          filetypes = { 'sql' },
+        },
         golangci_lint_ls = {
           cmd = { 'golangci-lint-langserver', '-nolintername' },
           -- cmd = { 'golangci-lint-langserver' },
@@ -140,7 +144,15 @@ return {
         -- pyright = {},
         cssls = {},
         rust_analyzer = {},
-        ts_ls = {},
+        biome = {},
+        ts_ls = {
+          init_options = { hostInfo = 'neovim' },
+          preferences = {
+            includeCompletionsForModuleExports = true,
+            includeCompletionsForImportStatements = true,
+            importModuleSpecifierPreference = 'relative',
+          },
+        },
         yamlls = {
           on_attach = function(client, bufnr)
             client.server_capabilities.documentFormattingProvider = true
@@ -177,7 +189,7 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
-        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        ensure_installed = {},
         automatic_installation = false,
         handlers = {
           function(server_name)

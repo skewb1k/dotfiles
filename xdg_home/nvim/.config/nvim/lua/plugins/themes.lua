@@ -17,6 +17,7 @@ local themes = {
   {
     name = 'vague2k/vague.nvim',
     as = 'vague',
+    lazy = false,
     config = function()
       local theme = require 'vague'
       theme.setup {

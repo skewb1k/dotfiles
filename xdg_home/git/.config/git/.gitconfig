@@ -2,7 +2,7 @@
 	email = skewb1kunix@gmail.com
 	name = skewb1k
 [init]
-	defaultBranch = main
+	defaultBranch = master
 [core]
 	editor = nvim
 	autocrlf = false
@@ -10,10 +10,7 @@
 [push]
 	autoSetupRemote = true
 [merge]
-	tool = nvimdiff
 	conflictstyle = diff3
-# [mergetool "nvimdiff"]
-#   layout = "LOCAL,BASE,REMOTE / MERGED"
 [pull]
 	rebase = false
 [commit]
