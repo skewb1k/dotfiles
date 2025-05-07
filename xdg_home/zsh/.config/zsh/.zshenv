@@ -28,6 +28,7 @@ export TMUXDOTDIR="$XDG_CONFIG_HOME/tmux"
 export GOPATH="$HOME/.local/go"
 
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/.cargo/bin
 
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"

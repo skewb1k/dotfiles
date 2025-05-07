@@ -1,9 +1,19 @@
+[language-server.jinja-lsp]
+command = "jinja-lsp"
+config = { templates = "./templates", backend = ["./src"], lang = "rust" }
+timeout = 5
+
 [language-server.clangd]
 command = 'clangd'
-args = ['--function-arg-placeholders', '--completion-style=detailed', '--clang-tidy', '--log=verbose']
+args = [
+  '--function-arg-placeholders',
+  '--completion-style=detailed',
+  '--clang-tidy',
+  '--log=verbose',
+]
 
 [language-server.biome]
-command = "biome" 
+command = "biome"
 args = ["lsp-proxy"]
 
 [language-server.flow]
@@ -23,7 +33,14 @@ plugins.isort.enabled = true
 command = "golangci-lint-langserver"
 
 [language-server.golangci-lint-lsp.config]
-command = ["golangci-lint", "run", "--output.json.path", "stdout", "--show-stats=false", "--issues-exit-code=1"]
+command = [
+  "golangci-lint",
+  "run",
+  "--output.json.path",
+  "stdout",
+  "--show-stats=false",
+  "--issues-exit-code=1",
+]
 
 [[language]]
 name = 'cpp'
@@ -34,7 +51,7 @@ language-servers = ['clangd']
 [[language]]
 name = "yaml"
 auto-format = true
-formatter = { command = "yamlfmt", args = ["-" ] }
+formatter = { command = "yamlfmt", args = ["-"] }
 
 [[language]]
 name = "ft"
@@ -42,19 +59,29 @@ file-types = ["ft"]
 roots = []
 injection-regex = "ft"
 scope = "scope.ft"
-language-servers = [ "flow" ]
+language-servers = ["flow"]
 language-id = "flow"
 
 
 [[language]]
 name = "javascript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
 
 [[language]]
 name = "typescript"
-language-servers = [{ name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
 
@@ -62,13 +89,23 @@ auto-format = true
 name = "tsx"
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
 
 [[language]]
 name = "jsx"
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
 
 # [[language]]
 # name = "typescript"
@@ -78,19 +115,23 @@ language-servers = [ { name = "typescript-language-server", except-features = [ 
 
 [[language]]
 name = "html"
-language-servers = [ "vscode-html-language-server", "tailwindcss-ls" ]
+language-servers = ["vscode-html-language-server", "tailwindcss-ls"]
 
 [[language]]
 name = "css"
-language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
+language-servers = ["vscode-css-language-server", "tailwindcss-ls"]
 
 [[language]]
 name = "go"
 auto-format = true
-language-servers = [ "gopls", "golangci-lint-lsp" ]
-formatter = { command = "golangci-lint", args = [ "fmt" ,"--stdin" ] }
+language-servers = ["gopls", "golangci-lint-lsp"]
+formatter = { command = "golangci-lint", args = ["fmt", "--stdin"] }
 
 
 [[language]]
 name = "python"
 auto-format = true
+
+[[language]]
+name = "jinja"
+language-servers = ["jinja-lsp"]
