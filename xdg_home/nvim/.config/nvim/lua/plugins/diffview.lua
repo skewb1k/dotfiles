@@ -11,7 +11,6 @@ return {
           },
         },
       }
-      Nmap('<leader>gd', '<cmd>DiffviewOpen -- %<cr><cmd>q<cr>')
     end,
   },
 }

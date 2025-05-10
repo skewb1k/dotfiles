@@ -15,7 +15,7 @@ local themes = {
     as = 'gruvbox',
   },
   {
-    name = 'vague2k/vague.nvim',
+    name = 'skewb1k/vague.nvim',
     as = 'vague',
     lazy = false,
     config = function()

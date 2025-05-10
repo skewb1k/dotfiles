@@ -138,7 +138,7 @@ require('lazy').setup {
 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
+  -- require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'plugins.dial',
   require 'plugins.mini',
   require 'plugins.colorizer',
