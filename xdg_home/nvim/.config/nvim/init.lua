@@ -58,6 +58,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.fn.setreg('p', 'viwP')
+vim.fn.setreg('t', 'I// TODO: ')
+
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
@@ -136,7 +139,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup {
   require 'plugins.themes'(),
 
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'plugins.dial',
@@ -150,6 +153,8 @@ require('lazy').setup {
   require 'plugins.blink',
   require 'plugins.harpoon',
   require 'plugins.todo-comments',
+  require 'plugins.treesitter-context',
+  require 'plugins.neotest',
   require 'plugins.telescope',
   require 'plugins.oil',
   require 'plugins.treesitter',

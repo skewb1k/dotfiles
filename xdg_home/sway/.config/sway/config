@@ -101,14 +101,8 @@ workspace 10 output DP-2
     # bindsym $mod+w layout tabbed
     # bindsym $mod+e layout toggle split
 
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
-
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+Shift+f floating toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -158,7 +152,7 @@ input type:touchpad {
 }
 
 input type:keyboard {
-    xkb_options grp:alt_shift_toggle
+    xkb_options grp:win_space_toggle
     # xkb_switch_layout next
     xkb_layout us,ru
     xkb_numlock disabled
@@ -197,8 +191,8 @@ exec swaymsg "workspace 2; exec spotify-launcher;"
 
 
 exec swayidle -w \
-	timeout 300 'swaylock -f' \
-	timeout 305 'swaymsg "output * power off"' \
+	timeout 900 'swaylock -f' \
+	timeout 905 'swaymsg "output * power off"' \
 		resume 'swaymsg "output * power on"'
 
 include /etc/sway/config.d/*

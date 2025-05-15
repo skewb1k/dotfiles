@@ -105,31 +105,32 @@ return {
           settings = {
             gopls = {
               gofumpt = true,
+              goimports = true,
             },
           },
-          on_attach = function(client, bufnr)
-            local format_sync_grp = vim.api.nvim_create_augroup('GoFormat', { clear = true })
-
-            vim.api.nvim_create_autocmd('BufWritePre', {
-              group = format_sync_grp,
-              pattern = '*.go',
-              callback = function()
-                -- Run LSP formatting
-                vim.lsp.buf.format()
-
-                -- Run golangci-lint --fix
-                -- vim.fn.jobstart({ 'golangci-lint', 'run', '--fix' }, {
-                --   on_exit = function(_, code, _)
-                --     if code ~= 0 then
-                --       vim.notify('golangci-lint --fix failed', vim.log.levels.WARN)
-                --     end
-                --   end,
-                --   stdout_buffered = true,
-                --   stderr_buffered = true,
-                -- })
-              end,
-            })
-          end,
+          -- on_attach = function(client, bufnr)
+          --   local format_sync_grp = vim.api.nvim_create_augroup('GoFormat', { clear = true })
+          --
+          --   vim.api.nvim_create_autocmd('BufWritePre', {
+          --     group = format_sync_grp,
+          --     pattern = '*.go',
+          --     callback = function()
+          --       -- Run LSP formatting
+          --       vim.lsp.buf.format()
+          --
+          --       -- Run golangci-lint --fix
+          --       -- vim.fn.jobstart({ 'golangci-lint', 'run', '--fix' }, {
+          --       --   on_exit = function(_, code, _)
+          --       --     if code ~= 0 then
+          --       --       vim.notify('golangci-lint --fix failed', vim.log.levels.WARN)
+          --       --     end
+          --       --   end,
+          --       --   stdout_buffered = true,
+          --       --   stderr_buffered = true,
+          --       -- })
+          --     end,
+          --   })
+          -- end,
         },
         sqruff = {
           cmd = { 'sqruff', 'fix' },
@@ -137,7 +138,6 @@ return {
         },
         golangci_lint_ls = {
           cmd = { 'golangci-lint-langserver', '-nolintername' },
-          -- cmd = { 'golangci-lint-langserver' },
           init_options = { command = { 'golangci-lint', 'run', '--output.json.path', 'stdout', '--show-stats=false', '--issues-exit-code=1' } },
           root_dir = require('lspconfig').util.root_pattern('.golangci.yml', '.golangci.yaml', '.golangci.toml', '.golangci.json', 'go.work', 'go.mod'),
         },
@@ -191,6 +191,7 @@ return {
       require('mason-lspconfig').setup {
         ensure_installed = {},
         automatic_installation = false,
+        automatic_enable = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
