@@ -30,6 +30,7 @@ function y() {
 
 # git
 alias gp='git push'
+alias gpf='git push --force-with-lease'
 alias gb="git branch"
 alias gd="git diff"
 alias gc="git add -A && git commit -v"

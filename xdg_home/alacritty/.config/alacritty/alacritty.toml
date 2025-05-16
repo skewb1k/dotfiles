@@ -31,4 +31,4 @@ y = 0
 [general]
 live_config_reload = true
 
-import = ["./themes/vague_1.toml"]
+import = ["./themes/vague.toml"]
