@@ -5,7 +5,7 @@ fi
 autoload -U compinit; compinit
 
 # source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-source /home/skewbik/dev/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source $HOME/dev/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_VI_HIGHLIGHT_BACKGROUND=black
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 

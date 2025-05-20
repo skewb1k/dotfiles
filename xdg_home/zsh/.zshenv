@@ -1,1 +1,1 @@
-export ZDOTDIR="/home/skewbik/.config/zsh"
+export ZDOTDIR="$HOME/.config/zsh"

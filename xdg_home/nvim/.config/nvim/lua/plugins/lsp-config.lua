@@ -143,7 +143,19 @@ return {
         },
         -- pyright = {},
         cssls = {},
-        rust_analyzer = {},
+        rust_analyzer = {
+          completion = {
+            callable = { snippets = 'fill_arguments' },
+            fullFunctionSignatures = { enable = true },
+          },
+          procMacro = { enable = true },
+          check = {
+            command = 'clippy',
+          },
+          cargo = {
+            features = 'all',
+          },
+        },
         biome = {},
         ts_ls = {
           init_options = { hostInfo = 'neovim' },
