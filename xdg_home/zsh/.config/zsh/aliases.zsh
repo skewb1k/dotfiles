@@ -74,3 +74,11 @@ alias lsz="du -ahd 1 | sort -hr"
 if [[ -n $ZSH_VERSION ]] && command -v nvim >/dev/null 2>&1; then
   alias vimdiff='nvim -d'
 fi
+
+
+alias pacls="comm -23 <(pacman -Qqt | sort) <(pacman -Qqg base | sort)"
+
+alias g='gtrash'
+alias gm='g put'
+alias rm="echo -e 'If you want to use rm really, then use \"\\\\rm\" instead.'; false"
+
