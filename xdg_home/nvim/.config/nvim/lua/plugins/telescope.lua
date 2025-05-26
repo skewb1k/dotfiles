@@ -59,6 +59,7 @@ return {
       Nmap('<leader>*', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       Nmap('<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       Nmap('<leader>st', builtin.tagstack, { desc = '[S]earch [T]ags' })
+      Nmap('<leader>sm', builtin.man_pages, { desc = '[S]earch [M]an pages' })
       Nmap('<leader>gs', builtin.git_status, { desc = '[G]it [S]tatus' })
       Nmap('<leader>d', function()
         builtin.diagnostics { sort_by = 'severity' }

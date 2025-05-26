@@ -21,6 +21,7 @@ return {
       { 'williamboman/mason.nvim', opts = {} },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
+      'b0o/schemastore.nvim',
 
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
@@ -156,7 +157,6 @@ return {
             features = 'all',
           },
         },
-        biome = {},
         ts_ls = {
           init_options = { hostInfo = 'neovim' },
           preferences = {
@@ -172,16 +172,41 @@ return {
           capabilities = capabilities,
           settings = {
             yaml = {
+              schemaStore = {
+                -- You must disable built-in schemaStore support if you want to use
+                -- this plugin and its advanced options like `ignore`.
+                enable = false,
+                -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+                url = '',
+              },
+              schemas = require('schemastore').yaml.schemas(),
               format = {
                 enable = true,
               },
-              schemaStore = {
-                enable = true,
-              },
+              validate = true,
             },
           },
         },
-        jsonls = {},
+        biome = {},
+        jsonls = {
+          on_attach = function(client, bufnr)
+            -- Disable formatting capability for jsonls
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end,
+          init_options = {
+            provideFormatter = false,
+          },
+          settings = {
+            json = {
+              format = {
+                enable = false,
+              },
+              schemas = require('schemastore').json.schemas(), -- optional, for schema support
+              validate = { enable = true },
+            },
+          },
+        },
         taplo = {},
         lua_ls = {
           settings = {

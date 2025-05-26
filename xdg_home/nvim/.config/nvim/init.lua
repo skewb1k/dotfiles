@@ -15,14 +15,6 @@ vim.opt.mouse = 'a'
 
 -- vim.opt.showmode = false
 
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
--- vim.schedule(function()
---   vim.opt.clipboard = 'unnamedplus'
--- end)
-
 -- Enable break indent
 vim.opt.breakindent = true
 vim.opt.undofile = true
@@ -108,6 +100,8 @@ Nmap('<C-s>', 'm`', { noremap = true, desc = 'mark [S]ave point' })
 
 Nmap('<leader>e', vim.diagnostic.open_float)
 
+Nmap('<A-z>', '<cmd>set wrap!<cr>', { noremap = true, silent = true })
+
 -- buffers
 Nmap('gn', '<cmd>bprev<cr>', { noremap = true, silent = true })
 Nmap('gp', '<cmd>bnext<cr>', { noremap = true, silent = true })
@@ -159,3 +153,13 @@ require('lazy').setup {
   require 'plugins.oil',
   require 'plugins.treesitter',
 }
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'typescriptreact', 'json', 'jsonc' },
+  callback = function()
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 2
+    vim.bo.softtabstop = 2
+    vim.bo.expandtab = true
+  end,
+})

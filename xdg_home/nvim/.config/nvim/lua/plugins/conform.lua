@@ -24,11 +24,15 @@ return {
         yaml = { 'yamlfmt' },
         -- go = { 'gofumpt', 'goimports' },
         go = {},
+        json = { 'biome' },
+        jsonc = { 'biome' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'biome' },
+        typescript = { 'biome' },
+        typescriptreact = { 'biome' },
       },
     },
   },

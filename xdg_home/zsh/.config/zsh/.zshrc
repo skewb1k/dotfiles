@@ -38,3 +38,16 @@ ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue,underline
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue,underline
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
 
+
+function zshaddhistory() {
+  # defang naughty commands; the entire history entry is in $1
+  if [[ $1 =~ "cp\ *|mv\ *|rm\ *|cat\ *\>|pv\ *|dd\ *|shutdown\ *" ]]; then
+    1="# $1"
+  fi
+  # write to usual history location
+  print -sr -- ${1%%$'\n'}
+  # do not save the history line. if you have a chain of zshaddhistory
+  # hook functions, this may be more complicated to manage, depending
+  # on what those other hooks do (man zshall | less -p zshaddhistory)
+  return 1
+}

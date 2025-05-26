@@ -5,6 +5,8 @@ return {
     opts = {
       text = {
         workspace = '',
+        editing = 'Editing a file',
+        viewing = 'Viewing a file',
       },
       idle = {
         enabled = false,

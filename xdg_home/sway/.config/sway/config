@@ -138,11 +138,11 @@ bindsym $mod+r mode "resize"
     # bindsym Print exec grim -g "$(slurp)" $HOME/pictures/screenshots/$(date +'%s_screenshot.png')
 
     # Screenshot a window
-    bindsym $mod+Print exec sway-screenshot -m window
+    bindsym $mod+Print exec sway-screenshot -m window -o ~/pictures/screenshots/
     # Screenshot a monitor
-    bindsym Print exec sway-screenshot -m output
+    bindsym Print exec sway-screenshot -m output -o ~/pictures/screenshots/
     # Screenshot a region
-    bindsym $mod+Shift+Print exec sway-screenshot -m region
+    bindsym $mod+Shift+Print exec sway-screenshot -m region -o ~/pictures/screenshots/
 
 input type:touchpad {
     dwt enabled
