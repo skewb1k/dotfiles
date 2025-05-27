@@ -23,8 +23,6 @@ export SAVEHIST=20000
 # tmux
 export TMUXDOTDIR="$XDG_CONFIG_HOME/tmux"
 
-# TERM="xterm-256color"
-
 export GOPATH="$HOME/.local/go"
 
 export PATH=$PATH:$GOPATH/bin
@@ -37,6 +35,8 @@ fi
 export PATH=$PATH:$HOME/.cache/bin
 
 export PATH="$HOME/.bun/bin:$PATH"
+
+export PATH="$HOME/.local/scripts:$PATH"
 
 # Disable Bun telemetry
 export DO_NOT_TRACK=1

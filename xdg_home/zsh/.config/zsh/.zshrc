@@ -51,3 +51,9 @@ function zshaddhistory() {
   # on what those other hooks do (man zshall | less -p zshaddhistory)
   return 1
 }
+
+function zvm_vi_yank () {
+  zvm_yank
+  printf %s "${CUTBUFFER}" | wl-copy
+  zvm_exit_visual_mode
+}
