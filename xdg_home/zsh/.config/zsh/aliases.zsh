@@ -82,3 +82,4 @@ alias g='gtrash'
 alias gm='g put'
 alias rm="echo -e 'If you want to use rm really, then use \"\\\\rm\" instead.'; false"
 
+alias yay='yay --noconfirm'
