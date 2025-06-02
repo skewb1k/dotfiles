@@ -41,3 +41,4 @@ export PATH="$HOME/.local/scripts:$PATH"
 # Disable Bun telemetry
 export DO_NOT_TRACK=1
 
+# export LESS='-iRMx4'

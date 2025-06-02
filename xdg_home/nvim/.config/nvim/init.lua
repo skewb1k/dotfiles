@@ -60,6 +60,12 @@ vim.opt.confirm = true
 
 local map = vim.keymap.set
 
+function exec(cmd)
+  return function()
+    vim.api.nvim_command(cmd)
+  end
+end
+
 ---@param lhs string
 ---@param rhs string|function
 ---@param opts? vim.keymap.set.Opts
@@ -91,7 +97,9 @@ Nmap('<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 Nmap('<leader>y', '"+y', { noremap = true, silent = true })
 Nmap('<leader>p', '"+p', { noremap = true, silent = true })
 
-Nmap('<leader>w', '<cmd>wa<cr>', { noremap = true, silent = true })
+Nmap('<leader>w', exec 'wa', { noremap = true, silent = true })
+
+Nmap('<leader>u', exec 'checktime', { noremap = true, silent = true })
 
 -- Nmap('<C-u>', '<C-u>zz', { noremap = true, silent = true })
 -- Nmap('<C-d>', '<C-d>zz', { noremap = true, silent = true })
@@ -100,14 +108,14 @@ Nmap('<C-s>', 'm`', { noremap = true, desc = 'mark [S]ave point' })
 
 Nmap('<leader>e', vim.diagnostic.open_float)
 
-Nmap('<A-z>', '<cmd>set wrap!<cr>', { noremap = true, silent = true })
+Nmap('<A-z>', exec 'set wrap!', { noremap = true, silent = true })
 
 -- buffers
-Nmap('gn', '<cmd>bprev<cr>', { noremap = true, silent = true })
-Nmap('gp', '<cmd>bnext<cr>', { noremap = true, silent = true })
+Nmap('gn', exec 'bprev', { noremap = true, silent = true })
+Nmap('gp', exec 'bnext', { noremap = true, silent = true })
 
-Nmap('<leader>l', '<cmd>Lazy<cr>')
-Nmap('<leader>m', '<cmd>Mason<cr>')
+Nmap('<leader>l', exec 'Lazy')
+Nmap('<leader>m', exec 'Mason')
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -136,6 +144,7 @@ require('lazy').setup {
   -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'plugins.treesitter',
   require 'plugins.dial',
   require 'plugins.mini',
   require 'plugins.colorizer',
@@ -151,7 +160,7 @@ require('lazy').setup {
   require 'plugins.neotest',
   require 'plugins.telescope',
   require 'plugins.oil',
-  require 'plugins.treesitter',
+  require 'plugins.kulala',
 }
 
 vim.api.nvim_create_autocmd('FileType', {

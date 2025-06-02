@@ -25,9 +25,6 @@ function __zoxide_cd() {
 
 setopt HIST_SAVE_NO_DUPS
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $ZDOTDIR/.p10k.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
