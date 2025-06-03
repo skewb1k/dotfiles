@@ -1,8 +1,10 @@
 export DOTFILES="$HOME/.dotfiles"
 
 # XDG
-export XDG_CONFIG_HOME=$HOME/.config
 export XDG_PICTURES_DIR=$HOME/pictures
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # git
 export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"
@@ -11,7 +13,6 @@ export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
 export TERM=xterm-256color
 
 # editor
-export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
 
