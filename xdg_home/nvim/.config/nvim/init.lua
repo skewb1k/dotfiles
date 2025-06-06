@@ -161,6 +161,7 @@ require('lazy').setup {
   require 'plugins.telescope',
   require 'plugins.oil',
   require 'plugins.kulala',
+  require 'plugins.render-markdown',
 }
 
 vim.api.nvim_create_autocmd('FileType', {

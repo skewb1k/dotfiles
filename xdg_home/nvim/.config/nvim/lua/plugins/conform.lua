@@ -32,6 +32,7 @@ return {
         -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { 'biome' },
         typescript = { 'biome' },
+        markdown = { 'prettier' },
         typescriptreact = { 'biome' },
       },
     },

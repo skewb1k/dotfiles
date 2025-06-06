@@ -105,6 +105,11 @@ return {
           function(a, b)
             local a_priority = source_priority[a.source_id]
             local b_priority = source_priority[b.source_id]
+
+            if a_priority == nil or b_priority == nil then
+              return false
+            end
+
             if a_priority ~= b_priority then
               return a_priority > b_priority
             end

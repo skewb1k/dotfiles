@@ -10,11 +10,11 @@ set $term "foot /home/skewbik/.local/scripts/tmux-autoattach"
 # Your preferred application launcher
 set $menu wmenu-run
 
-# output eDP-1 mode 3072x1920@120Hz scale 1.5
+output eDP-1 mode 3072x1920@120Hz scale 1.5
 
-output eDP-1 disable
-output DP-2 mode 2560x1440@170Hz pos 0 0
-output HDMI-A-1 mode 1920x1080@75Hz transform 90 pos 2560,0
+# output eDP-1 disable
+# output DP-2 mode 2560x1440@170Hz pos 0 0
+# output HDMI-A-1 mode 1920x1080@75Hz transform 90 pos 2560,0
 
 workspace 1 output DP-2
 workspace 2 output DP-2
@@ -192,7 +192,7 @@ bindsym $mod+c exec playerctl -p spotify next
 exec swaymsg "workspace 1; exec zen-browser;"
 exec swaymsg "workspace 3; exec $term;"
 exec swaymsg "workspace 6; exec nekoray;"
-exec swaymsg "workspace 6; exec telegram-desktop;"
+exec swaymsg "workspace 6; exec Telegram;"
 exec swaymsg "workspace 6; exec discord;"
 exec swaymsg "workspace 2; exec spotify-launcher;"
 
