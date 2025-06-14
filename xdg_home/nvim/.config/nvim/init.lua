@@ -52,6 +52,7 @@ vim.opt.scrolloff = 10
 
 vim.fn.setreg('p', 'viwP')
 vim.fn.setreg('t', 'I// TODO: ')
+vim.fn.setreg('f', 'I// FIXME: ')
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -143,7 +144,7 @@ require('lazy').setup {
 
   -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  -- require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
+  -- require 'plugins.gitsigns',
   require 'plugins.treesitter',
   require 'plugins.dial',
   require 'plugins.mini',
@@ -152,7 +153,6 @@ require('lazy').setup {
   require 'plugins.cord',
   require 'plugins.conform',
   require 'plugins.lsp-config',
-  -- require 'plugins.leap',
   require 'plugins.blink',
   require 'plugins.harpoon',
   require 'plugins.todo-comments',
@@ -161,7 +161,8 @@ require('lazy').setup {
   require 'plugins.telescope',
   require 'plugins.oil',
   require 'plugins.kulala',
-  require 'plugins.render-markdown',
+  -- require 'plugins.leap',
+  -- require 'plugins.render-markdown',
 }
 
 vim.api.nvim_create_autocmd('FileType', {

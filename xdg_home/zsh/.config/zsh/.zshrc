@@ -2,6 +2,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if hash nvim 2>/dev/null; then
+  export EDITOR=nvim
+
+  # Use nvim as manpager `:h Man`
+  export MANPAGER='nvim +Man!'
+else
+  export EDITOR=vim
+fi
+
+# don't append "not found command" to history
+# https://www.zsh.org/mla/users//2014/msg00715.html
+function zshaddhistory() {
+	whence ${${(z)1}[1]} >| /dev/null || return 1
+}
+
 autoload -U compinit; compinit
 
 # source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
@@ -17,11 +32,6 @@ source $XDG_CONFIG_HOME/fzf/.fzfrc
 bindkey '^O' autosuggest-accept
 bindkey '^P' up-history
 bindkey '^N' down-history
-
-eval "$(zoxide init zsh)"
-function __zoxide_cd() {
-	builtin cd "$1" && l
-}
 
 setopt HIST_SAVE_NO_DUPS
 
