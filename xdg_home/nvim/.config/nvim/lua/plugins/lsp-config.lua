@@ -101,6 +101,7 @@ return {
         --     },
         --   },
         -- },
+        protols = {},
         gopls = {
           filetypes = { 'go', 'gomod' },
           settings = {
@@ -133,10 +134,10 @@ return {
           --   })
           -- end,
         },
-        sqruff = {
-          cmd = { 'sqruff', 'fix' },
-          filetypes = { 'sql' },
-        },
+        -- sqruff = {
+        --   cmd = { 'sqruff', 'fix' },
+        --   filetypes = { 'sql' },
+        -- },
         golangci_lint_ls = {
           cmd = { 'golangci-lint-langserver', '-nolintername' },
           -- init_options = { command = { 'golangci-lint', 'run', '--output.json.path', 'stdout', '--show-stats=false', '--issues-exit-code=1' } },

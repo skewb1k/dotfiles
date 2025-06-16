@@ -21,18 +21,13 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        yaml = { 'yamlfmt' },
-        -- go = { 'gofumpt', 'goimports' },
+        -- yaml = { 'yamlfmt' },
         go = {},
         json = { 'biome' },
         jsonc = { 'biome' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { 'biome' },
         typescript = { 'biome' },
-        markdown = { 'prettier' },
+        -- markdown = { 'prettier' },
         typescriptreact = { 'biome' },
       },
     },

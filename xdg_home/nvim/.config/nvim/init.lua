@@ -114,6 +114,7 @@ Nmap('<A-z>', exec 'set wrap!', { noremap = true, silent = true })
 -- buffers
 Nmap('gn', exec 'bprev', { noremap = true, silent = true })
 Nmap('gp', exec 'bnext', { noremap = true, silent = true })
+Nmap('<F5>', exec 'LspRestart', { noremap = true })
 
 Nmap('<leader>l', exec 'Lazy')
 Nmap('<leader>m', exec 'Mason')
@@ -172,5 +173,13 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.bo.tabstop = 2
     vim.bo.softtabstop = 2
     vim.bo.expandtab = true
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  callback = function()
+    -- Disable comment on new line
+    vim.opt.formatoptions:remove { 'c', 'r', 'o' }
   end,
 })
