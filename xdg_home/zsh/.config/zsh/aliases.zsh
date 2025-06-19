@@ -17,6 +17,8 @@ alias t="tmux"
 alias m="make"
 alias nv="nvim ."
 
+alias nvimdiff="nvim -d"
+
 # yazi helper https://yazi-rs.github.io/docs/quick-start#shell-wrapper
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -28,10 +30,18 @@ function y() {
 }
 
 # git
+function gdnolock() {
+  if [[ "$#" -eq 0 ]]; then
+    command git diff ':(exclude)package-lock.json' ':(exclude)pnpm-lock.yaml' ':(exclude)*.lock' ':(exclude)go.sum'
+  else
+    command git diff "$@"
+  fi
+}
+
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias gb="git branch"
-alias gd="git diff"
+alias gd="gdnolock"
 alias gc="git add -A && git commit -v"
 alias gl="git log --oneline --graph --decorate --all"
 alias gll="git --no-pager log --oneline --graph --decorate --all -n 20"
@@ -82,3 +92,4 @@ alias gm='g put'
 alias rm="echo -e 'If you want to use rm really, then use \"\\\\rm\" instead.'; false"
 
 alias yay='yay --noconfirm'
+

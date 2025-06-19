@@ -51,8 +51,8 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 vim.fn.setreg('p', 'viwP')
-vim.fn.setreg('t', 'I// TODO: ')
-vim.fn.setreg('f', 'I// FIXME: ')
+vim.fn.setreg('t', 'ITODO: gccA')
+vim.fn.setreg('f', 'IFIXME: gccA')
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -86,7 +86,7 @@ function Nmap(lhs, rhs, opts)
   map(modes, lhs, rhs, opts)
 end
 
-map('n', '<Esc>', '<cmd>nohlsearch<CR>')
+map('n', '<Esc>', exec 'nohlsearch')
 map('i', 'jk', '<esc>')
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
