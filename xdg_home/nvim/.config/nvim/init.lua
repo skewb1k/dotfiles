@@ -158,12 +158,19 @@ require('lazy').setup {
   require 'plugins.harpoon',
   require 'plugins.todo-comments',
   require 'plugins.treesitter-context',
-  require 'plugins.neotest',
+  -- require 'plugins.neotest',
   require 'plugins.telescope',
   require 'plugins.oil',
   require 'plugins.kulala',
   -- require 'plugins.leap',
   -- require 'plugins.render-markdown',
+  {
+    'kylechui/nvim-surround',
+    opts = {},
+    -- config = function()
+    --   require('nvim-surround').setup {}
+    -- end,
+  },
 }
 
 vim.api.nvim_create_autocmd('FileType', {

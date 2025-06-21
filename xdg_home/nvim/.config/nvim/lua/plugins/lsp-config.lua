@@ -138,6 +138,8 @@ return {
         --   cmd = { 'sqruff', 'fix' },
         --   filetypes = { 'sql' },
         -- },
+        tailwindcss = {},
+        html = {},
         golangci_lint_ls = {
           cmd = { 'golangci-lint-langserver', '-nolintername' },
           -- init_options = { command = { 'golangci-lint', 'run', '--output.json.path', 'stdout', '--show-stats=false', '--issues-exit-code=1' } },
@@ -166,6 +168,7 @@ return {
             importModuleSpecifierPreference = 'relative',
           },
         },
+        bashls = {},
         yamlls = {
           on_attach = function(client, bufnr)
             client.server_capabilities.documentFormattingProvider = true
