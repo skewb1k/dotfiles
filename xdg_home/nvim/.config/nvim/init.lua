@@ -114,6 +114,7 @@ Nmap('<A-z>', exec 'set wrap!', { noremap = true, silent = true })
 -- buffers
 Nmap('gn', exec 'bprev', { noremap = true, silent = true })
 Nmap('gp', exec 'bnext', { noremap = true, silent = true })
+
 Nmap('<F5>', exec 'LspRestart', { noremap = true })
 
 Nmap('<leader>l', exec 'Lazy')
@@ -129,52 +130,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
--- [[ Install `lazy.nvim` plugin manager ]]
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-  if vim.v.shell_error ~= 0 then
-    error('Error cloning lazy.nvim:\n' .. out)
-  end
-end ---@diagnostic disable-next-line: undefined-field
-vim.opt.rtp:prepend(lazypath)
-
-require('lazy').setup {
-  require 'plugins.themes'(),
-
-  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
-  -- require 'plugins.gitsigns',
-  require 'plugins.treesitter',
-  require 'plugins.dial',
-  require 'plugins.mini',
-  require 'plugins.colorizer',
-  require 'plugins.diffview',
-  require 'plugins.cord',
-  require 'plugins.conform',
-  require 'plugins.lsp-config',
-  require 'plugins.blink',
-  require 'plugins.harpoon',
-  require 'plugins.todo-comments',
-  require 'plugins.treesitter-context',
-  -- require 'plugins.neotest',
-  require 'plugins.telescope',
-  require 'plugins.oil',
-  require 'plugins.kulala',
-  -- require 'plugins.leap',
-  -- require 'plugins.render-markdown',
-  {
-    'kylechui/nvim-surround',
-    opts = {},
-    -- config = function()
-    --   require('nvim-surround').setup {}
-    -- end,
-  },
-}
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'typescriptreact', 'json', 'jsonc' },
+  pattern = { 'typescriptreact', 'json', 'jsonc', 'lua' },
   callback = function()
     vim.bo.shiftwidth = 2
     vim.bo.tabstop = 2
@@ -190,3 +148,38 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt.formatoptions:remove { 'c', 'r', 'o' }
   end,
 })
+
+-- [[ Install `lazy.nvim` plugin manager ]]
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+  if vim.v.shell_error ~= 0 then
+    error('Error cloning lazy.nvim:\n' .. out)
+  end
+end ---@diagnostic disable-next-line: undefined-field
+vim.opt.rtp:prepend(lazypath)
+
+require('lazy').setup {
+  require 'plugins.themes'(),
+
+  require 'plugins.treesitter',
+  require 'plugins.telescope',
+  require 'plugins.lsp-config',
+  require 'plugins.mini',
+  require 'plugins.colorizer',
+  require 'plugins.diffview',
+  require 'plugins.cord',
+  require 'plugins.conform',
+  require 'plugins.blink',
+  require 'plugins.harpoon',
+  require 'plugins.todo-comments',
+  require 'plugins.treesitter-context',
+  require 'plugins.kulala',
+  require 'plugins.oil',
+  require 'plugins.surround',
+  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- require 'plugins.neotest',
+  -- require 'plugins.leap',
+  -- require 'plugins.render-markdown',
+}
