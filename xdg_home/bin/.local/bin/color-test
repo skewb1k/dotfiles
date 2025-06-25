@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # 256-color test script
 
 for i in $(seq 0 255); do

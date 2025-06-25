@@ -158,7 +158,10 @@ vim.api.nvim_create_autocmd('VimEnter', {
     local first_arg = vim.v.argv[3]
 
     if first_arg ~= '' then
-      vim.fn.chdir(first_arg)
+      local stat = vim.loop.fs_stat(first_arg)
+      if stat and stat.type == 'directory' then
+        vim.fn.chdir(first_arg)
+      end
     end
   end,
 })

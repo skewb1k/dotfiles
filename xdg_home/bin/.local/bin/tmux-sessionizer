@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
+	env > /tmp/script-env.log
     selected=$(find ~/dev ~/dotfiles -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 

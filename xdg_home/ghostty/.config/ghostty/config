@@ -15,4 +15,5 @@ gtk-titlebar=false
 
 gtk-custom-css = ./custom.css
 
-command = ~/.local/scripts/tmux-autoattach
+command = /home/skewbik/.local/bin/tmux-autoattach
+# command = /usr/bin/env tmux-autoattach
