@@ -1,0 +1,37 @@
+#!/bin/bash
+
+set -e
+
+# Defaults
+DEST_DIR="."
+
+# Parse options
+while getopts ":d:" opt; do
+  case $opt in
+    d) DEST_DIR="$OPTARG" ;;
+    \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
+    :) echo "Option -$OPTARG requires an argument." >&2; exit 1 ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+SRC_DIR="$1"
+if [[ -z "$SRC_DIR" ]]; then
+  echo "Usage: $0 [-d <destination-dir>] <source-dir>"
+  exit 1
+fi
+
+# Make sure source is valid
+if [[ ! -d "$SRC_DIR/.git" ]]; then
+  echo "Error: '$SRC_DIR' is not a Git repository."
+  exit 1
+fi
+
+# Derive archive name from folder name
+BASENAME="$(basename "$SRC_DIR")"
+ARCHIVE_PATH="$DEST_DIR/$BASENAME.zip"
+
+cd "$SRC_DIR"
+
+git ls-files --cached --modified --others --exclude-standard | zip -@ "$ARCHIVE_PATH"
+

@@ -1,0 +1,12 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:hide-preview"
+rev = "beb586a"
+hash = "55904f17e1053cfb91dacd9015a99f9d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "2730199"
+hash = "2f1053f89d1a301a648ab181d0948e38"
+
+[flavor]
+deps = []

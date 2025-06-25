@@ -1,0 +1,7 @@
+*.log
+*.swp
+.DS_Store
+.zsh_history
+.zhistory
+.zcompdump
+.zcompcache

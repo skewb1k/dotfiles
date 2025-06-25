@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TARGET_DIR="${1:-.}"  # default to current dir if no arg
+
+echo "Fixing permissions in: $TARGET_DIR"
+
+# Change all directories to 755
+find "$TARGET_DIR" -type d -exec chmod 755 {} +
+
+# Change all files to 644
+find "$TARGET_DIR" -type f -exec chmod 644 {} +
+
+echo "Done."

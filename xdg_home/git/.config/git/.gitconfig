@@ -1,0 +1,34 @@
+[user]
+	email = skewb1kunix@gmail.com
+	name = skewb1k
+[init]
+	defaultBranch = master
+[core]
+	editor = nvim
+	autocrlf = false
+	excludesfile = /home/skewbik/.config/git/.gitignore_global
+[push]
+	autoSetupRemote = true
+[merge]
+	conflictstyle = diff3
+	tool = nvim
+[pull]
+	rebase = false
+[commit]
+	template = /home/skewbik/.config/git/.gitmessage
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[diff]
+    tool = nvimdiff
+[difftool]
+    prompt = false
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[merge]
+    tool = nvimdiff
+[mergetool]
+    prompt = true
+[mergetool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\" -c 'wincmd w' -c 'wincmd J'"
+[http]
+	cookiefile = /home/skewbik/.gitcookies
