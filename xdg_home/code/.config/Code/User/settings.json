@@ -78,7 +78,6 @@
   "editor.occurrencesHighlight": "off",
   "editor.cursorBlinking": "solid",
   "editor.linkedEditing": true,
-  "editor.parameterHints.enabled": false,
   "editor.showFoldingControls": "never",
   "editor.scrollbar.horizontalScrollbarSize": 8,
   "editor.scrollbar.verticalScrollbarSize": 8,
@@ -96,12 +95,7 @@
   "http.proxySupport": "off",
   // ========== Formatting ==========
   "editor.formatOnPaste": false,
-  "go.useLanguageServer": true,
-  "go.addTags":{
-"tags": "json",
-"options": "",
-"transform": "camelcase"
-},
+  // "go.useLanguageServer": true,
   "go.lintTool": "golangci-lint",
   // "go.lintFlags": [
   //   "--fast-only"
@@ -114,6 +108,9 @@
   //   "fmt",
   //   "--stdin"
   // ],
+   "go.alternateTools": {
+    "gopls": "/home/skewbik/.local/go/bin/gopls",
+  },
   "gopls": {
     "formatting.gofumpt": true
   },
@@ -122,7 +119,6 @@
     "--config=.golangci.yml"
   ],
   "go.formatTool": "goimports",
-  "go.toolsManagement.autoUpdate": true,
   "files.autoSave": "off",
   "editor.formatOnSave": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -422,4 +418,11 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "editor.selectionHighlight": false,
   "extensions.autoCheckUpdates": false,
+  "go.enableCodeLens": {
+    "runtest": false
+  },
+  "biome.lsp.trace.server": "verbose",
+  "go.testExplorer.concatenateMessages": false,
+  "go.trace.server": "verbose",
+  // "biome.lsp.bin":"/home/skewbik/dev/biome/target/debug/biome"
 }

@@ -21,7 +21,7 @@ return {
       },
     }
 
-    vim.keymap.set('n', '-', exec 'Oil', { desc = 'Open parent directory' })
+    vim.keymap.set('n', '-', require('oil').open, { desc = 'Open parent directory' })
 
     vim.api.nvim_create_autocmd('User', {
       pattern = 'OilEnter',
