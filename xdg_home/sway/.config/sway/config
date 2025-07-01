@@ -12,21 +12,21 @@ set $menu yofi binapps
 
 output eDP-1 mode 3072x1920@120Hz scale 1.5
 
-# output eDP-1 disable
-# output DP-2 mode 2560x1440@170Hz pos 0 0
-# output HDMI-A-1 mode 1920x1080@75Hz transform 90 pos 2560,0
-#
-# workspace 1 output DP-2
-# workspace 2 output DP-2
-# workspace 3 output DP-2
-# workspace 4 output DP-2
-# workspace 5 output DP-2
-# workspace 6 output HDMI-A-1
-# workspace 7 output HDMI-A-1
-# workspace 8 output DP-2
-# workspace 9 output DP-2
-# workspace 10 output DP-2
-#
+output eDP-1 disable
+output DP-2 mode 2560x1440@170Hz pos 0 0
+output HDMI-A-1 mode 1920x1080@75Hz transform 90 pos 2560,0
+
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-2
+workspace 6 output HDMI-A-1
+workspace 7 output HDMI-A-1
+workspace 8 output DP-2
+workspace 9 output DP-2
+workspace 10 output DP-2
+
 ### Key bindings
 # Basics:
     # Start a terminal
@@ -131,14 +131,15 @@ bindsym $mod+r mode "resize"
     bindsym --locked $mod+minus exec brightnessctl set 5%-
     bindsym --locked $mod+equal exec brightnessctl set 5%+
 
-    # bindsym Print exec grim -g "$(slurp)" $HOME/pictures/screenshots/$(date +'%s_screenshot.png')
+    bindsym Print exec grim "$HOME/pictures/screenshots/$(date +'%s_screenshot.png')"
+    bindsym $mod+Print exec grim -g "$(slurp)" "$HOME/pictures/screenshots/$(date +'%s_screenshot.png')"
 
     # Screenshot a window
-    bindsym $mod+Print exec sway-screenshot -m window -o /home/skewbik/pictures/screenshots/
+    # bindsym $mod+Print exec sway-screenshot -m window -o /home/skewbik/pictures/screenshots/
     # Screenshot a monitor
-    bindsym Print exec sway-screenshot -m output -o /home/skewbik/pictures/screenshots/
+    # bindsym Print exec sway-screenshot -m output -o /home/skewbik/pictures/screenshots/
     # Screenshot a region
-    bindsym $mod+Shift+Print exec sway-screenshot -m region -o /home/skewbik/pictures/screenshots/
+    # bindsym $mod+Shift+Print exec sway-screenshot -m region -o /home/skewbik/pictures/screenshots/
 
 input type:touchpad {
     dwt enabled

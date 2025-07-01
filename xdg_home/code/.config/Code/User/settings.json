@@ -416,7 +416,7 @@
   // },
   "workbench.colorTheme": "poimandres",
   "github.copilot.nextEditSuggestions.enabled": true,
-  "editor.selectionHighlight": false,
+  "editor.selectionHighlight": true,
   "extensions.autoCheckUpdates": false,
   "go.enableCodeLens": {
     "runtest": false

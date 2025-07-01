@@ -84,8 +84,6 @@ alias dsp="docker system prune -af && docker volume prune -af"
 
 alias lsz="du -ahd 1 | sort -hr"
 
-alias pacls="comm -23 <(pacman -Qqt | sort) <(pacman -Qqg base | sort)"
-
 alias g='gtrash'
 alias gm='g put'
 

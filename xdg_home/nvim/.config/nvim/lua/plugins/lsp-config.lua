@@ -72,7 +72,7 @@ return {
         },
         rust_analyzer = {},
         golangci_lint_ls = {},
-        -- ts_ls = {},
+        ts_ls = {},
         basedpyright = {},
         gopls = {
           settings = {
@@ -87,7 +87,7 @@ return {
           filetypes = { 'bash', 'sh', 'zsh' },
         },
         biome = {
-          -- cmd = { '/home/skewbik/dev/biome/target/debug/biome', 'lsp-proxy' },
+          cmd = { '/home/skewbik/dev/biome/target/debug/biome', 'lsp-proxy' },
         },
         jsonls = {
           on_attach = function(client, bufnr)
