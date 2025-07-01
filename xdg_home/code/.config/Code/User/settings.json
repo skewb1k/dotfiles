@@ -70,7 +70,7 @@
   "editor.scrollBeyondLastLine": false,
   "editor.quickSuggestionsDelay": 0,
   "editor.inlayHints.enabled": "off",
-  "editor.codeLens": false,
+  // "editor.codeLens": false,
   "editor.overviewRulerBorder": false,
   "editor.lineNumbers": "relative",
   "editor.mouseWheelScrollSensitivity": 2,
@@ -418,11 +418,9 @@
   "github.copilot.nextEditSuggestions.enabled": true,
   "editor.selectionHighlight": true,
   "extensions.autoCheckUpdates": false,
-  "go.enableCodeLens": {
-    "runtest": false
-  },
   "biome.lsp.trace.server": "verbose",
   "go.testExplorer.concatenateMessages": false,
   "go.trace.server": "verbose",
+  "python.analysis.typeCheckingMode": "standard",
   // "biome.lsp.bin":"/home/skewbik/dev/biome/target/debug/biome"
 }
