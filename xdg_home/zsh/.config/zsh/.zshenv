@@ -2,12 +2,8 @@ export DOTFILES=$HOME/.dotfiles
 
 export WORDCHARS=${WORDCHARS/\//}
 
-if hash nvim 2>/dev/null; then
-	export EDITOR=nvim
-	export MANPAGER='nvim +Man!'
-else
-	export EDITOR=vim
-fi
+export EDITOR=nvim
+export MANPAGER='nvim +Man!'
 
 export SUDO_EDITOR=$EDITOR
 export VISUAL=$EDITOR

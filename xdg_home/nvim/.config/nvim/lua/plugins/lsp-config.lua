@@ -86,9 +86,7 @@ return {
         bashls = {
           filetypes = { 'bash', 'sh', 'zsh' },
         },
-        biome = {
-          cmd = { '/home/skewbik/dev/biome/target/debug/biome', 'lsp-proxy' },
-        },
+        biome = {},
         jsonls = {
           on_attach = function(client, bufnr)
             -- Disable formatting capability for jsonls

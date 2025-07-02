@@ -108,9 +108,6 @@
   //   "fmt",
   //   "--stdin"
   // ],
-   "go.alternateTools": {
-    "gopls": "/home/skewbik/.local/go/bin/gopls",
-  },
   "gopls": {
     "formatting.gofumpt": true
   },
