@@ -106,6 +106,24 @@ return {
             },
           },
         },
+        yamlls = {
+          -- on_attach = function(client, bufnr)
+          --   client.server_capabilities.documentFormattingProvider = true
+          -- end,
+          settings = {
+            yaml = {
+              schemaStore = {
+                enable = false,
+                url = '',
+              },
+              schemas = require('schemastore').yaml.schemas(),
+              format = {
+                enable = true,
+              },
+              validate = true,
+            },
+          },
+        },
         taplo = {},
       }
 

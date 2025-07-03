@@ -24,7 +24,6 @@ require('lazy').setup {
   require 'plugins.conform',
   require 'plugins.blink',
   require 'plugins.lsp-config',
-  -- require 'plugins.cord',
   -- require 'plugins.neotest',
   -- require 'plugins.leap',
   -- require 'plugins.render-markdown',
