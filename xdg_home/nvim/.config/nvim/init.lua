@@ -7,7 +7,7 @@ end
 ---@param lhs string
 ---@param rhs string|function
 ---@param opts? table
-function Nmap(lhs, rhs, opts)
+function map_non_i(lhs, rhs, opts)
   local default_modes = { 'n', 'v', 'x', 'o' }
   local modes = default_modes
 
@@ -22,6 +22,15 @@ function Nmap(lhs, rhs, opts)
 
   vim.keymap.set(modes, lhs, rhs, opts)
 end
+
+-- vim.filetype.add({
+--   extension = {
+--     flow = "flow",
+--     ft = "flow",
+--   },
+-- })
+--
+-- vim.treesitter.language.add('flow', { path = "/home/skewb1k/dev/tree-sitter-flow/flow.so" })
 
 require 'config.options'
 require 'config.lazy'

@@ -153,6 +153,7 @@ input type:keyboard {
     # xkb_switch_layout next
     xkb_layout us,ru
     xkb_numlock disabled
+	repeat_delay 400
 }
 
 # Read `man 5 sway-bar` for more information about this section.
@@ -192,8 +193,7 @@ exec swaymsg "workspace 2; exec spotify-launcher;"
 
 
 exec swayidle -w \
-	timeout 900 'swaylock -f' \
-	timeout 905 'swaymsg "output * power off"' \
+	timeout 900 'swaymsg "output * power off"' \
 		resume 'swaymsg "output * power on"'
 
 include /etc/sway/config.d/*

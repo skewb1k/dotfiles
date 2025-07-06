@@ -37,14 +37,12 @@ return {
       preset = 'default',
       ['<Tab>'] = {},
     },
-
     completion = {
       documentation = { auto_show = true, auto_show_delay_ms = 300, window = { border = 'rounded' } },
       menu = {
         border = 'rounded',
       },
     },
-
     sources = {
       default = { 'lsp', 'path', 'snippets', 'lazydev' },
       providers = {
@@ -53,15 +51,15 @@ return {
         path = { score_offset = -10 },
       },
     },
-
     snippets = { preset = 'luasnip' },
-
     fuzzy = {
-      implementation = 'prefer_rust_with_warning',
+      implementation = 'prefer_rust',
     },
-
     signature = {
       enabled = true,
+      -- trigger = {
+      --   show_on_insert = true,
+      -- },
       window = { border = 'rounded' },
     },
   },

@@ -10,6 +10,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
   require 'plugins.vague',
+  require 'plugins.lsp-config',
   require 'plugins.treesitter',
   require 'plugins.telescope',
   require 'plugins.treesitter-context',
@@ -23,7 +24,7 @@ require('lazy').setup {
   require 'plugins.kulala',
   require 'plugins.conform',
   require 'plugins.blink',
-  require 'plugins.lsp-config',
+
   -- require 'plugins.neotest',
   -- require 'plugins.leap',
   -- require 'plugins.render-markdown',

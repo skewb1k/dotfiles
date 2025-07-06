@@ -2,49 +2,43 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      'b0o/schemastore.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
-      'saghen/blink.cmp',
       {
         'folke/lazydev.nvim',
         ft = 'lua',
         opts = {
           library = {
-            -- Load luvit types when the `vim.uv` word is found
             { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
           },
         },
       },
-      {
-        'artemave/workspace-diagnostics.nvim',
-      },
+      -- {
+      --   'artemave/workspace-diagnostics.nvim',
+      -- },
     },
     config = function()
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
-        callback = function(event)
-          Nmap('<leader>r', vim.lsp.buf.rename)
-          Nmap('<leader>a', vim.lsp.buf.code_action)
-          Nmap('gr', require('telescope.builtin').lsp_references)
-          Nmap('gi', require('telescope.builtin').lsp_implementations)
+      vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
+      vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action)
+      vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references)
+      vim.keymap.set('n', 'gi', require('telescope.builtin').lsp_implementations)
+      vim.keymap.set('n', 'K', function()
+        vim.lsp.buf.hover { border = 'rounded', max_height = 25, max_width = 120 }
+      end)
+      vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions)
+      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+      vim.keymap.set('n', 'grt', require('telescope.builtin').lsp_type_definitions)
+      vim.keymap.set('n', '<leader>S', require('telescope.builtin').lsp_document_symbols)
+      vim.keymap.set('n', 'gW', require('telescope.builtin').lsp_dynamic_workspace_symbols)
 
-          Nmap('K', function()
-            vim.lsp.buf.hover { border = 'rounded', max_height = 25, max_width = 120 }
-          end)
-
-          Nmap('gd', require('telescope.builtin').lsp_definitions)
-          Nmap('gD', vim.lsp.buf.declaration)
-          Nmap('grt', require('telescope.builtin').lsp_type_definitions)
-
-          Nmap('<leader>S', require('telescope.builtin').lsp_document_symbols)
-          Nmap('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols)
-
-          -- local client = vim.lsp.get_client_by_id(event.data.client_id)
-          -- if client then
-          --   require('workspace-diagnostics').populate_workspace_diagnostics(client, event.buf)
-          -- end
-        end,
-      })
+      -- vim.api.nvim_create_autocmd('LspAttach', {
+      --   group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+      --   callback = function(event)
+      --     local client = vim.lsp.get_client_by_id(event.data.client_id)
+      --     if client then
+      --       require('workspace-diagnostics').populate_workspace_diagnostics(client, event.buf)
+      --     end
+      --   end,
+      -- })
 
       vim.diagnostic.config {
         severity_sort = true,
@@ -71,7 +65,7 @@ return {
           single_file_support = true,
         },
         rust_analyzer = {},
-        golangci_lint_ls = {},
+        -- golangci_lint_ls = {},
         ts_ls = {},
         basedpyright = {},
         gopls = {
@@ -88,8 +82,8 @@ return {
         },
         biome = {},
         jsonls = {
-          on_attach = function(client, bufnr)
-            -- Disable formatting capability for jsonls
+          on_attach = function(client, _)
+            -- Disable formatting
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
           end,
@@ -101,7 +95,6 @@ return {
               format = {
                 enable = false,
               },
-              schemas = require('schemastore').json.schemas(),
               validate = { enable = true },
             },
           },
@@ -112,11 +105,6 @@ return {
           -- end,
           settings = {
             yaml = {
-              schemaStore = {
-                enable = false,
-                url = '',
-              },
-              schemas = require('schemastore').yaml.schemas(),
               format = {
                 enable = true,
               },
@@ -131,8 +119,6 @@ return {
         vim.lsp.config(name, config)
         vim.lsp.enable(name)
       end
-
-      vim.lsp.log.set_format_func(vim.json.encode)
     end,
   },
 }

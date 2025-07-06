@@ -10,10 +10,8 @@ return {
         -- then enable it, otherwise disable it
         if vim.b.disable_autoformat then
           vim.cmd 'FormatEnable'
-          vim.notify 'Enabled autoformat for current buffer'
         else
           vim.cmd 'FormatDisable!'
-          vim.notify 'Disabled autoformat for current buffer'
         end
       end,
       desc = 'Toggle autoformat for current buffer',
@@ -25,10 +23,8 @@ return {
         -- then enable it globally, otherwise disable it globally
         if vim.g.disable_autoformat then
           vim.cmd 'FormatEnable'
-          vim.notify 'Enabled autoformat globally'
         else
           vim.cmd 'FormatDisable'
-          vim.notify 'Disabled autoformat globally'
         end
       end,
       desc = 'Toggle autoformat globally',
@@ -46,16 +42,16 @@ return {
         lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
       }
     end,
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        -- yaml = { 'yamlfmt' },
-        json = { 'biome' },
-        jsonc = { 'biome' },
-        javascript = { 'biome' },
-        typescript = { 'biome' },
-        -- markdown = { 'prettier' },
-        typescriptreact = { 'biome' },
-      },
+    formatters_by_ft = {
+      lua = { 'stylua' },
+      -- yaml = { 'yamlfmt' },
+      json = { 'biome' },
+      jsonc = { 'biome' },
+      javascript = { 'biome' },
+      typescript = { 'biome' },
+      markdown = { 'prettier' },
+      typescriptreact = { 'biome' },
+    },
   },
   config = function(_, opts)
     require('conform').setup(opts)
@@ -81,4 +77,3 @@ return {
     })
   end,
 }
-

@@ -3,5 +3,6 @@
 .DS_Store
 .zsh_history
 .zhistory
+.zprofile
 .zcompdump
 .zcompcache
