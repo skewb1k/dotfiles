@@ -89,4 +89,6 @@ alias gm='g put'
 
 alias yay='yay --noconfirm'
 
-alias nvimlsplog=nvim --cmd "lua vim.lsp.set_log_level('debug')"
+nvimlsplog() {
+	nvim --cmd "lua vim.lsp.set_log_level('debug')" "$@"
+}

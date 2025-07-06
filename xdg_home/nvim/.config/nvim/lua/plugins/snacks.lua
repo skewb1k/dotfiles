@@ -1,0 +1,270 @@
+return {
+  'folke/snacks.nvim',
+  priority = 1000,
+  lazy = false,
+  ---@type snacks.Config
+  opts = {
+    picker = {
+      sources = {
+        files = { hidden = true },
+      },
+      icons = {
+        files = {
+          enabled = false,
+        },
+      },
+      main = {
+        file = false,
+      },
+    },
+  },
+  keys = {
+    -- Top Pickers & Explorer
+    {
+      '<leader>f',
+      function()
+        Snacks.picker.files()
+      end,
+    },
+    {
+      '<leader>st',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'TODO', 'FIX', 'FIXME' } }
+      end,
+    },
+    {
+      '<leader>b',
+      function()
+        Snacks.picker.buffers()
+      end,
+    },
+    {
+      '<leader>sg',
+      function()
+        Snacks.picker.grep()
+      end,
+    },
+    {
+      '<leader>:',
+      function()
+        Snacks.picker.command_history()
+      end,
+    },
+    {
+      '<leader>sn',
+      function()
+        Snacks.picker.notifications()
+      end,
+    },
+    -- {
+    --   '<leader>e',
+    --   function()
+    --     Snacks.explorer()
+    --   end,
+    -- },
+    -- find
+    {
+      '<leader>sn',
+      function()
+        Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
+      end,
+    },
+    {
+      '<leader>sf',
+      function()
+        Snacks.picker.files()
+      end,
+    },
+    {
+      '<leader>sg',
+      function()
+        Snacks.picker.git_files()
+      end,
+    },
+    {
+      '<leader>sr',
+      function()
+        Snacks.picker.recent()
+      end,
+    },
+    -- git
+    {
+      '<leader>gb',
+      function()
+        Snacks.picker.git_branches()
+      end,
+    },
+    {
+      '<leader>gl',
+      function()
+        Snacks.picker.git_log()
+      end,
+    },
+    {
+      '<leader>gL',
+      function()
+        Snacks.picker.git_log_line()
+      end,
+    },
+    {
+      '<leader>gs',
+      function()
+        Snacks.picker.git_status()
+      end,
+    },
+    {
+      '<leader>gS',
+      function()
+        Snacks.picker.git_stash()
+      end,
+    },
+    {
+      '<leader>gD',
+      function()
+        Snacks.picker.git_diff()
+      end,
+    },
+    {
+      '<leader>gf',
+      function()
+        Snacks.picker.git_log_file()
+      end,
+    },
+    -- Grep
+    {
+      '<leader>/',
+      function()
+        Snacks.picker.lines()
+      end,
+    },
+    {
+      '<leader>sg',
+      function()
+        Snacks.picker.grep()
+      end,
+    },
+    {
+      '<leader>*',
+      function()
+        Snacks.picker.grep_word()
+      end,
+    },
+    -- search
+    {
+      '<leader>s"',
+      function()
+        Snacks.picker.registers()
+      end,
+    },
+    {
+      '<leader>s/',
+      function()
+        Snacks.picker.search_history()
+      end,
+    },
+    {
+      '<leader>sc',
+      function()
+        Snacks.picker.command_history()
+      end,
+    },
+    {
+      '<leader>d',
+      function()
+        Snacks.picker.diagnostics()
+      end,
+    },
+    {
+      '<leader>sh',
+      function()
+        Snacks.picker.help()
+      end,
+    },
+    {
+      '<leader>si',
+      function()
+        Snacks.picker.icons()
+      end,
+    },
+    {
+      '<leader>sj',
+      function()
+        Snacks.picker.jumps()
+      end,
+    },
+    {
+      '<leader>sk',
+      function()
+        Snacks.picker.keymaps()
+      end,
+    },
+    {
+      '<leader>sl',
+      function()
+        Snacks.picker.loclist()
+      end,
+    },
+    {
+      '<leader>sm',
+      function()
+        Snacks.picker.man()
+      end,
+    },
+    {
+      '<leader>sq',
+      function()
+        Snacks.picker.qflist()
+      end,
+    },
+    {
+      "<leader>'",
+      function()
+        Snacks.picker.resume()
+      end,
+    },
+    -- LSP
+    {
+      'gd',
+      function()
+        Snacks.picker.lsp_definitions()
+      end,
+    },
+    {
+      'gD',
+      function()
+        Snacks.picker.lsp_declarations()
+      end,
+    },
+    {
+      'gr',
+      function()
+        Snacks.picker.lsp_references()
+      end,
+      nowait = true,
+    },
+    {
+      'gi',
+      function()
+        Snacks.picker.lsp_implementations()
+      end,
+    },
+    {
+      'gy',
+      function()
+        Snacks.picker.lsp_type_definitions()
+      end,
+    },
+    {
+      '<leader>ss',
+      function()
+        Snacks.picker.lsp_symbols()
+      end,
+    },
+    {
+      '<leader>sS',
+      function()
+        Snacks.picker.lsp_workspace_symbols()
+      end,
+    },
+  },
+}

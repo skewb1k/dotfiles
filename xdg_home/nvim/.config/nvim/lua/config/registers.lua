@@ -1,3 +1,5 @@
-vim.fn.setreg('p', 'viwP')
-vim.fn.setreg('t', 'ITODO: gccA')
-vim.fn.setreg('f', 'IFIXME: gccA')
+local setreg = vim.fn.setreg
+
+setreg('p', 'viwP')
+setreg('t', 'ITODO: gccA')
+setreg('f', 'IFIXME: gccA')

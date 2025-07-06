@@ -3,6 +3,8 @@ vim.g.maplocalleader = ' '
 
 vim.o.termguicolors = true
 
+vim.o.winborder = 'rounded'
+
 vim.g.have_nerd_font = true
 
 vim.o.number = true
@@ -27,7 +29,7 @@ vim.o.smartindent = true -- Enable smart indenting for code
 
 vim.o.wrap = false
 
-vim.o.timeoutlen = 300
+vim.o.timeout = false
 
 vim.o.splitright = true
 vim.o.splitbelow = true

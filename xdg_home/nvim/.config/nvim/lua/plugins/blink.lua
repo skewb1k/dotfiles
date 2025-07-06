@@ -15,33 +15,21 @@ return {
         end
         return 'make install_jsregexp'
       end)(),
-      dependencies = {
-        -- `friendly-snippets` contains a variety of premade snippets.
-        --    See the README about individual language/framework/plugin snippets:
-        --    https://github.com/rafamadriz/friendly-snippets
-        {
-          'rafamadriz/friendly-snippets',
-          config = function()
-            require('luasnip.loaders.from_vscode').lazy_load()
-          end,
-        },
-      },
       opts = {},
     },
-    'folke/lazydev.nvim',
+    'Jari27/lazydev.nvim',
   },
   --- @module 'blink.cmp'
   --- @type blink.cmp.Config
   opts = {
     keymap = {
       preset = 'default',
+      ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
+      ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
       ['<Tab>'] = {},
     },
     completion = {
-      documentation = { auto_show = true, auto_show_delay_ms = 300, window = { border = 'rounded' } },
-      menu = {
-        border = 'rounded',
-      },
+      documentation = { auto_show = true, auto_show_delay_ms = 300 },
     },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'lazydev' },
@@ -60,7 +48,6 @@ return {
       -- trigger = {
       --   show_on_insert = true,
       -- },
-      window = { border = 'rounded' },
     },
   },
 }

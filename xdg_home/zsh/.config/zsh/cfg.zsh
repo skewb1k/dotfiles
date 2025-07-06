@@ -1,12 +1,12 @@
 cfg() {
-  nvim "$HOME/.config/$*"
+  local dir="$HOME/.config/$*"
+  nvim "$dir" --cmd "cd $dir"
 }
 
 _cfg() {
-  local config_dir="$HOME/.config"
   # list all files and dirs one level deep
   local -a entries
-  entries=("${(@f)$(command ls -1A "$config_dir")}")
+  entries=("${(@f)$(command ls -1A "$HOME/.config")}")
 
   compadd -Q -S '' -a entries -r -- ${(M)entries:#*/}
 }

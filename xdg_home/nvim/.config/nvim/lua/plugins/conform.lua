@@ -44,7 +44,6 @@ return {
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      -- yaml = { 'yamlfmt' },
       json = { 'biome' },
       jsonc = { 'biome' },
       javascript = { 'biome' },

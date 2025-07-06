@@ -6,38 +6,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'typescriptreact', 'json', 'jsonc', 'lua' },
-  callback = function()
-    vim.bo.shiftwidth = 2
-    vim.bo.tabstop = 2
-    vim.bo.softtabstop = 2
-    vim.bo.expandtab = true
-  end,
-})
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = { 'typescriptreact', 'json', 'jsonc', 'lua' },
+--   callback = function()
+--     vim.bo.shiftwidth = 2
+--     vim.bo.tabstop = 2
+--     vim.bo.softtabstop = 2
+--     vim.bo.expandtab = true
+--   end,
+-- })
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
+  desc = 'Disable auto-comment on new line',
   callback = function()
-    -- Disable comment on new line
     vim.opt.formatoptions:remove { 'c', 'r', 'o' }
-  end,
-})
-
-local group_cdpwd = vim.api.nvim_create_augroup('group_cdpwd', { clear = true })
-vim.api.nvim_create_autocmd('VimEnter', {
-  group = group_cdpwd,
-  pattern = '*',
-  callback = function()
-    local argv = vim.v.argv
-    if #argv >= 3 then
-      local first_arg = argv[3]
-      if first_arg ~= '' then
-        local stat = vim.uv.fs_stat(first_arg)
-        if stat and stat.type == 'directory' then
-          vim.fn.chdir(first_arg)
-        end
-      end
-    end
   end,
 })

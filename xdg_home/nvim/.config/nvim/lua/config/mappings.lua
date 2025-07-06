@@ -1,34 +1,43 @@
 local map = vim.keymap.set
 
+local function exec(cmd)
+  return function()
+    vim.api.nvim_command(cmd)
+  end
+end
+
 map('n', '<Esc>', exec 'nohlsearch')
-map('i', 'jk', '<esc>')
-map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+map('t', '<Esc><Esc>', '<C-\\><C-n>')
 
-map_non_i('<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-map_non_i('<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-map_non_i('<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-map_non_i('<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+map('', '<C-h>', '<C-w><C-h>')
+map('', '<C-l>', '<C-w><C-l>')
+map('', '<C-j>', '<C-w><C-j>')
+map('', '<C-k>', '<C-w><C-k>')
 
-map_non_i('<leader>y', '"+y', { noremap = true, silent = true })
-map_non_i('<leader>p', '"+p', { noremap = true, silent = true })
+map('', '<C-M-h>', exec 'vertical resize -2')
+map('', '<C-M-l>', exec 'vertical resize +2')
+map('', '<C-M-j>', exec 'resize +2')
+map('', '<C-M-k>', exec 'resize -2')
 
-map_non_i('<leader>w', exec 'wa', { noremap = true, silent = true })
+map('', '<leader>y', '"+y')
+map('', '<leader>p', '"+p')
 
-map_non_i('<leader>u', exec 'checktime', { noremap = true, silent = true })
+map('', '<leader>w', function()
+  vim.lsp.buf.format { async = true }
+  exec 'w'
+end)
 
--- nmap('<C-u>', '<C-u>zz', { noremap = true, silent = true })
--- nmap('<C-d>', '<C-d>zz', { noremap = true, silent = true })
+map('', '<leader>u', exec 'checktime')
 
-map_non_i('<C-s>', 'm`', { noremap = true, desc = 'mark [S]ave point' })
+map('', '<C-s>', 'm`')
 
-map_non_i('<leader>e', vim.diagnostic.open_float)
+map('', '<leader>e', vim.diagnostic.open_float)
 
-map_non_i('<A-z>', exec 'set wrap!', { noremap = true, silent = true })
+map('', '<A-z>', exec 'set wrap!')
 
-map_non_i('gn', exec 'bprev', { noremap = true, silent = true })
-map_non_i('gp', exec 'bnext', { noremap = true, silent = true })
+map('', 'gn', exec 'bprev')
+map('', 'gp', exec 'bnext')
 
-map_non_i('<F5>', exec 'LspRestart', { noremap = true })
+map('', '<F5>', exec 'LspRestart')
 
-map_non_i('<leader>l', require('lazy').home)
--- Nmap('<leader>m', exec 'Mason')
+map('', '<leader>l', require('lazy').home)

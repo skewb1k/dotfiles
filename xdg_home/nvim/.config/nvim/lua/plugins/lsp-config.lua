@@ -4,7 +4,8 @@ return {
     dependencies = {
       { 'j-hui/fidget.nvim', opts = {} },
       {
-        'folke/lazydev.nvim',
+        'Jari27/lazydev.nvim', -- https://github.com/folke/lazydev.nvim/issues/114
+        branch = 'deprecate_client_notify',
         ft = 'lua',
         opts = {
           library = {
@@ -12,37 +13,20 @@ return {
           },
         },
       },
-      -- {
-      --   'artemave/workspace-diagnostics.nvim',
-      -- },
     },
     config = function()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
+
       vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
       vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action)
-      vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references)
-      vim.keymap.set('n', 'gi', require('telescope.builtin').lsp_implementations)
-      vim.keymap.set('n', 'K', function()
-        vim.lsp.buf.hover { border = 'rounded', max_height = 25, max_width = 120 }
-      end)
-      vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions)
+      -- vim.keymap.set('n', 'K', function()
+      --   vim.lsp.buf.hover { max_height = 25, max_width = 120 }
+      -- end)
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
-      vim.keymap.set('n', 'grt', require('telescope.builtin').lsp_type_definitions)
-      vim.keymap.set('n', '<leader>S', require('telescope.builtin').lsp_document_symbols)
-      vim.keymap.set('n', 'gW', require('telescope.builtin').lsp_dynamic_workspace_symbols)
-
-      -- vim.api.nvim_create_autocmd('LspAttach', {
-      --   group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
-      --   callback = function(event)
-      --     local client = vim.lsp.get_client_by_id(event.data.client_id)
-      --     if client then
-      --       require('workspace-diagnostics').populate_workspace_diagnostics(client, event.buf)
-      --     end
-      --   end,
-      -- })
 
       vim.diagnostic.config {
         severity_sort = true,
-        float = { border = 'rounded', source = 'if_many' },
+        float = { source = 'if_many' },
         underline = { severity = vim.diagnostic.severity.ERROR },
         virtual_text = {
           source = 'if_many',
@@ -52,6 +36,7 @@ return {
 
       local servers = {
         lua_ls = {
+          cmd = { '/home/skewb1k/dev/lua-language-server/bin/lua-language-server' },
           settings = {
             Lua = {
               telemetry = {
@@ -62,11 +47,15 @@ return {
               },
             },
           },
-          single_file_support = true,
+          -- single_file_support = true,
         },
         rust_analyzer = {},
-        -- golangci_lint_ls = {},
+        golangci_lint_ls = {
+          cmd = { 'golangci-lint-langserver', '-nolintername' },
+        },
         ts_ls = {},
+        biome = {},
+        clangd = {},
         basedpyright = {},
         gopls = {
           settings = {
@@ -80,7 +69,6 @@ return {
         bashls = {
           filetypes = { 'bash', 'sh', 'zsh' },
         },
-        biome = {},
         jsonls = {
           on_attach = function(client, _)
             -- Disable formatting
@@ -116,9 +104,13 @@ return {
       }
 
       for name, config in pairs(servers) do
+        config.capabilities = capabilities
         vim.lsp.config(name, config)
         vim.lsp.enable(name)
       end
+      -- vim.lsp.log.set_format_func(function(_, ...)
+      --   return vim.json.encode(...)
+      -- end)
     end,
   },
 }
