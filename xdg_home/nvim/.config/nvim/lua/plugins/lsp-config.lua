@@ -17,18 +17,15 @@ return {
       -- },
     },
     config = function()
+      local lspconfig = require 'lspconfig'
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
+
       vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
       vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action)
-      -- vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references)
-      -- vim.keymap.set('n', 'gi', require('telescope.builtin').lsp_implementations)
       vim.keymap.set('n', 'K', function()
-        vim.lsp.buf.hover { border = 'rounded', max_height = 25, max_width = 120 }
+        vim.lsp.buf.hover { max_height = 25, max_width = 120 }
       end)
-      -- vim.keymap.set('n', 'gd', require('telescope.builtin').lsp_definitions)
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
-      -- vim.keymap.set('n', 'grt', require('telescope.builtin').lsp_type_definitions)
-      -- vim.keymap.set('n', '<leader>S', require('telescope.builtin').lsp_document_symbols)
-      -- vim.keymap.set('n', 'gW', require('telescope.builtin').lsp_dynamic_workspace_symbols)
 
       -- vim.api.nvim_create_autocmd('LspAttach', {
       --   group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
@@ -40,9 +37,11 @@ return {
       --   end,
       -- })
 
+      -- vim.lsp.inlay_hint.enable()
+
       vim.diagnostic.config {
         severity_sort = true,
-        float = { border = 'rounded', source = 'if_many' },
+        float = { source = 'if_many' },
         underline = { severity = vim.diagnostic.severity.ERROR },
         virtual_text = {
           source = 'if_many',
@@ -65,7 +64,7 @@ return {
           single_file_support = true,
         },
         rust_analyzer = {},
-        -- golangci_lint_ls = {},
+        golangci_lint_ls = {},
         ts_ls = {},
         basedpyright = {},
         gopls = {

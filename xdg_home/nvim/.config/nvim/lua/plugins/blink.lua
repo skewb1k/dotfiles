@@ -35,13 +35,12 @@ return {
   opts = {
     keymap = {
       preset = 'default',
+      ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
+      ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
       ['<Tab>'] = {},
     },
     completion = {
-      documentation = { auto_show = true, auto_show_delay_ms = 300, window = { border = 'rounded' } },
-      menu = {
-        border = 'rounded',
-      },
+      documentation = { auto_show = true, auto_show_delay_ms = 300 },
     },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'lazydev' },
@@ -56,11 +55,10 @@ return {
       implementation = 'prefer_rust',
     },
     signature = {
-      enabled = true,
+      enabled = false,
       -- trigger = {
       --   show_on_insert = true,
       -- },
-      window = { border = 'rounded' },
     },
   },
 }

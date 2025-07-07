@@ -1,4 +1,4 @@
-function exec(cmd)
+function Exec(cmd)
   return function()
     vim.api.nvim_command(cmd)
   end
@@ -7,7 +7,7 @@ end
 ---@param lhs string
 ---@param rhs string|function
 ---@param opts? table
-function map_non_i(lhs, rhs, opts)
+function Map_non_i(lhs, rhs, opts)
   local default_modes = { 'n', 'v', 'x', 'o' }
   local modes = default_modes
 

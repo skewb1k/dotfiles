@@ -1,13 +1,16 @@
 return {
   'echasnovski/mini.nvim',
   config = function()
-    require('mini.trailspace').setup()
+    local trailspace = require 'mini.trailspace'
+    trailspace.setup()
     vim.api.nvim_create_autocmd('BufWritePre', {
       group = vim.api.nvim_create_augroup('trailspace', { clear = true }),
-      callback = require('mini.trailspace').trim,
+      callback = trailspace.trim,
     })
 
     require('mini.move').setup()
+
+    require('mini.align').setup()
 
     require('mini.diff').setup {
       view = {
