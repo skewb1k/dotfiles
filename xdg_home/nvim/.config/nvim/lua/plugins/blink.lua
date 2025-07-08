@@ -55,7 +55,7 @@ return {
       implementation = 'prefer_rust',
     },
     signature = {
-      enabled = false,
+      enabled = true,
       -- trigger = {
       --   show_on_insert = true,
       -- },

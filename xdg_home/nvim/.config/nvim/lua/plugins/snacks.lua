@@ -25,7 +25,7 @@ return {
       end,
     },
     {
-      '<leader>sb',
+      '<leader>b',
       function()
         Snacks.picker.buffers()
       end,
@@ -161,15 +161,9 @@ return {
       end,
     },
     {
-      '<leader>sd',
+      '<leader>d',
       function()
         Snacks.picker.diagnostics()
-      end,
-    },
-    {
-      '<leader>sD',
-      function()
-        Snacks.picker.diagnostics_buffer()
       end,
     },
     {
