@@ -1,0 +1,23 @@
+[font]
+size = 14.5
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[general]
+import = ["./themes/vague.toml"]
+
+[mouse]
+hide_when_typing = true
+
+[hints]
+enabled = []

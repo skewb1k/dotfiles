@@ -1,0 +1,20 @@
+theme = vague
+font-family = "JetBrainsMono Nerd Font"
+font-feature = "-calt, -liga, -dlig"
+font-size = 15
+resize-overlay = never
+window-padding-balance = true
+window-padding-x = 0
+window-padding-y = 0
+cursor-invert-fg-bg = true
+
+shell-integration = zsh
+desktop-notifications = false
+app-notifications = false
+window-decoration = false
+gtk-titlebar=false
+
+gtk-custom-css = ./custom.css
+
+# command = /home/skewb1k/.local/bin/tmux-autoattach
+# command = /usr/bin/env tmux-autoattach

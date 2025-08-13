@@ -1,0 +1,149 @@
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+
+output eDP-1 mode 3072x1920@120Hz scale 1.5
+
+# output eDP-1 disable
+# output DP-2 mode 2560x1440@170Hz pos 0 0
+# output HDMI-A-1 mode 1920x1080@75Hz transform 90 pos 2560,0
+
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-2
+workspace 6 output HDMI-A-1
+workspace 7 output HDMI-A-1
+workspace 8 output DP-2
+workspace 9 output DP-2
+workspace 10 output DP-2
+
+floating_modifier $mod normal
+
+bindsym $mod+Return exec $TERMINAL
+bindsym $mod+q kill
+bindsym $mod+d exec rofi -show run
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+s splith
+bindsym $mod+v splitv
+
+bindsym $mod+n workspace next
+bindsym $mod+p workspace prev
+
+bindsym $mod+f floating toggle
+
+# Resizing containers:
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+# bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+# bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+# bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+
+bindsym --locked $mod+minus exec brightnessctl set 5%-
+bindsym --locked $mod+equal exec brightnessctl set 5%+
+
+bindsym Print exec grim "$HOME/pictures/screenshots/$(date +'%s_screenshot.png')"
+bindsym $mod+Print exec grim -g "$(slurp)" "$HOME/pictures/screenshots/$(date +'%s_screenshot.png')"
+
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    natural_scroll true
+    middle_emulation enabled
+}
+
+input type:keyboard {
+    # xkb_options ctrl:nocaps
+    xkb_options grp:win_space_toggle
+    xkb_layout us,ru
+	repeat_delay 400
+}
+
+bindsym Lock+1 workspace number 11
+
+bar {
+    position top
+    status_command while ~/.config/sway/status.sh; do sleep 30; done
+
+    colors {
+        statusline #ffffff
+        background #141415
+    }
+    font pango:JetBrainsMono Nerd Font 8
+
+	# diable vertical scrolling
+    bindsym button4 nop
+    bindsym button5 nop
+    # diable horizontal scrolling
+    bindsym button6 nop
+    bindsym button7 nop
+}
+
+default_border none
+
+bindsym $mod+z exec playerctl -p spotify play-pause
+bindsym $mod+c exec playerctl -p spotify next
+bindsym $mod+a exec playerctl -p spotify volume 0.05+
+bindsym $mod+x exec playerctl -p spotify volume 0.05-
+
+bindsym $mod+F8 exec hyprpicker
+
+exec swaymsg "workspace 1; exec zen-browser;"
+exec swaymsg "workspace 2; exec thunderbird;"
+# exec swaymsg "workspace 2; exec spotify;"
+exec swaymsg "workspace 3; exec $TERMINAL;"
+exec swaymsg "workspace 6; exec throne;"
+exec swaymsg "workspace 6; exec Telegram;"
+exec swaymsg "workspace 6; exec discord;"
+
+exec swayidle -w \
+	timeout 900 'swaymsg "output * power off"' \
+		resume 'swaymsg "output * power on"'

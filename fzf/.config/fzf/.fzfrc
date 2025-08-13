@@ -1,0 +1,19 @@
+--color=info:4
+--color=prompt:2
+--color=pointer:5
+--color=hl+:4
+--color=marker:4
+--color=spinner:6
+--color=header:6
+--color=border:2
+--color=hl:3
+--color=selected-hl:1
+--color=hl+:2
+--color=preview-fg:15
+--color=current-bg:0
+--color=current-fg:11
+--color=fg:7
+--color=fg+:7
+--bind 'ctrl-u:page-up'
+--bind 'ctrl-d:page-down'
+--ansi

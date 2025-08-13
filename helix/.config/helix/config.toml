@@ -1,0 +1,32 @@
+theme = "vague"
+
+[editor]
+line-number = "relative"
+mouse = false
+true-color = true
+end-of-line-diagnostics = "hint"
+auto-info = false
+continue-comments = false
+# bufferline = "multiple"
+# auto-pairs = false
+# rulers = [120]
+
+# [editor.file-picker]
+# hidden = false
+# git-exclude = false
+# git-ignore = false
+
+# [editor.cursor-shape]
+# insert = "bar"
+
+# [editor.statusline]
+# left = ["mode", "spinner", "version-control", "file-name"]
+# right = ["diagnostics", "position", "file-encoding", "file-type"]
+# separator = "│"
+
+# [editor.inline-diagnostics]
+# cursor-line = "warning"
+
+[editor.soft-wrap]
+enable = false
+

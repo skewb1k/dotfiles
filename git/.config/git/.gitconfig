@@ -1,0 +1,10 @@
+[user]
+	email = skewb1kunix@gmail.com
+	name = skewb1k
+[init]
+	defaultBranch = master
+[push]
+	default = current
+	autoSetupRemote = true
+[http]
+	cookiefile = /home/skewb1k/.gitcookies

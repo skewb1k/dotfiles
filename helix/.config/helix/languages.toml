@@ -1,0 +1,136 @@
+[language-server.jinja-lsp]
+command = "jinja-lsp"
+config = { templates = "./templates", backend = ["./src"], lang = "rust" }
+timeout = 5
+
+[language-server.clangd]
+command = 'clangd'
+args = [
+	'--function-arg-placeholders',
+	'--completion-style=detailed',
+	'--clang-tidy',
+	'--log=verbose',
+]
+
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+
+[language-server.rust-analyzer]
+command = "/home/skewb1k/dev/rust-analyzer/target/release/rust-analyzer"
+
+# [language-server.gopls]
+# command = "gopls"
+# config = { "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
+# config = { "gofumpt" = true, "local" = "goimports", "completeFunctionCalls" = false }
+
+[language-server.pylsp.config.pylsp]
+plugins.ruff.enabled = true
+plugins.isort.enabled = true
+
+# [language-server.golangci-lint-lsp]
+# command = "golangci-lint-langserver"
+#
+# [language-server.golangci-lint-lsp.config]
+# command = [
+# 	"golangci-lint",
+# 	"run",
+# 	"--output.json.path",
+# 	"stdout",
+# 	"--show-stats=false",
+# 	"--issues-exit-code=1",
+# ]
+
+[[language]]
+name = 'cpp'
+formatter = { command = 'clang-format', args = ['--style=file'] }
+auto-format = true
+language-servers = ['clangd']
+
+[[language]]
+name = "yaml"
+auto-format = true
+formatter = { command = "yamlfmt", args = ["-"] }
+
+[[language]]
+name = "ft"
+file-types = ["ft"]
+roots = []
+injection-regex = "ft"
+scope = "scope.ft"
+language-servers = ["flow"]
+language-id = "flow"
+
+
+[[language]]
+name = "javascript"
+language-servers = [
+	{ name = "typescript-language-server", except-features = [
+		"format",
+	] },
+	"biome",
+]
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+
+[[language]]
+name = "typescript"
+language-servers = [
+	{ name = "typescript-language-server", except-features = [
+		"format",
+	] },
+	"biome",
+]
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+
+[[language]]
+name = "tsx"
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+language-servers = [
+	{ name = "typescript-language-server", except-features = [
+		"format",
+	] },
+	"biome",
+]
+
+[[language]]
+name = "jsx"
+indent = { tab-width = 4, unit = "    " }
+auto-format = true
+language-servers = [
+	{ name = "typescript-language-server", except-features = [
+		"format",
+	] },
+	"biome",
+]
+
+# [[language]]
+# name = "typescript"
+# file-types = ["js", "ts", "jsx", "tsx"]
+# indent = { tab-width = 4, unit = "    " }
+# auto-format = true
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "tailwindcss-ls"]
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "tailwindcss-ls"]
+
+# [[language]]
+# name = "go"
+# auto-format = true
+# language-servers = ["gopls", "golangci-lint-lsp"]
+# formatter = { command = "golangci-lint", args = ["fmt", "--stdin"] }
+
+
+[[language]]
+name = "python"
+auto-format = true
+
+[[language]]
+name = "jinja"
+language-servers = ["jinja-lsp"]
