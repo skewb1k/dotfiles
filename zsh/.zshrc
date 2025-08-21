@@ -16,9 +16,16 @@ ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue,underline
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue,underline
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
 
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-setopt HIST_SAVE_NO_DUPS
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
+setopt HIST_EXPIRE_DUPS_FIRST  # Expire dup event first when trimming hist
+setopt HIST_FIND_NO_DUPS       # Do not display previously found event
+setopt HIST_IGNORE_ALL_DUPS    # Delete old event if new is dup
+setopt HIST_IGNORE_DUPS        # Do not record consecutive dup events
+setopt HIST_IGNORE_SPACE       # Do not record event starting with a space
+setopt HIST_SAVE_NO_DUPS       # Do not write dup event to hist file
 
 # don't append "not found command" to history
 # https://www.zsh.org/mla/users//2014/msg00715.html
