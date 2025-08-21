@@ -6,7 +6,6 @@ local function exec(cmd)
 	end
 end
 
-map("n", "<Esc>", exec("nohlsearch"))
 map("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 map("", "<C-M-h>", exec("vertical resize -2"))
@@ -15,7 +14,6 @@ map("", "<C-M-j>", exec("resize +2"))
 map("", "<C-M-k>", exec("resize -2"))
 
 map("", "<leader>y", '"+y')
-map("", "<leader>p", '"+p')
 map("", "<leader>d", '"+d')
 
 map("", "<leader>w", function()
