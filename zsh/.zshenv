@@ -38,3 +38,5 @@ export DO_NOT_TRACK=1
 export FZF_DEFAULT_OPTS_FILE=$XDG_CONFIG_HOME/fzf/.fzfrc
 
 export CDPATH="$CDPATH:$XDG_DATA_HOME/nvim/site/pack/local/opt"
+
+export CMAKE_POLICY_VERSION_MINIMUM=3.5
