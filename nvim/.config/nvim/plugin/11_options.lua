@@ -37,4 +37,4 @@ vim.g.netrw_preview = 1
 -- vim.g.netrw_list_hide = [[^\.\.\=/\=$]]
 vim.g.netrw_liststyle = 3
 
-vim.opt.completeopt = { "menuone", "noselect", "popup", "fuzzy" }
+vim.opt.completeopt = { "menuone", "noinsert", "popup", "fuzzy" }
