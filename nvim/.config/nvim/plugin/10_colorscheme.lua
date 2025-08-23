@@ -1,3 +1,9 @@
+-- vim.pack.add({
+-- 	{ src = "https://github.com/vague2k/vague.nvim" },
+-- 	{ src = "https://github.com/projekt0n/github-nvim-theme" },
+-- 	{ src = "https://github.com/rose-pine/neovim" },
+-- })
+
 vim.cmd("packadd vague.nvim")
 require("vague").setup({
 	italic = false,
