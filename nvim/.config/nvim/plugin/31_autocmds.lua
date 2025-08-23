@@ -5,15 +5,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- vim.api.nvim_create_autocmd('FileType', {
---   pattern = { 'typescriptreact', 'json', 'jsonc', 'lua' },
---   callback = function()
---     vim.bo.shiftwidth = 2
---     vim.bo.tabstop = 2
---     vim.bo.softtabstop = 2
---     vim.bo.expandtab = true
---   end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "json", "jsonc", "lua" },
+	callback = function()
+		vim.bo.tabstop = 2
+	end,
+})
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",
