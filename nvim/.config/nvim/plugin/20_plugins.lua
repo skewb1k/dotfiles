@@ -1,36 +1,48 @@
 require("nvim-highlight-colors").setup()
 
----@diagnostic disable-next-line: missing-fields
-require("nvim-treesitter.configs").setup({
-	ensure_installed = {
-		"bash",
-		"query",
-		"c",
-		"diff",
-		"editorconfig",
-		"git_config",
-		"git_rebase",
-		"gitattributes",
-		"gitcommit",
-		"gitignore",
-		"javascript",
-		"typescript",
-		"tsx",
-		"jsdoc",
-		"json",
-		"jsonc",
-		"lua",
-		"luadoc",
-		"make",
-		"markdown",
-		"markdown_inline",
-		"ssh_config",
-		"vim",
-		"vimdoc",
-	},
-	sync_install = false,
-	auto_install = true,
-	highlight = { enable = true },
+local ensure_installed = {
+	"bash",
+	"query",
+	"c",
+	"diff",
+	"editorconfig",
+	"git_config",
+	"git_rebase",
+	"gitattributes",
+	"gitcommit",
+	"gitignore",
+	"javascript",
+	"typescript",
+	"tsx",
+	"jsdoc",
+	"yaml",
+	"toml",
+	"json",
+	"jsonc",
+	"lua",
+	"luadoc",
+	"make",
+	"markdown",
+	"markdown_inline",
+	"ssh_config",
+	"vim",
+	"vimdoc",
+	"go",
+	"rust",
+	"zig",
+	"python",
+	"html",
+	"css",
+}
+
+require("nvim-treesitter").install(ensure_installed)
+
+local filetypes = vim.iter(ensure_installed):map(vim.treesitter.language.get_filetypes):flatten():totable()
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = filetypes,
+	callback = function(ev)
+		vim.treesitter.start(ev.buf)
+	end,
 })
 
 require("gitsigns").setup({
