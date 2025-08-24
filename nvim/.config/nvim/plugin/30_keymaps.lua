@@ -26,4 +26,4 @@ map("", "<leader>u", exec("checktime"))
 
 map("", "<A-z>", exec("set wrap!"))
 
-map("", "gd", "<C-]>")
+map("", "gd", vim.lsp.buf.definition)
