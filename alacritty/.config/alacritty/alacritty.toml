@@ -1,3 +1,6 @@
+[general]
+import = ["./themes/vague.toml"]
+
 [font]
 size = 14.5
 
@@ -13,17 +16,10 @@ style = "Regular"
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
-[general]
-import = ["./themes/vague.toml"]
-
 [mouse]
 hide_when_typing = true
-
-[hints]
-enabled = []
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
 key = "Return"
 mods = "Control|Shift"
-
