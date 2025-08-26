@@ -5,7 +5,7 @@
 autoload -U compinit; compinit
 
 bindkey -e
-bindkey '^y' autosuggest-accept
+bindkey '\e/' autosuggest-accept
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.p10k.zsh
