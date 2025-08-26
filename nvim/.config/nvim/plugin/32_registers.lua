@@ -1,3 +1,1 @@
-local setreg = vim.fn.setreg
-
-setreg("t", "ITODO: gccA")
+vim.fn.setreg("t", "ITODO(skewb1k): gccA.i")
