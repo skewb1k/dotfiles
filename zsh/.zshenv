@@ -4,7 +4,6 @@ export WORDCHARS=${WORDCHARS/\//}
 
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
-
 export SUDO_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
@@ -20,15 +19,11 @@ export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
 
 export TMUXDOTDIR="$XDG_CONFIG_HOME/tmux"
 
-export GOPATH="$HOME/.local/go"
-
-export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.cache/bin"
 export PATH="$PATH:$HOME/.cache/.bun/bin"
 export PATH="$PATH:/opt/brew/bin"
-export PATH="$PATH:$XDG_CONFIG_HOME/tmux"
 
 export DO_NOT_TRACK=1
 
