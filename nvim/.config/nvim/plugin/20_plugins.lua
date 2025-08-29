@@ -38,11 +38,17 @@ local ensure_installed = {
 	"vim",
 	"vimdoc",
 	"go",
+	"gomod",
+	"gowork",
 	"rust",
+	"sql",
 	"zig",
 	"python",
 	"html",
 	"css",
+	"cpp",
+	"just",
+	"nginx",
 }
 
 require("nvim-treesitter").install(ensure_installed)
