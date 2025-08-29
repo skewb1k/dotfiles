@@ -1,19 +1,19 @@
---color=info:4
---color=prompt:2
---color=pointer:5
---color=hl+:4
---color=marker:4
---color=spinner:6
---color=header:6
---color=border:2
---color=hl:3
---color=selected-hl:1
---color=hl+:2
---color=preview-fg:15
---color=current-bg:0
---color=current-fg:11
---color=fg:7
---color=fg+:7
---bind 'ctrl-u:page-up'
---bind 'ctrl-d:page-down'
---ansi
+--pointer=
+--scrollbar=
+--highlight-line
+--color=hl:#f3be7c
+--color=bg:-1
+--color=gutter:-1
+--color=bg+:#252530
+--color=fg+:#aeaed1
+--color=hl+:#f3be7c
+--color=border:#606079
+--color=prompt:#bb9dbd
+--color=query:#aeaed1:bold
+--color=pointer:#aeaed1
+--color=scrollbar:#aeaed1
+--color=info:#f3be7c
+--color=spinner:#7fa563
+
+--bind 'alt-v:page-up'
+--bind 'ctrl-v:page-down'
