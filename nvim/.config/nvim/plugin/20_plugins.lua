@@ -3,8 +3,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
 	{ src = "https://github.com/brenoprata10/nvim-highlight-colors" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
-	{ src = "https://github.com/echasnovski/mini.extra" },
-	{ src = "https://github.com/echasnovski/mini.pick" },
+	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/echasnovski/mini.trailspace" },
 })
 
@@ -73,22 +72,6 @@ require("gitsigns").setup({
 	signs_staged_enable = false,
 })
 
--- vim.keymap.set("", "<leader>gd", Gitsigns.)
-
-require("mini.extra").setup()
-
-local pick = require("mini.pick")
-pick.setup({
-	source = {
-		show = pick.default_show,
-	},
-})
-
-vim.keymap.set("", "<leader>f", MiniPick.builtin.files)
-vim.keymap.set("", "<leader>'", MiniPick.builtin.resume)
-vim.keymap.set("", "<leader>sg", MiniExtra.pickers.git_hunks)
-vim.ui.select = MiniPick.ui_select
-
 require("mini.trailspace").setup()
 
 require("treesitter-context").setup({
@@ -97,3 +80,9 @@ require("treesitter-context").setup({
 	mode = "topline",
 	multiwindow = true,
 })
+
+local fzf = require("fzf-lua")
+fzf.setup()
+fzf.register_ui_select()
+vim.keymap.set("", "<leader>f", FzfLua.files)
+vim.keymap.set("", "<leader>sg", FzfLua.git_status)
