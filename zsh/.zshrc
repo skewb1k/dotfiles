@@ -58,7 +58,7 @@ function y() {
 
 alias gd="git diff"
 alias gp="git push"
-alias gc="git add -A && git commit -v"
+alias gc="git commit -v"
 alias gl="git log --oneline --graph --decorate --all"
 alias gll="git --no-pager log --oneline --graph --decorate --all -n 20"
 alias gs="git status"
