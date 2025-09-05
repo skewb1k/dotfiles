@@ -1,19 +1,20 @@
---pointer=
---scrollbar=
---highlight-line
---color=hl:#f3be7c
---color=bg:-1
---color=gutter:-1
---color=bg+:#252530
---color=fg+:#aeaed1
---color=hl+:#f3be7c
---color=border:#606079
---color=prompt:#bb9dbd
---color=query:#aeaed1:bold
---color=pointer:#aeaed1
---color=scrollbar:#aeaed1
---color=info:#f3be7c
---color=spinner:#7fa563
-
 --bind 'alt-v:page-up'
 --bind 'ctrl-v:page-down'
+
+--pointer=
+--highlight-line
+--color=fg:#cdcdcd
+--color=bg:#141415
+--color=hl:#f3be7c
+--color=fg+:#aeaed1
+--color=bg+:#252530
+--color=hl+:#f3be7c
+--color=border:#606079
+--color=header:#6e94b2
+--color=gutter:#141415
+--color=spinner:#7fa563
+--color=info:#f3be7c
+--color=pointer:#aeaed1
+--color=marker:#d8647e
+--color=prompt:#bb9dbd
+
