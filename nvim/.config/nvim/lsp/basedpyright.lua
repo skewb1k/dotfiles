@@ -12,10 +12,12 @@ return {
 	},
 	settings = {
 		basedpyright = {
+			disableOrganizeImports = true,
+		},
+		python = {
 			analysis = {
-				autoSearchPaths = true,
-				useLibraryCodeForTypes = true,
-				diagnosticMode = 'workspace'
+				ignore = { "*" },
+				typeCheckingMode = "off",
 			},
 		},
 	},

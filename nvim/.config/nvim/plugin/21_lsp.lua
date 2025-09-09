@@ -43,5 +43,7 @@ vim.lsp.enable({
 	"yamlls",
 	"clangd",
 	"basedpyright",
+	"ruff",
+	"ty",
 	"taplo",
 })
