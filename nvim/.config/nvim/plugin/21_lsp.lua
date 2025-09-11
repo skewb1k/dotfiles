@@ -46,4 +46,5 @@ vim.lsp.enable({
 	"ruff",
 	"ty",
 	"taplo",
+	"tinymist",
 })
