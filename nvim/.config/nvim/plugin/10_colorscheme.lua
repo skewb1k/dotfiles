@@ -5,7 +5,7 @@
 -- 	-- { src = "https://github.com/catppuccin/nvim" },
 -- })
 
-vim.cmd("packadd vague.nvim")
+vim.cmd.packadd("vague.nvim")
 require("vague").setup({
 	italic = false,
 	on_highlights = function(hl)
