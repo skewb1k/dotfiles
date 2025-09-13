@@ -12,6 +12,7 @@ export XDG_PICTURES_DIR="$HOME/pictures"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DOWNLOAD_DIR="$HOME/downloads"
 
 # git
 export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"
