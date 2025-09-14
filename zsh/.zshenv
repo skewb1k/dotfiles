@@ -7,18 +7,11 @@ export MANPAGER='nvim +Man!'
 export SUDO_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
-# XDG
-export XDG_PICTURES_DIR="$HOME/pictures"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DOWNLOAD_DIR="$HOME/downloads"
-
 # git
-export GIT_DOT_DIR="$XDG_CONFIG_HOME/git"
+export GIT_DOT_DIR="$HOME/.config/git"
 export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
 
-export TMUXDOTDIR="$XDG_CONFIG_HOME/tmux"
+export TMUXDOTDIR="$HOME/.config/tmux"
 
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
@@ -28,6 +21,6 @@ export PATH="$PATH:/opt/brew/bin"
 
 export DO_NOT_TRACK=1
 
-export FZF_DEFAULT_OPTS_FILE=$XDG_CONFIG_HOME/fzf/.fzfrc
+export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/.fzfrc"
 
 export CMAKE_POLICY_VERSION_MINIMUM=3.5
