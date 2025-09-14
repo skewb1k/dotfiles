@@ -37,6 +37,7 @@ vim.lsp.enable({
 	"biome",
 	"ts_ls",
 	-- "tsgo",
+	"tailwindcss",
 	"golangci_lint_ls",
 	"jsonls",
 	"bashls",
