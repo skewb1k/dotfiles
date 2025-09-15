@@ -1,3 +1,4 @@
+---@type vim.lsp.Config
 return {
 	cmd = function(dispatchers, config)
 		local cmd = "biome"
@@ -23,9 +24,9 @@ return {
 		"vue",
 	},
 	root_markers = {
-		".git",
-		"package.json",
 		"biome.json",
+		"package.json",
 		"node_modules",
+		".git",
 	},
 }
