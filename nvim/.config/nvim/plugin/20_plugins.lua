@@ -4,6 +4,7 @@ vim.pack.add({
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/echasnovski/mini.trailspace" },
+	{ src = "https://github.com/neovim/nvim-lspconfig" },
 })
 
 vim.pack.add({
