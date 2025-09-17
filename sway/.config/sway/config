@@ -85,8 +85,8 @@ bindsym $mod+r mode "resize"
 bindsym --locked $mod+minus exec brightnessctl set 5%-
 bindsym --locked $mod+equal exec brightnessctl set 5%+
 
-bindsym Print exec grim "$HOME/pictures/screenshots/$(date +'%s_screenshot.png')"
-bindsym $mod+Print exec grim -g "$(slurp)" "$HOME/pictures/screenshots/$(date +'%s_screenshot.png')"
+bindsym Print exec grim "$HOME/Pictures/screenshots/$(date +'%s_screenshot.png')"
+bindsym $mod+Print exec grim -g "$(slurp)" "$HOME/Pictures/screenshots/$(date +'%s_screenshot.png')"
 
 input type:touchpad {
     dwt enabled
