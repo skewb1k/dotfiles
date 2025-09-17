@@ -2,7 +2,6 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 vim.lsp.protocol.make_client_capabilities = function()
 	capabilities.textDocument.semanticTokens = nil
 	capabilities.workspace.semanticTokens = nil
-	vim.lsp.semantic_tokens.enable(false)
 	return capabilities
 end
 

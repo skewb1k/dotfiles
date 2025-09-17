@@ -29,5 +29,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			-- client.server_capabilities.completionProvider.triggerCharacters = chars
 			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
 		end
+		vim.lsp.semantic_tokens.enable(false)
 	end,
 })
