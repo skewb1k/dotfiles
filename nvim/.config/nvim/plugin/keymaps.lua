@@ -14,7 +14,9 @@ map("", "<C-M-j>", exec("resize +2"))
 map("", "<C-M-k>", exec("resize -2"))
 
 map("", "<leader>y", '"+y')
+map("", "<leader>Y", '"+y$')
 map("", "<leader>d", '"+d')
+map("", "<leader>D", '"+D')
 
 map("", "<leader>w", function()
 	-- require("mini.trailspace").trim()
