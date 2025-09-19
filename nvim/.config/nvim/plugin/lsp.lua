@@ -5,19 +5,6 @@ vim.lsp.protocol.make_client_capabilities = function()
 	return capabilities
 end
 
--- vim.api.nvim_create_autocmd("LspAttach", {
--- 	callback = function(ev)
--- 		local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
--- 		client.server_capabilities.semanticTokensProvider = nil
--- 	end,
--- })
-
--- vim.api.nvim_create_autocmd("LspAttach", {
--- 	callback = function()
--- 		vim.lsp.semantic_tokens.enable(false)
--- 	end,
--- })
-
 vim.diagnostic.config({
 	severity_sort = true,
 	float = { source = "if_many" },
