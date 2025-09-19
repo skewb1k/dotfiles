@@ -1,5 +1,6 @@
 vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
 }, { load = true })
 
 local ensure_installed = {
@@ -51,10 +52,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function(ev)
 		vim.treesitter.start(ev.buf)
 	end,
-})
-
-vim.pack.add({
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
 })
 
 require("treesitter-context").setup({

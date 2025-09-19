@@ -4,7 +4,7 @@ vim.pack.add({
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/echasnovski/mini.trailspace" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
-})
+}, { load = true })
 
 require("nvim-highlight-colors").setup({})
 
@@ -17,7 +17,6 @@ require("gitsigns").setup({
 		changedelete = { text = "~" },
 		untracked = { text = "┆" },
 	},
-	signs_staged_enable = false,
 })
 
 require("mini.trailspace").setup()
