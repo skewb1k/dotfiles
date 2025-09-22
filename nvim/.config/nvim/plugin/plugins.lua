@@ -4,6 +4,7 @@ vim.pack.add({
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/echasnovski/mini.trailspace" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/skewb1k/colorscheme-preview.nvim" },
 }, { load = true })
 
 require("nvim-highlight-colors").setup({})
