@@ -6,7 +6,7 @@ resize-overlay = never
 window-padding-balance = true
 window-padding-x = 0
 window-padding-y = 0
-cursor-invert-fg-bg = true
+cursor-color = cell-foreground
 
 shell-integration = zsh
 desktop-notifications = false
