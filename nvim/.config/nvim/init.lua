@@ -7,6 +7,7 @@ vim.o.relativenumber = true
 
 vim.o.breakindent = true
 vim.o.undofile = true
+vim.o.swapfile = false
 vim.o.writebackup = false
 
 vim.o.signcolumn = "yes"
