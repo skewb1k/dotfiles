@@ -26,6 +26,7 @@ vim.lsp.enable({
 	-- "tsgo",
 	"tailwindcss",
 	"cssls",
+	"zls",
 	"golangci_lint_ls",
 	"jsonls",
 	"bashls",
