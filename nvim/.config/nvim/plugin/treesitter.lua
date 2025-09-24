@@ -1,7 +1,7 @@
 vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
-}, { load = true })
+}, { load = true, confirm = false })
 
 local ensure_installed = {
 	"bash",
