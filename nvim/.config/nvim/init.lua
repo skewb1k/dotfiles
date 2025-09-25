@@ -33,6 +33,8 @@ vim.o.smartcase = true
 
 vim.g.matchparen_disable_cursor_hl = 1
 
+vim.o.path = "**"
+
 vim.g.netrw_banner = false
 vim.g.netrw_preview = 1
 -- vim.g.netrw_list_hide = [[^\.\.\=/\=$]]

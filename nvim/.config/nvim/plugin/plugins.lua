@@ -1,7 +1,6 @@
 vim.pack.add({
 	{ src = "https://github.com/brenoprata10/nvim-highlight-colors" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
-	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/nvim-mini/mini.trailspace" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/skewb1k/colorscheme-preview.nvim" },
@@ -29,9 +28,3 @@ require("gitsigns").setup({
 })
 
 require("mini.trailspace").setup()
-
-local fzf = require("fzf-lua")
-fzf.setup()
-fzf.register_ui_select()
-vim.keymap.set("", "<leader>f", FzfLua.files)
-vim.keymap.set("", "<leader>sg", FzfLua.git_status)
