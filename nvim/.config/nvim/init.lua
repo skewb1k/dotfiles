@@ -12,9 +12,9 @@ vim.o.writebackup = false
 
 vim.o.signcolumn = "yes"
 
-vim.o.tabstop = 4 -- Display tabs as 4 spaces wide
-vim.o.shiftwidth = 0 -- Use tabstop value
-vim.o.smartindent = true -- Enable smart indenting for code
+vim.o.tabstop = 4
+vim.o.shiftwidth = 0
+vim.o.smartindent = true
 
 vim.o.timeout = false
 
@@ -34,13 +34,15 @@ vim.o.smartcase = true
 vim.g.matchparen_disable_cursor_hl = 1
 
 vim.o.path = "**"
+vim.o.grepprg = "rg --vimgrep --hidden" -- respect .gitignore
 
 vim.g.netrw_banner = false
 vim.g.netrw_preview = 1
 -- vim.g.netrw_list_hide = [[^\.\.\=/\=$]]
 vim.g.netrw_liststyle = 3
 
-vim.opt.completeopt = { "menuone", "noinsert", "popup", "fuzzy" }
+vim.o.completeopt = "menuone,noinsert,popup,preview"
+vim.o.wildmode = "noselect:lastused"
 
 vim.g.loaded_tutor_mode_plugin = 0
 vim.g.loaded_2html_plugin = 0
