@@ -1,5 +1,18 @@
 vim.g.mapleader = " "
 
+vim.g.matchparen_disable_cursor_hl = 1
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.g.loaded_tutor_mode_plugin = 0
+vim.g.loaded_2html_plugin = 0
+
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_node_provider = 0
+
 vim.o.winborder = "rounded"
 
 vim.o.number = true
@@ -31,23 +44,8 @@ vim.o.confirm = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-vim.g.matchparen_disable_cursor_hl = 1
-
-vim.o.path = "**"
-vim.o.grepprg = "rg --vimgrep --hidden" -- respect .gitignore
-
-vim.g.netrw_banner = false
-vim.g.netrw_preview = 1
--- vim.g.netrw_list_hide = [[^\.\.\=/\=$]]
-vim.g.netrw_liststyle = 3
-
 vim.o.completeopt = "menuone,noinsert,popup,preview"
 vim.o.wildmode = "noselect:lastused"
 
-vim.g.loaded_tutor_mode_plugin = 0
-vim.g.loaded_2html_plugin = 0
-
-vim.g.loaded_python3_provider = 0
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_node_provider = 0
+vim.o.path = "**"
+vim.o.grepprg = "rg --vimgrep --hidden" -- respect .gitignore
