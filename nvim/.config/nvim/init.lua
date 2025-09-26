@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 vim.g.matchparen_disable_cursor_hl = 1
 
+require("vim._extui").enable({ enable = true })
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
