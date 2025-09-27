@@ -1,13 +1,10 @@
-export DOTFILES=$HOME/.dotfiles
-
-export WORDCHARS=${WORDCHARS/\//}
+# export WORDCHARS=${WORDCHARS/\//}
 
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 export SUDO_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
-# git
 export GIT_DOT_DIR="$HOME/.config/git"
 export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
 

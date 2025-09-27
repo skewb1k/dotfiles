@@ -33,19 +33,6 @@ setopt HIST_SAVE_NO_DUPS       # Do not write dup event to hist file
 # 	whence ${${(z)1}[1]} >| /dev/null || return 1
 # }
 
-if command -v mise >/dev/null 2>&1; then
-  eval "$("$(command -v mise)" activate zsh)"
-fi
-
-
-alias python="python3"
-alias py="python3"
-alias ls="ls --color=auto"
-
-alias task="go-task"
-
-alias nv="nvim ."
-
 # yazi helper https://yazi-rs.github.io/docs/quick-start#shell-wrapper
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -67,11 +54,4 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
-alias fo='fzf --print0 | xargs -0 -o nvim'
-
-alias d="docker"
-
-alias g='gtrash'
-alias gm='g put'
-
-alias yay='yay --noconfirm'
+alias ls="ls --color=auto"
