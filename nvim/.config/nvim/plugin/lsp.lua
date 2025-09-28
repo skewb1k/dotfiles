@@ -6,13 +6,7 @@ vim.lsp.protocol.make_client_capabilities = function()
 end
 
 vim.diagnostic.config({
-	severity_sort = true,
-	float = { source = "if_many" },
-	underline = { severity = vim.diagnostic.severity.ERROR },
-	virtual_text = {
-		source = "if_many",
-		spacing = 2,
-	},
+	virtual_text = true,
 })
 
 vim.lsp.enable({
