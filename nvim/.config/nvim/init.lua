@@ -50,4 +50,4 @@ vim.o.completeopt = "menuone,noinsert,popup,preview"
 vim.o.wildmode = "noselect:lastused"
 
 vim.o.path = "**"
-vim.o.grepprg = "rg --vimgrep --hidden" -- respect .gitignore
+vim.o.grepprg = "rg --vimgrep --hidden --glob='!.git'" -- respect .gitignore
