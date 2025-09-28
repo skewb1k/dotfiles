@@ -4,9 +4,9 @@ bindkey -e
 
 PS1="%F{blue}%~%f%(1j. %F{yellow}%jj%f .)%(?.%F{green}$%f.%F{red}$%f) "
 
-HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 setopt appendhistory
 setopt HIST_EXPIRE_DUPS_FIRST  # Expire dup event first when trimming hist
 setopt HIST_FIND_NO_DUPS       # Do not display previously found event
@@ -38,7 +38,7 @@ alias gl="git log --oneline --graph --decorate --all"
 alias gll="git --no-pager log --oneline --graph --decorate --all -n 20"
 alias gs="git status"
 alias gcne="git commit --amend --no-edit"
-alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "[WIP]: $(date -u)"'
+alias gwip='git commit -m "[WIP]: $(date -u)"'
 
 alias cdr='cd $(git rev-parse --show-toplevel)'
 

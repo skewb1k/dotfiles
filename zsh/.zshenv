@@ -1,5 +1,3 @@
-# export WORDCHARS=${WORDCHARS/\//}
-
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 export SUDO_EDITOR=$EDITOR
