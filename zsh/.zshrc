@@ -1,20 +1,8 @@
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 autoload -U compinit; compinit
 
 bindkey -e
-bindkey '\e/' autosuggest-accept
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-source $HOME/.p10k.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue,underline
-ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue,underline
-ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
+PS1="%F{blue}%~%f%(1j. %F{yellow}%jj%f .)%(?.%F{green}$%f.%F{red}$%f) "
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -27,7 +15,7 @@ setopt HIST_IGNORE_DUPS        # Do not record consecutive dup events
 setopt HIST_IGNORE_SPACE       # Do not record event starting with a space
 setopt HIST_SAVE_NO_DUPS       # Do not write dup event to hist file
 
-# don't append "not found command" to history
+# TODO: don't append "not found command" to history
 # https://www.zsh.org/mla/users//2014/msg00715.html
 # function zshaddhistory() {
 # 	whence ${${(z)1}[1]} >| /dev/null || return 1
