@@ -104,7 +104,6 @@ input type:keyboard {
 bindsym Lock+1 workspace number 11
 
 bar {
-    # status_command while $HOME/.config/sway/status.sh; do sleep 30; done
     status_command i3status
     colors {
         statusline #ffffff
@@ -126,14 +125,6 @@ bindsym $mod+a exec playerctl -p spotify volume 0.05+
 bindsym $mod+x exec playerctl -p spotify volume 0.05-
 
 bindsym $mod+F8 exec hyprpicker
-
-exec swaymsg workspace 1; exec zen-browser
-exec swaymsg workspace 2; exec thunderbird
-# exec swaymsg workspace 2; exec spotify;
-exec swaymsg workspace 3; exec $TERMINAL
-exec swaymsg workspace 6; exec throne
-exec swaymsg workspace 6; exec Telegram
-exec swaymsg workspace 6; exec discord
 
 # exec swayidle -w \
 # 	timeout 900 'swaymsg "output * power off"' \
