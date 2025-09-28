@@ -1,20 +1,12 @@
 theme = vague
-font-family = "JetBrainsMono Nerd Font"
-font-feature = "-calt, -liga, -dlig"
 font-size = 15
+font-feature = "-calt, -liga, -dlig"
 resize-overlay = never
-window-padding-balance = true
-window-padding-x = 0
-window-padding-y = 0
+mouse-shift-capture = never
+mouse-hide-while-typing = true
+link-previews = false
 cursor-color = cell-foreground
-
+cursor-style = block
+cursor-style-blink = false
 shell-integration = zsh
-desktop-notifications = false
-app-notifications = false
-window-decoration = false
-gtk-titlebar=false
-
-gtk-custom-css = ./custom.css
-
-# command = /home/skewb1k/.local/bin/tmux-autoattach
-# command = /usr/bin/env tmux-autoattach
+shell-integration-features = no-cursor
