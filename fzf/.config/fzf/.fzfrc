@@ -1,6 +1,8 @@
 --bind 'alt-v:page-up'
 --bind 'ctrl-v:page-down'
 
+--cycle
+
 --pointer=
 --highlight-line
 --color=fg:#cdcdcd
