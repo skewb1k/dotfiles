@@ -13,7 +13,6 @@ Environment=XDG_SESSION_TYPE=wayland
 Environment=XDG_CURRENT_DESKTOP=sway
 Environment=XDG_RUNTIME_DIR=%t
 Environment=GTK_THEME='Adwaita-dark'
-Environment=TERMINAL=alacritty
 
 [Install]
 WantedBy=default.target
