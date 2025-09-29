@@ -2,7 +2,7 @@ autoload -U compinit; compinit
 
 bindkey -e
 
-PS1="%F{blue}%~%f%(1j. %F{yellow}%jj%f .) %(?.%F{green}$%f.%F{red}$%f) "
+PS1="%F{blue}%~%f%(1j. %F{yellow}%jj%f.) %(?.%F{green}$%f.%F{red}$%f) "
 
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
