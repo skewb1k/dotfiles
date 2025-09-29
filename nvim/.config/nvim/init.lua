@@ -2,8 +2,6 @@ vim.g.mapleader = " "
 
 vim.g.matchparen_disable_cursor_hl = 1
 
-require("vim._extui").enable({ enable = true })
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -46,8 +44,7 @@ vim.o.confirm = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-vim.o.completeopt = "menuone,noinsert,popup,preview"
-vim.o.wildmode = "noselect:lastused"
+vim.o.cot = "noinsert,menuone,popup"
 
 vim.o.path = "**"
 vim.o.grepprg = "rg --vimgrep --hidden --glob='!.git' --color=never" -- respect .gitignore
