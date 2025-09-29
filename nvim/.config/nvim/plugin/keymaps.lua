@@ -18,11 +18,7 @@ map("", "<leader>Y", '"+y$')
 map("", "<leader>d", '"+d')
 map("", "<leader>D", '"+D')
 
-map("", "<leader>w", function()
-	-- require("mini.trailspace").trim()
-	vim.lsp.buf.format()
-	vim.cmd("write")
-end)
+map("", "<leader>f", ":find ")
 
 map("", "<leader>u", exec("checktime"))
 
