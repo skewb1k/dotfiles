@@ -126,8 +126,8 @@ bindsym $mod+x exec playerctl -p spotify volume 0.05-
 
 bindsym $mod+F8 exec hyprpicker
 
-# exec swayidle -w \
-# 	timeout 900 'swaymsg "output * power off"' \
-# 		resume 'swaymsg "output * power on"'
+exec swayidle -w \
+	timeout 900 'swaymsg "output * power off"' \
+		resume 'swaymsg "output * power on"'
 
 include /etc/sway/config.d/*
