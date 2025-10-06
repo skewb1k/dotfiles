@@ -23,7 +23,7 @@ workspace 10 output DP-2
 
 floating_modifier $mod normal
 
-bindsym $mod+Return exec ghostty
+bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 bindsym $mod+d exec rofi -show run
 
