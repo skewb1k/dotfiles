@@ -1,0 +1,3 @@
+[submodule "foot/.config/foot/vague"]
+	path = foot/.config/foot/vague
+	url = https://github.com/vague-theme/vague-foot.git
