@@ -1,3 +1,6 @@
 [submodule "foot/.config/foot/vague"]
 	path = foot/.config/foot/vague
 	url = https://github.com/vague-theme/vague-foot.git
+[submodule "alacritty/.config/alacritty/vague"]
+	path = alacritty/.config/alacritty/vague
+	url = https://github.com/vague-theme/vague-alacritty.git
