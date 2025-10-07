@@ -4,3 +4,6 @@
 [submodule "alacritty/.config/alacritty/vague"]
 	path = alacritty/.config/alacritty/vague
 	url = https://github.com/vague-theme/vague-alacritty.git
+[submodule "ghostty/.config/ghostty/vague"]
+	path = ghostty/.config/ghostty/vague
+	url = https://github.com/vague-theme/vague-ghostty.git
