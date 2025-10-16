@@ -124,7 +124,7 @@ bindsym $mod+c exec playerctl -p spotify next
 bindsym $mod+a exec playerctl -p spotify volume 0.05+
 bindsym $mod+x exec playerctl -p spotify volume 0.05-
 
-bindsym $mod+F8 exec hyprpicker
+bindsym $mod+F8 exec hyprpicker -a
 
 exec swayidle -w \
 	timeout 900 'swaymsg "output * power off"' \
