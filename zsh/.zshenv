@@ -11,7 +11,7 @@ export TMUXDOTDIR="$HOME/.config/tmux"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.cache/.bun/bin"
+export PATH="$PATH:$HOME/.bun/bin"
 export PATH="$PATH:/opt/brew/bin"
 
 export DO_NOT_TRACK=1
