@@ -11,6 +11,17 @@ vim.g.loaded_node_provider = 0
 
 vim.g.mapleader = " "
 
+vim.keymap.set("", "<leader>y", '"+y')
+vim.keymap.set("", "<leader>Y", '"+y$')
+vim.keymap.set("", "<leader>d", '"+d')
+vim.keymap.set("", "<leader>D", '"+D')
+
+vim.keymap.set("", "<leader>f", ":find ")
+vim.keymap.set("", "<leader>g", ":grep ")
+
+vim.keymap.set("", "gd", vim.lsp.buf.definition)
+vim.keymap.set("", "grf", vim.lsp.buf.format)
+
 vim.o.guicursor = ""
 vim.g.matchparen_disable_cursor_hl = 1
 
@@ -45,9 +56,6 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 vim.o.cot = "noinsert,menuone,popup"
-
--- TODO: make it portable.
-vim.fn.setreg("t", "ITODO(skewb1k): gccA.i")
 
 vim.pack.add({
 	"https://github.com/skewb1k/vague.nvim",
