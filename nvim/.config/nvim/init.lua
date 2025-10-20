@@ -46,17 +46,6 @@ vim.o.smartcase = true
 
 vim.o.cot = "noinsert,menuone,popup"
 
-vim.o.grepprg = "rg --vimgrep --hidden --glob='!.git' --color=never" -- respect .gitignore
-
-function FindFunc(arg)
-	local cmd = vim.o.grepprg .. " --files"
-	if #arg ~= 0 then
-		cmd = cmd .. "| fzf -f " .. arg
-	end
-	return vim.fn.systemlist(cmd)
-end
-vim.o.findfunc = "v:lua.FindFunc"
-
 -- TODO: make it portable.
 vim.fn.setreg("t", "ITODO(skewb1k): gccA.i")
 
