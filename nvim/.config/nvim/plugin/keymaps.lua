@@ -19,9 +19,11 @@ map("", "<leader>d", '"+d')
 map("", "<leader>D", '"+D')
 
 map("", "<leader>f", ":find ")
+map("", "<leader>g", ":grep ")
 
 map("", "<leader>u", exec("checktime"))
 
 map("", "<A-z>", exec("set wrap!"))
 
 map("", "gd", vim.lsp.buf.definition)
+map("", "grf", vim.lsp.buf.format)
