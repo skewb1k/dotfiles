@@ -1,9 +1,9 @@
 vim.pack.add({
-	{ src = "https://github.com/brenoprata10/nvim-highlight-colors" },
-	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
-	{ src = "https://github.com/nvim-mini/mini.trailspace" },
-	{ src = "https://github.com/neovim/nvim-lspconfig" },
-	-- { src = "https://github.com/skewb1k/colorscheme-preview.nvim" },
+	"https://github.com/brenoprata10/nvim-highlight-colors",
+	"https://github.com/lewis6991/gitsigns.nvim",
+	"https://github.com/nvim-mini/mini.trailspace",
+	"https://github.com/neovim/nvim-lspconfig",
+	-- "https://github.com/skewb1k/colorscheme-preview.nvim",
 }, { load = true, confirm = false })
 
 require("nvim-highlight-colors").setup({})
@@ -27,4 +27,5 @@ require("gitsigns").setup({
 	},
 })
 
+vim.api.nvim_set_hl(0, "MiniTrailspace", { bg = vim.api.nvim_get_hl(0, { name = "Error" }).fg })
 require("mini.trailspace").setup()

@@ -1,15 +1,10 @@
--- vim.pack.add({
--- 	-- { src = "https://github.com/vague2k/vague.nvim" },
--- 	-- { src = "https://github.com/projekt0n/github-nvim-theme" },
--- 	{ src = "https://github.com/rose-pine/neovim" },
--- 	-- { src = "https://github.com/catppuccin/nvim" },
--- })
+vim.pack.add({
+	"https://github.com/skewb1k/vague.nvim",
+	-- "https://github.com/vague2k/vague.nvim",
+	-- "https://github.com/projekt0n/github-nvim-theme",
+	-- "https://github.com/rose-pine/neovim",
+	-- "https://github.com/catppuccin/nvim",
+}, { load = true, confirm = false })
 
-vim.cmd.packadd("vague.nvim")
-require("vague").setup({
-	italic = false,
-	on_highlights = function(hl)
-		hl.StatusLine.bg = nil
-	end,
-})
-vim.cmd("colorscheme vague")
+vim.cmd.colorscheme("vague")
+vim.api.nvim_set_hl(0, "StatusLine", { link = "Normal" })
