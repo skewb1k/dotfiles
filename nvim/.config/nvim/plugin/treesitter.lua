@@ -5,9 +5,8 @@ vim.pack.add({
 
 local ensure_installed = {
 	"bash",
-	"query",
-	"c",
 	"diff",
+	"comment",
 	"editorconfig",
 	"git_config",
 	"git_rebase",
@@ -22,31 +21,37 @@ local ensure_installed = {
 	"toml",
 	"json",
 	"jsonc",
-	"lua",
 	"luadoc",
 	"make",
-	"markdown",
-	"markdown_inline",
 	"ssh_config",
-	"vim",
-	"vimdoc",
 	"go",
+	"gosum",
+	"gotmpl",
 	"gomod",
 	"gowork",
 	"rust",
 	"sql",
 	"zig",
+	"ziggy",
+	"ziggy_schema",
+	"kdl",
 	"python",
 	"html",
 	"css",
 	"cpp",
 	"just",
+	"sway",
+	"nix",
+	"dockerfile",
 	"nginx",
 }
 
 require("nvim-treesitter").install(ensure_installed)
 
 local filetypes = vim.iter(ensure_installed):map(vim.treesitter.language.get_filetypes):flatten():totable()
+
+vim.list_extend(filetypes, { "c", "markdown", "markdown_inline", "vim", "vimdoc", "query", "lua" })
+
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = filetypes,
 	callback = function(ev)
