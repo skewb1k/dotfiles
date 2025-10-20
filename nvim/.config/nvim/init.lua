@@ -65,7 +65,6 @@ vim.pack.add({
 	"https://github.com/brenoprata10/nvim-highlight-colors",
 	"https://github.com/nvim-mini/mini.trailspace",
 	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/nvim-treesitter/nvim-treesitter-context",
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 	-- "https://github.com/skewb1k/colorscheme-preview.nvim",
 }, { confirm = false })

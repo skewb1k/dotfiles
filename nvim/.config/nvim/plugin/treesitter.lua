@@ -55,12 +55,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.treesitter.start(ev.buf)
 	end,
 })
-
-vim.api.nvim_set_hl(0, "TreesitterContext", { link = "CursorLine" })
-vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { link = "Folded" })
-require("treesitter-context").setup({
-	enable = true,
-	max_lines = 5,
-	mode = "topline",
-	multiwindow = true,
-})

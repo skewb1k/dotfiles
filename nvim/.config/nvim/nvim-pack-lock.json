@@ -17,10 +17,6 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
-    "nvim-treesitter-context": {
-      "rev": "41847d3",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
-    },
     "vague.nvim": {
       "rev": "0b4527b",
       "src": "https://github.com/skewb1k/vague.nvim"
