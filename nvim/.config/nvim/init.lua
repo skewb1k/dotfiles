@@ -47,7 +47,6 @@ vim.o.smartcase = true
 
 vim.o.cot = "noinsert,menuone,popup"
 
-vim.o.path = "**"
 vim.o.grepprg = "rg --vimgrep --hidden --glob='!.git' --color=never" -- respect .gitignore
 
 function FindFunc(arg)
