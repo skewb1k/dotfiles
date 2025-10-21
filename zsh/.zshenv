@@ -8,14 +8,14 @@ export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
 
 export TMUXDOTDIR="$HOME/.config/tmux"
 
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.bun/bin"
-export PATH="$PATH:/opt/brew/bin"
+export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/.fzfrc"
+
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.bun/bin:$PATH"
+export PATH="/opt/brew/bin:$PATH"
 
 export DO_NOT_TRACK=1
-
-export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/.fzfrc"
 
 export CMAKE_POLICY_VERSION_MINIMUM=3.5
