@@ -1,4 +1,5 @@
-autoload -U compinit; compinit
+autoload -U compinit
+compinit
 
 bindkey -e
 
@@ -8,12 +9,12 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
-setopt HIST_EXPIRE_DUPS_FIRST  # Expire dup event first when trimming hist
-setopt HIST_FIND_NO_DUPS       # Do not display previously found event
-setopt HIST_IGNORE_ALL_DUPS    # Delete old event if new is dup
-setopt HIST_IGNORE_DUPS        # Do not record consecutive dup events
-setopt HIST_IGNORE_SPACE       # Do not record event starting with a space
-setopt HIST_SAVE_NO_DUPS       # Do not write dup event to hist file
+setopt HIST_EXPIRE_DUPS_FIRST # Expire dup event first when trimming hist
+setopt HIST_FIND_NO_DUPS      # Do not display previously found event
+setopt HIST_IGNORE_ALL_DUPS   # Delete old event if new is dup
+setopt HIST_IGNORE_DUPS       # Do not record consecutive dup events
+setopt HIST_IGNORE_SPACE      # Do not record event starting with a space
+setopt HIST_SAVE_NO_DUPS      # Do not write dup event to hist file
 
 # TODO: don't append "not found command" to history
 # https://www.zsh.org/mla/users//2014/msg00715.html
