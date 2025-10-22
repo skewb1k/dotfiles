@@ -41,6 +41,8 @@ alias gs="git status"
 alias gcne="git commit --amend --no-edit"
 alias gwip='git commit -m "[WIP]: $(date -u)"'
 
+alias gdiff="git diff --no-index"
+
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
 alias ls="ls --color=auto"
