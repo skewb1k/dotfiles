@@ -9,16 +9,16 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-lspconfig": {
-      "rev": "ac98db2",
+      "rev": "e5c61b0",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "71bf1665",
+      "rev": "30c466ad",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "vague.nvim": {
-      "rev": "0b4527b",
+      "rev": "804891a",
       "src": "https://github.com/skewb1k/vague.nvim"
     }
   }
