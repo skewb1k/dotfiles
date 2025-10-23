@@ -67,9 +67,6 @@ vim.pack.add({
 }, { confirm = false })
 
 vim.cmd.colorscheme("vague")
-vim.api.nvim_set_hl(0, "StatusLine", { link = "Normal" })
 
 require("nvim-highlight-colors").setup({})
-
-vim.api.nvim_set_hl(0, "MiniTrailspace", { bg = vim.api.nvim_get_hl(0, { name = "Error" }).fg })
 require("mini.trailspace").setup()
