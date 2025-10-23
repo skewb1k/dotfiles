@@ -56,6 +56,9 @@ vim.o.confirm = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.o.list = true
+vim.o.listchars = "tab:> ,lead:·"
+
 vim.o.cot = "noinsert,menuone,popup"
 
 vim.pack.add({
