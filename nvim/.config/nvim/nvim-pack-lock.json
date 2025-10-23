@@ -9,7 +9,7 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-lspconfig": {
-      "rev": "e5c61b0",
+      "rev": "52a8932",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
