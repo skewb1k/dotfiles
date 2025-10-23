@@ -59,7 +59,6 @@ vim.o.cot = "noinsert,menuone,popup"
 
 vim.pack.add({
 	"https://github.com/skewb1k/vague.nvim",
-	"https://github.com/brenoprata10/nvim-highlight-colors",
 	"https://github.com/nvim-mini/mini.trailspace",
 	"https://github.com/neovim/nvim-lspconfig",
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -68,5 +67,4 @@ vim.pack.add({
 
 vim.cmd.colorscheme("vague")
 
-require("nvim-highlight-colors").setup({})
 require("mini.trailspace").setup()

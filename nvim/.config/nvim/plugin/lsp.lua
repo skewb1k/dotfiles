@@ -31,4 +31,5 @@ vim.lsp.enable({
 	"ty",
 	"taplo",
 	"tinymist",
+	"chroma_ls",
 })
