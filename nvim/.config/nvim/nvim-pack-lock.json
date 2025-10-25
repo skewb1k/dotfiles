@@ -10,7 +10,7 @@
       "version": "'main'"
     },
     "vague.nvim": {
-      "rev": "66f2ead",
+      "rev": "07419c3",
       "src": "https://github.com/skewb1k/vague.nvim"
     }
   }
