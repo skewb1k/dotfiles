@@ -49,8 +49,6 @@ vim.o.splitbelow = true
 
 vim.o.inccommand = "split"
 
-vim.o.scrolloff = 4
-
 vim.o.confirm = true
 
 vim.o.ignorecase = true
