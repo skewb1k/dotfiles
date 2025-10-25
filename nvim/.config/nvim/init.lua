@@ -36,7 +36,7 @@ vim.o.swapfile = false
 vim.o.writebackup = false
 
 vim.o.signcolumn = "yes"
-vim.o.fillchars = "eob: "
+vim.opt.fillchars = { eob = " " }
 
 vim.o.tabstop = 4
 vim.o.shiftwidth = 0
@@ -57,9 +57,9 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 vim.o.list = true
-vim.o.listchars = "tab:> ,lead:·"
+vim.opt.listchars = { tab = "> ", lead = "·" }
 
-vim.o.cot = "noinsert,menuone,popup"
+vim.opt.cot = { "noinsert", "menuone", "popup" }
 
 vim.pack.add({
 	"https://github.com/skewb1k/vague.nvim",
