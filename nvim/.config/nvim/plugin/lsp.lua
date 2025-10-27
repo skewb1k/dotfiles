@@ -5,6 +5,15 @@ vim.lsp.config("*", {
 	end,
 })
 
+-- Disable formatting for these LSP servers
+for _, lang in pairs({ "lua_ls", "tsgo", "ts_ls" }) do
+	vim.lsp.config(lang, {
+		on_init = function(p)
+			p.server_capabilities.documentFormattingProvider = false
+		end,
+	})
+end
+
 vim.diagnostic.config({
 	virtual_text = true,
 })
