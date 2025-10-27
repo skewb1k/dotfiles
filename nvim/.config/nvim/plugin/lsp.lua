@@ -1,9 +1,9 @@
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-vim.lsp.protocol.make_client_capabilities = function()
-	capabilities.textDocument.semanticTokens = nil
-	capabilities.workspace.semanticTokens = nil
-	return capabilities
-end
+vim.lsp.config("*", {
+	before_init = function(p)
+		p.capabilities.textDocument.semanticTokens = nil
+		p.capabilities.workspace.semanticTokens = nil
+	end,
+})
 
 vim.diagnostic.config({
 	virtual_text = true,
