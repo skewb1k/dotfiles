@@ -1,17 +1,21 @@
 {
   "plugins": {
     "nvim-lspconfig": {
-      "rev": "64e0a1c",
+      "rev": "a89bfcf",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "9ddd853e",
+      "rev": "64f4755b",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "vague.nvim": {
       "rev": "1478f87",
       "src": "https://github.com/skewb1k/vague.nvim"
+    },
+    "vie.nvim": {
+      "rev": "6f02dff",
+      "src": "https://github.com/vietmpl/vie.nvim"
     }
   }
 }

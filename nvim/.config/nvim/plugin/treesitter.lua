@@ -36,6 +36,7 @@ local ensure_installed = {
 	"rust",
 	"sql",
 	"zig",
+	"vie",
 	"ziggy",
 	"ziggy_schema",
 	"kdl",
