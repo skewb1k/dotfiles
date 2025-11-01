@@ -1,5 +1,3 @@
-vim.cmd.packadd("nvim-treesitter")
-
 local ensure_installed = {
 	"c",
 	"markdown",
@@ -48,6 +46,7 @@ local ensure_installed = {
 	"sway",
 	"nix",
 	"dockerfile",
+	"svelte",
 	"nginx",
 }
 
