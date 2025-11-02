@@ -5,7 +5,7 @@
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "64f4755b",
+      "rev": "55820833",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -14,7 +14,7 @@
       "src": "https://github.com/skewb1k/vague.nvim"
     },
     "vie.nvim": {
-      "rev": "6f02dff",
+      "rev": "1c8db38",
       "src": "https://github.com/vietmpl/vie.nvim"
     }
   }
