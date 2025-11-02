@@ -1,271 +1,30 @@
-//! VSCode settings.json file.
-//! Source: https://github.com/skewb1k/dotfiles
-//! --------------------------------------------------
 {
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontLigatures": false,
-  "editor.fontSize": 14,
-  "editor.fontVariations": true,
-  // "editor.letterSpacing": 0.3,
-  // ========== Terminal ==========
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.fontLigatures": false,
-  "terminal.integrated.copyOnSelection": true,
+  "editor.fontSize": 16,
   "terminal.integrated.initialHint": false,
-  "terminal.integrate.tabs.title": "${shellType}",
   "terminal.integrated.tabs.showActions": "never",
   "terminal.integrated.tabs.description": "${shellType}",
-  "terminal.integrated.commandsToSkipShell": [
-    "workbench.action.selectTheme",
-    "workbench.action.openSettingsJson",
-    "notifications.clearAll",
-    "workbench.action.toggleSidebarVisibility"
-  ],
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-  // ========== Window ==========
-  "output.smartScroll.enabled": false,
   "window.menuBarVisibility": "toggle",
-  "window.newWindowProfile": "Default",
   "window.commandCenter": false,
-  "window.openFilesInNewWindow": "off",
-  "window.customMenuBarAltFocus": false,
   "window.titleBarStyle": "custom",
   "window.title": "${rootName}",
   "window.zoomLevel": 1,
-  "window.enableMenuBarMnemonics": false,
-  // ========== Workbench ==========
-  "workbench.tips.enabled": false,
-  "workbench.startupEditor": "none",
-  "workbench.activityBar.location": "bottom",
-  "workbench.panel.showLabels": false,
+  // "workbench.activityBar.location": "bottom",
   "workbench.layoutControl.enabled": false,
-  // ========== Tabs ==========
-  "workbench.editor.wrapTabs": true,
-  "workbench.editor.enablePreview": false,
-  "workbench.editor.decorations.badges": false,
-  "workbench.editor.decorations.colors": false,
-  // ========== Tree ==========
-  "workbench.tree.expandMode": "doubleClick",
   "explorer.autoReveal": false,
   "explorer.compactFolders": false,
-  "explorer.confirmPasteNative": false,
-  // ========== Trust rules ==========
-  "security.workspace.trust.untrustedFiles": "open",
   "security.workspace.trust.enabled": false,
-  "security.workspace.trust.banner": "never",
-  "explorer.confirmDragAndDrop": false,
-  // ========== Editor ==========
-  "editor.folding": false,
-  "editor.stablePeek": false,
-  "editor.inlineSuggest.suppressSuggestions": true,
   "editor.matchBrackets": "never",
-  "editor.guides.highlightActiveIndentation": false,
-  "editor.guides.indentation": false,
-  "editor.scrollBeyondLastLine": false,
-  "editor.quickSuggestionsDelay": 0,
-  "editor.inlayHints.enabled": "off",
-  // "editor.codeLens": false,
-  "editor.overviewRulerBorder": false,
   "editor.lineNumbers": "relative",
-  "editor.mouseWheelScrollSensitivity": 2,
-  "editor.lightbulb.enabled": "off",
   "editor.occurrencesHighlight": "off",
   "editor.cursorBlinking": "solid",
-  "editor.linkedEditing": true,
   "editor.showFoldingControls": "never",
-  "editor.scrollbar.horizontalScrollbarSize": 8,
-  "editor.scrollbar.verticalScrollbarSize": 8,
-  "editor.bracketPairColorization.enabled": false,
-  "workbench.editor.empty.hint": "hidden",
-  "editor.colorDecoratorsLimit": 100,
-  "editor.accessibilitySupport": "off",
-  "editor.find.addExtraSpaceOnTop": false,
-  "editor.screenReaderAnnounceInlineSuggestion": false,
-  "editor.glyphMargin": false,
-  "scm.diffDecorations": "none",
-  "breadcrumbs.enabled": true,
-  "breadcrumbs.icons": false,
-  "breadcrumbs.symbolPath": "off",
-  "http.proxySupport": "off",
-  // ========== Formatting ==========
-  "editor.formatOnPaste": false,
-  // "go.useLanguageServer": true,
-  "go.lintTool": "golangci-lint",
-  // "go.lintFlags": [
-  //   "--fast-only"
-  // ],
-  // "go.formatTool": "custom",
-  // "go.alternateTools": {
-  //   "customFormatter": "golangci-lint"
-  // },
-  // "go.formatFlags": [
-  //   "fmt",
-  //   "--stdin"
-  // ],
-  "gopls": {
-    "formatting.gofumpt": true
-  },
-  "go.showWelcome": false,
-  "go.lintFlags": [
-    "--config=.golangci.yml"
-  ],
-  "go.formatTool": "goimports",
-    // "rust-analyzer.trace.server": "verbose"
-    // "go.alternateTools": {
-        // "gopls":"/home/skewb1k/lsproxy/gopls"
-        // "gopls":"/home/skewb1k/.local/go/bin/gopls"
-    // },
-    // "go.trace.server": "verbose",
-  "files.autoSave": "off",
-  "editor.formatOnSave": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "files.trimTrailingWhitespace": true,
-  "makefile.configureOnOpen": false,
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[javascript][javascriptreact][typescript][typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-  "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[java]": {
-    "editor.defaultFormatter": "redhat.java"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features",
-    "editor.formatOnSave": false
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features",
-    "editor.formatOnSave": false
-  },
-  "[lua]": {
-    "editor.defaultFormatter": "sumneko.lua"
-  },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-  },
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  },
-  // ========== Goto ==========
-  "editor.gotoLocation.multipleDeclarations": "goto",
-  "editor.gotoLocation.multipleDefinitions": "goto",
-  "editor.gotoLocation.multipleImplementations": "goto",
-  "editor.gotoLocation.multipleReferences": "goto",
-  "editor.gotoLocation.multipleTypeDefinitions": "goto",
-  "testing.automaticallyOpenPeekView": "never",
-  "references.preferredLocation": "view",
-  // ========== Minimap ==========
   "editor.minimap.enabled": false,
-  // ========== Git ==========
-  "git.ignoreMissingGitWarning": true,
-  "git.openRepositoryInParentFolders": "never",
-  // ========== Telemetry ==========
-  "redhat.telemetry.enabled": false,
   "telemetry.telemetryLevel": "off",
-  "cody.telemetry.level": "off",
-  "database-client.telemetry.usesOnlineServices": false,
-  // ========== Other ==========
-  "keyboard.dispatch": "keyCode",
-  "debug.internalConsoleOptions": "neverOpen",
-  "files.maxMemoryForLargeFilesMB": 16392,
   "update.mode": "none",
-  "explorer.confirmDelete": false,
-  "accessibility.hideAccessibleView": true,
-  // ========== Extensions ==========
   "extensions.ignoreRecommendations": true,
-  "extensions.autoUpdate": "onlyEnabledExtensions",
-  // ========== Peacock ==========
-  "peacock.affectActivityBar": false,
-  "peacock.affectTitleBar": false,
-  // ========== Emmet ==========
-  "emmet.triggerExpansionOnTab": true,
-  // ========== DB Client ==========
-  "database-client.executeCursorSQLByShortcut": false,
-  // ========== ErrorLens ==========
-  "errorLens.replaceLinebreaksSymbol": "",
-  "errorLens.codeLensLength": {
-    "max": 20
-  },
-  "errorLens.messageMaxChars": 100,
-  // ========== Snippets Viewer ==========
-  "snippets.viewer.expandSnippetFiles": true,
-  // ========== Vim ==========
-  "vim.leader": "<Space>",
-  "vim.incsearch": true,
-  // To improve performance
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
-  },
-  "vim.highlightedyank.duration": 200,
-  "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.color": "rgba(255, 255, 255, 0.2)",
-  // ========== Cody ==========
-  "cody.commandHints.enabled": false,
-  "cody.autocomplete.enabled": true,
-  // ========== Discord ==========
-  "vscord.app.name": "Visual Studio Code",
-  "vscord.status.idle.check": false,
-  "vscord.status.idle.enabled": false,
-  "vscord.status.problems.enabled": false,
-  "vscord.status.details.text.editing": "{workspace}",
-  "vscord.status.details.text.viewing": "{workspace}",
-  "vscord.status.details.text.idle": "Chilling...",
-  "vscord.status.image.large.idle.key": "https://media.tenor.com/VdIKn05yIh8AAAAM/cat-sleep.gif",
-  "vscord.status.image.large.idle.text": "Cat",
-  "vscord.status.buttons.button1.enabled": false,
-  "vscord.status.buttons.button2.enabled": false,
-  "vscord.status.details.enabled": true,
-  "vscord.status.details.text.notInFile": "Chilling...",
-  "vscord.status.image.large.editing.key": "https://media.tenor.com/9-RWXkKEE24AAAAM/yevgeny-ponasenkov.gif",
-  "vscord.status.image.large.editing.text": "Ponasenkov",
-  "vscord.status.image.large.notInFile.key": "https://media.tenor.com/VdIKn05yIh8AAAAM/cat-sleep.gif",
-  "vscord.status.image.large.viewing.key": "https://media.tenor.com/9-RWXkKEE24AAAAM/yevgeny-ponasenkov.gif",
-  "vscord.status.image.large.viewing.tjext": "Ponasenkov",
-  "vscord.status.image.small.editing.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{lang}.png",
-  "vscord.status.image.small.editing.text": "{LANG}",
-  "vscord.status.image.small.viewing.key": "https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/{lang}.png",
-  "vscord.status.image.small.viewing.text": "{LANG}",
-  "vscord.status.showElapsedTime": false,
-  "vscord.status.state.idle.enabled": false,
-  "vscord.status.state.text.editing": "{file_name}{file_extension}",
-  "vscord.status.state.text.viewing": "{file_name}{file_extension}",
-  "vscord.behaviour.suppressNotifications": true,
-  "workbench.colorCustomizations": {
-    // fix highlighting of rename tag
-    "editor.linkedEditingBackground": "#00000000"
-  },
-  "database-client.autoSync": true,
-  "svelte.enable-ts-plugin": true,
-  "workbench.iconTheme": "material-icon-theme",
-  "window.confirmSaveUntitledWorkspace": false,
-  // "cody.suggestions.mode": "off",
-  // "extensions.allowed": {
-  // },
-  "workbench.colorTheme": "poimandres",
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "editor.selectionHighlight": true,
+  "extensions.autoUpdate": false,
   "extensions.autoCheckUpdates": false,
-  "biome.lsp.trace.server": "verbose",
-  "go.testExplorer.concatenateMessages": false,
-  "go.trace.server": "verbose",
-  "python.analysis.typeCheckingMode": "standard"
-  // "biome.lsp.bin":"/home/skewbik/dev/biome/target/debug/biome"
+  "workbench.colorTheme": "Vague",
 }
