@@ -1,3 +1,19 @@
+vim.api.nvim_create_autocmd("User", {
+	pattern = "TSUpdate",
+	group = vim.api.nvim_create_augroup("ts-custom-parsers", {}),
+	callback = function()
+		local parsers = require("nvim-treesitter.parsers")
+		---@diagnostic disable-next-line: missing-fields
+		parsers.test = {
+			---@diagnostic disable-next-line: missing-fields
+			install_info = {
+				url = "https://github.com/tree-sitter-grammars/tree-sitter-test",
+				revision = "76b419f178da018c29d3004fcbf14f755649eb58",
+			},
+		}
+	end,
+})
+
 local ensure_installed = {
 	"c",
 	"markdown",
@@ -47,6 +63,7 @@ local ensure_installed = {
 	"dockerfile",
 	"svelte",
 	"nginx",
+	"test",
 }
 
 require("nvim-treesitter").install(ensure_installed)

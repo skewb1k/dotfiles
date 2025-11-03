@@ -9,6 +9,10 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
+    "tree-sitter-test": {
+      "rev": "76b419f",
+      "src": "https://github.com/tree-sitter-grammars/tree-sitter-test"
+    },
     "vague.nvim": {
       "rev": "9b01310",
       "src": "https://github.com/skewb1k/vague.nvim"

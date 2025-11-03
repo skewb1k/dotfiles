@@ -61,6 +61,7 @@ vim.pack.add({
 	"https://github.com/skewb1k/vague.nvim",
 	"https://github.com/vietmpl/vie.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
+	"https://github.com/tree-sitter-grammars/tree-sitter-test",
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 }, { confirm = false })
 
