@@ -43,7 +43,6 @@ local ensure_installed = {
 	"css",
 	"cpp",
 	"just",
-	"sway",
 	"nix",
 	"dockerfile",
 	"svelte",
