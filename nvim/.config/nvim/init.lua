@@ -35,6 +35,8 @@ vim.o.undofile = true
 vim.o.swapfile = false
 vim.o.writebackup = false
 
+vim.o.foldenable = false
+
 vim.o.signcolumn = "yes"
 vim.opt.fillchars = { eob = " " }
 
