@@ -5,12 +5,12 @@
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "55820833",
+      "rev": "65a266bf",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "vague.nvim": {
-      "rev": "1478f87",
+      "rev": "9b01310",
       "src": "https://github.com/skewb1k/vague.nvim"
     },
     "vie.nvim": {
