@@ -1,11 +1,11 @@
 {
   "plugins": {
     "nvim-lspconfig": {
-      "rev": "a89bfcf",
+      "rev": "2010fc6",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "65a266bf",
+      "rev": "896e92a7",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
