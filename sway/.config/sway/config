@@ -19,7 +19,7 @@ floating_modifier $mod normal
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec fuzzel
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -65,49 +65,48 @@ bindsym $mod+p workspace prev
 bindsym $mod+f floating toggle
 
 mode "resize" {
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+	bindsym $left resize shrink width 10px
+	bindsym $down resize grow height 10px
+	bindsym $up resize shrink height 10px
+	bindsym $right resize grow width 10px
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
 bindsym --locked $mod+minus exec brightnessctl set 5%-
 bindsym --locked $mod+equal exec brightnessctl set 5%+
 
+# TODO: fix.
 bindsym Print exec grim "$HOME/Pictures/screenshots/$(date +'%s_screenshot.png')"
 bindsym $mod+Print exec grim -g "$(slurp)" "$HOME/Pictures/screenshots/$(date +'%s_screenshot.png')"
 
 input type:touchpad {
-    dwt enabled
-    tap enabled
-    natural_scroll true
-    middle_emulation enabled
+	dwt enabled
+	tap enabled
+	natural_scroll true
+	middle_emulation enabled
 }
 
 input type:keyboard {
-    xkb_options ctrl:nocaps,grp:win_space_toggle
-    xkb_layout us,ru
+	xkb_options ctrl:nocaps,grp:win_space_toggle
+	xkb_layout us,ru
 	repeat_delay 400
 }
 
-bindsym Lock+1 workspace number 11
-
 bar {
-    status_command i3status
-    colors {
-        statusline #ffffff
-        background #141415
-    }
+	status_command i3status
+	colors {
+		statusline #ffffff
+		background #141415
+	}
 	# diable vertical scrolling
-    bindsym button4 nop
-    bindsym button5 nop
-    # diable horizontal scrolling
-    bindsym button6 nop
-    bindsym button7 nop
+	bindsym button4 nop
+	bindsym button5 nop
+	# diable horizontal scrolling
+	bindsym button6 nop
+	bindsym button7 nop
 }
 
 default_border none
