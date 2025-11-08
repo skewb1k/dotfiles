@@ -41,4 +41,5 @@ vim.lsp.enable({
 	"taplo",
 	"tinymist",
 	"chroma_ls",
+	"phpactor",
 })

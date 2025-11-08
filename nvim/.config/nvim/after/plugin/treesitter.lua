@@ -64,6 +64,7 @@ local ensure_installed = {
 	"svelte",
 	"nginx",
 	"test",
+	"php",
 }
 
 require("nvim-treesitter").install(ensure_installed)
