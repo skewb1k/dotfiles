@@ -3,9 +3,6 @@ export MANPAGER="nvim +Man!"
 export SUDO_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 
-export GIT_DOT_DIR="$HOME/.config/git"
-export GIT_CONFIG_GLOBAL="$GIT_DOT_DIR/.gitconfig"
-
 export TMUXDOTDIR="$HOME/.config/tmux"
 
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/.fzfrc"
