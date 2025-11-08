@@ -38,6 +38,7 @@ alias gc="git commit -v"
 alias gl="git log --oneline --graph --decorate --all"
 alias gll="git --no-pager log --oneline --graph --decorate --all -n 20"
 alias gs="git status"
+alias gds="git diff --staged"
 alias gcne="git commit --amend --no-edit"
 alias gwip='git commit -m "[WIP]: $(date -u)"'
 
