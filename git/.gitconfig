@@ -8,3 +8,5 @@
 	autoSetupRemote = true
 [http]
 	cookiefile = /home/skewb1k/.gitcookies
+[core]
+	pager = less -x1,5
