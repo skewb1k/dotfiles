@@ -5,7 +5,7 @@
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "d97d226c",
+      "rev": "81aec1e4",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -14,11 +14,11 @@
       "src": "https://github.com/tree-sitter-grammars/tree-sitter-test"
     },
     "vague.nvim": {
-      "rev": "9b01310",
+      "rev": "27a154c",
       "src": "https://github.com/skewb1k/vague.nvim"
     },
     "vie.nvim": {
-      "rev": "4b47e2a",
+      "rev": "daa286b",
       "src": "https://github.com/vietmpl/vie.nvim"
     }
   }
