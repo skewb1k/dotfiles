@@ -14,6 +14,22 @@ for _, lang in pairs({ "lua_ls", "tsgo", "ts_ls" }) do
 	})
 end
 
+-- Enable golangci_lint_ls only if a config file exists
+vim.lsp.config("golangci_lint_ls", {
+	root_dir = function(bufnr, on_dir)
+		local root_markers = {
+			".golangci.yml",
+			".golangci.yaml",
+			".golangci.toml",
+			".golangci.json",
+		}
+		local project_root = vim.fs.root(bufnr, root_markers)
+		if project_root then
+			on_dir(project_root)
+		end
+	end,
+})
+
 vim.diagnostic.config({
 	virtual_text = true,
 })
