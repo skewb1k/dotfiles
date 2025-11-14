@@ -19,7 +19,7 @@ floating_modifier $mod normal
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
-bindsym $mod+d exec fuzzel
+bindsym $mod+d exec rofi -show drun
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
