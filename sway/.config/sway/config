@@ -22,7 +22,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec rofi -show drun
 
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+# bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -79,8 +79,8 @@ bindsym --locked $mod+minus exec brightnessctl set 5%-
 bindsym --locked $mod+equal exec brightnessctl set 5%+
 
 # TODO: fix.
-bindsym Print exec grim "$HOME/Pictures/screenshots/$(date +'%s_screenshot.png')"
-bindsym $mod+Print exec grim -g "$(slurp)" "$HOME/Pictures/screenshots/$(date +'%s_screenshot.png')"
+bindsym $mod+e exec grim "$HOME/Pictures/screenshots/$(date +'%s_screenshot.png')"
+bindsym $mod+Shift+e exec grim -g "$(slurp)" "$HOME/Pictures/screenshots/$(date +'%s_screenshot.png')"
 
 input type:touchpad {
 	dwt enabled
