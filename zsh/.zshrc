@@ -42,6 +42,7 @@ alias gs="git status"
 alias gds="git diff --staged"
 alias gcne="git commit --amend --no-edit"
 alias gwip='git commit -m "[WIP]: $(date -u)"'
+alias gfp='git fetch --all --prune'
 
 alias gdiff="git diff --no-index"
 
