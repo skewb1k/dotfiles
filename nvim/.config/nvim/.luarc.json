@@ -3,9 +3,7 @@
 	"runtime.version": "LuaJIT",
 	"workspace": {
 		"library": [
-			"$VIMRUNTIME",
-			"$HOME/.local/share/nvim/site/pack"
-		],
-		"checkThirdParty": false
+			"$VIMRUNTIME"
+		]
 	}
 }
