@@ -49,3 +49,5 @@ alias gdiff="git diff --no-index"
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
 alias ls="ls --color=auto"
+
+alias ts="tree-sitter"
