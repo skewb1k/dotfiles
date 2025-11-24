@@ -31,7 +31,7 @@ fastfetch
 fd
 firefox
 foot
-fuzzel
+freerdp
 fzf
 gdb
 gfold
@@ -40,6 +40,7 @@ git-filter-repo
 github-cli
 gnome-calculator
 go
+go-tools
 goreleaser-bin
 grim
 grub
@@ -68,6 +69,11 @@ luarocks
 man-db
 man-pages
 mesa
+mingw-w64-binutils
+mingw-w64-crt
+mingw-w64-gcc
+mingw-w64-headers
+mingw-w64-winpthreads
 mise
 mpv
 nautilus
@@ -93,6 +99,7 @@ playerctl
 prettier
 qt5-wayland
 ripgrep
+rofi
 rust-analyzer
 rustup
 shell-color-scripts-git
@@ -128,6 +135,7 @@ ttf-nerd-fonts-symbols-mono
 typescript-language-server
 upfile-bin
 upower
+valgrind
 vi
 vim
 visual-studio-code-bin
@@ -135,6 +143,7 @@ vscode-css-languageserver
 vscode-json-languageserver
 wezterm
 wget
+wine
 wl-clipboard
 wlroots-asan-git
 xdg-desktop-portal-gtk
