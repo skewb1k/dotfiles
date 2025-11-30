@@ -2,8 +2,13 @@ profile laptop {
 	output eDP-1 mode 3072x1920@120Hz scale 1.5
 }
 
-profile home {
+profile home1 {
 	output eDP-1 disable
 	output DP-2 mode 2560x1440@170Hz position 0,0
 	output HDMI-A-1 mode 1920x1080@75Hz transform 270 position 2560,0
+}
+
+profile home2 {
+	output eDP-1 disable
+	output DP-2 mode 2560x1440@170Hz position 0,0
 }
