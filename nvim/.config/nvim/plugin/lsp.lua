@@ -55,6 +55,7 @@ vim.lsp.enable({
 	"ruff",
 	"taplo",
 	"tinymist",
+	"ts_query_ls",
 	"chroma_ls",
 	"phpactor",
 })
