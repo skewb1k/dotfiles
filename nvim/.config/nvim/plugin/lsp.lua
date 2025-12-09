@@ -53,7 +53,6 @@ vim.lsp.enable({
 	"clangd",
 	"basedpyright",
 	"ruff",
-	"ty",
 	"taplo",
 	"tinymist",
 	"chroma_ls",
