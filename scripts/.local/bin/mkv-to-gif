@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -e
+
+if [[ -z "$1" ]]; then
+	echo "Usage: $0 input.mkv"
+	exit 1
+fi
+
+input="$1"
+output="${input%.*}.gif"
+palette=$(mktemp -u --suffix=.png)
+
+# generate palette
+ffmpeg -v warning \
+	-i "$input" \
+	-vf "fps=15,scale=-1:-1:flags=lanczos,palettegen" \
+	"$palette"
+
+# create gif
+ffmpeg -v warning \
+	-i "$input" \
+	-i "$palette" \
+	-filter_complex "fps=15,scale=-1:-1:flags=lanczos[x];[x][1:v]paletteuse" \
+	"$output"
+
+rm -f "$palette"
