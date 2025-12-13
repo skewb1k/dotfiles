@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+print_color() {
+	local code=$1
+	local name=$2
+	echo -e "\e[${code}m${name} (code ${code}) ████\e[0m"
+}
+
+echo "Normal colors:"
+for i in {30..37}; do
+	print_color "$i" "Normal $((i - 30))"
+done
+
+echo -e "\nBright colors:"
+for i in {90..97}; do
+	print_color "$i" "Bright $((i - 90))"
+done
+
+echo -e "\nDimmed colors:"
+for i in {30..37}; do
+	print_color "2;$i" "Dim $((i - 30))"
+done
+
+echo -e "\e[0m"
