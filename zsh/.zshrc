@@ -43,11 +43,11 @@ alias gds="git diff --staged"
 alias gcne="git commit --amend --no-edit"
 alias gwip='git commit -m "[WIP]: $(date -u)"'
 alias gfp='git fetch --all --prune'
-
 alias gdiff="git diff --no-index"
-
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
 alias ls="ls --color=auto"
 
 alias ts="tree-sitter"
+
+alias ghb="gh browse"
