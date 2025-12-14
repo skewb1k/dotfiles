@@ -69,5 +69,3 @@ vim.pack.add({
 	"https://github.com/tree-sitter-grammars/tree-sitter-test",
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 }, { confirm = false })
-
-vim.cmd.colorscheme("vague")
