@@ -3,6 +3,8 @@ export MANPAGER="nvim +Man!"
 export SUDO_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 
+export LESS='-RF -x4'
+
 export TMUXDOTDIR="$HOME/.config/tmux"
 
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/.fzfrc"
