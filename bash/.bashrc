@@ -1,0 +1,46 @@
+export EDITOR="nvim"
+export MANPAGER="nvim +Man!"
+export SUDO_EDITOR="$EDITOR"
+export VISUAL="$EDITOR"
+
+export LESS="-RF -x4"
+
+export TMUXDOTDIR="$HOME/.config/tmux"
+export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/.fzfrc"
+
+export DO_NOT_TRACK=1
+
+export CMAKE_POLICY_VERSION_MINIMUM=3.5
+
+export HISTCONTROL="ignoredups"
+
+ps_exitstatus() {
+	if [ "$?" -eq 0 ]; then
+		printf '\e[32m'
+	else
+		printf '\e[31m'
+	fi
+	printf '$\e[0m'
+}
+
+PS1='\[\e[34m\]\w\[\e[0m\] $(ps_exitstatus) '
+
+alias gd="git diff"
+alias gdp='git diff $(git merge-base refs/remotes/origin/HEAD HEAD)'
+alias gp="git push"
+alias gc="git commit -v"
+alias gl="git log --oneline --graph --decorate --all"
+alias gll="git --no-pager log --oneline --graph --decorate --all -n 20"
+alias gs="git status"
+alias gds="git diff --staged"
+alias gcne="git commit --amend --no-edit"
+alias gwip='git commit -m "[WIP]: $(date -u)"'
+alias gfp='git fetch --all --prune'
+alias gdiff="git diff --no-index"
+alias cdr='cd $(git rev-parse --show-toplevel)'
+
+alias ls="ls --color=auto"
+
+alias ts="tree-sitter"
+
+alias ghb="gh browse"
