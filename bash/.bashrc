@@ -19,16 +19,8 @@ export CMAKE_POLICY_VERSION_MINIMUM=3.5
 
 export HISTCONTROL="ignoredups"
 
-# ps_exitstatus() {
-# 	if [ "$?" -eq 0 ]; then
-# 		printf '\e[32m'
-# 	else
-# 		printf '\e[31m'
-# 	fi
-# 	printf '$\e[0m'
-# }
-#
-# PS1='\[\e[34m\]\w\[\e[0m\] $(ps_exitstatus) '
+# TODO: add exit code indicator and jobs counter.
+PS1='\[\e[34m\]\W\[\e[0m\] $ '
 
 alias gd="git diff"
 alias gdp='git diff $(git merge-base refs/remotes/origin/HEAD HEAD)'
