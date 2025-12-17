@@ -7,7 +7,7 @@ vim.keymap.set("", "<leader>f", ":find ")
 vim.keymap.set("", "<leader>g", ":grep ")
 
 vim.keymap.set("", "<leader>m", ":make<CR>")
-vim.keymap.set("", "<leader>c", ":cwindow<CR>")
+vim.keymap.set("", "<leader>c", ":copen<CR>")
 
 vim.keymap.set("", "gd", vim.lsp.buf.definition)
 vim.keymap.set("", "grf", vim.lsp.buf.format)
