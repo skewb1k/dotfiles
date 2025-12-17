@@ -51,6 +51,7 @@ vim.opt.cot = { "noinsert", "menuone", "popup" }
 require("pack_build")
 vim.pack.add({
 	"https://github.com/skewb1k/vague.nvim",
+	"https://github.com/nvim-mini/mini.trailspace",
 	"https://github.com/vietmpl/vie.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
 	{
@@ -61,3 +62,5 @@ vim.pack.add({
 	},
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 }, { confirm = false })
+
+require("mini.trailspace").setup()
