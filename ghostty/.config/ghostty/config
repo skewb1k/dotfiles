@@ -8,5 +8,5 @@ link-previews = false
 cursor-color = cell-foreground
 cursor-style = block
 cursor-style-blink = false
-shell-integration = zsh
 shell-integration-features = no-cursor
+scrollbar = never
