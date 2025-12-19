@@ -6,14 +6,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	group = vim.api.nvim_create_augroup("ft-tabstop", {}),
-	pattern = { "json", "jsonc", "lua" },
-	callback = function()
-		vim.bo.tabstop = 2
-	end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",
 	group = vim.api.nvim_create_augroup("disable-autocomment", {}),
 	callback = function()
