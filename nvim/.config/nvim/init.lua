@@ -44,7 +44,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 vim.o.list = true
-vim.opt.listchars = { tab = "> ", lead = "·" }
+vim.opt.listchars = { tab = "> ", space = "·" }
 
 vim.opt.cot = { "noinsert", "menuone", "popup" }
 
