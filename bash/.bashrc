@@ -17,7 +17,9 @@ export DO_NOT_TRACK=1
 
 export CMAKE_POLICY_VERSION_MINIMUM=3.5
 
-export HISTCONTROL="ignoredups"
+export HISTCONTROL='ignoredups'
+export HISTSIZE=10000
+export HISTFILESIZE=10000
 
 # TODO: add exit code indicator and jobs counter.
 PS1='\[\e[34m\]\W\[\e[0m\] $ '
