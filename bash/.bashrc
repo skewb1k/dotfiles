@@ -9,6 +9,7 @@ export VISUAL="$EDITOR"
 export LESS="-RF -x4"
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export TMUXDOTDIR="$HOME/.config/tmux"
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/.fzfrc"
