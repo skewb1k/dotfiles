@@ -14,7 +14,7 @@ vim.g.mapleader = " "
 vim.o.guicursor = ""
 vim.g.matchparen_disable_cursor_hl = 1
 
-vim.o.winborder = "rounded"
+vim.o.winborder = "solid"
 
 vim.o.number = true
 vim.o.relativenumber = true
