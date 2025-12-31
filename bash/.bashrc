@@ -24,8 +24,19 @@ export HISTCONTROL='ignoredups'
 export HISTSIZE=10000
 export HISTFILESIZE=10000
 
-# TODO: add exit code indicator and jobs counter.
-PS1='\[\e[34m\]\W\[\e[0m\] $ '
+PROMPT_COMMAND=__prompt_command
+__prompt_command() {
+	local exit_status="$?"
+
+	PS1='\[\e[34m\]\W\[\e[0m\]'
+	PS1+='$([ \j -gt 0 ] && echo "\[\e[33m\] \jj\[\e[0m\]")'
+	if [ $exit_status == 0 ]; then
+		PS1+='\[\e[0;32m\]'
+	else
+		PS1+='\[\e[0;31m\]'
+	fi
+	PS1+=' $ \[\e[0m\]'
+}
 
 alias gd="git diff"
 alias gdp='git diff $(git merge-base refs/remotes/origin/HEAD HEAD)'
