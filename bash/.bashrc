@@ -11,10 +11,6 @@ export PATH="/usr/lib/rustup/bin:$PATH"
 export TMUXDOTDIR="$HOME/.config/tmux"
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/.fzfrc"
 
-export DO_NOT_TRACK=1
-
-export CMAKE_POLICY_VERSION_MINIMUM=3.5
-
 export HISTCONTROL='ignoredups'
 export HISTSIZE=10000
 export HISTFILESIZE=10000
