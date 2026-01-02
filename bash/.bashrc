@@ -8,7 +8,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/lib/rustup/bin:$PATH"
 
-export TMUXDOTDIR="$HOME/.config/tmux"
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/.fzfrc"
 
 export HISTCONTROL='ignoredups'
