@@ -2,11 +2,6 @@
 [[ $- != *i* ]] && return
 
 export EDITOR="nvim"
-export MANPAGER="nvim +Man!"
-export SUDO_EDITOR="$EDITOR"
-export VISUAL="$EDITOR"
-
-export LESS="-RF -x4"
 
 # TODO: move it out of .bashrc.
 export PATH="$HOME/.local/bin:$PATH"
