@@ -7,6 +7,7 @@ export EDITOR="nvim"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/lib/rustup/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/.fzfrc"
 
@@ -38,7 +39,7 @@ alias gln="gl -n 20"
 alias gs="git status"
 alias gds="git diff --staged"
 alias gcne="git commit --amend --no-edit"
-alias gwip='git commit -m "[WIP]: $(date -u)"'
+alias gwip='git commit -m "wip [skip ci]"'
 alias gfp='git fetch --all --prune'
 alias gdiff="git diff --no-index"
 alias cdr='cd $(git rev-parse --show-toplevel)'
