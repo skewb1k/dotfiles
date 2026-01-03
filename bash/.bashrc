@@ -29,6 +29,8 @@ __prompt_command() {
 	PS1+=' $ \[\e[0m\]'
 }
 
+alias ga="git add"
+alias gaa="git add -A"
 alias gd="git diff"
 alias gdp='git diff $(git merge-base refs/remotes/origin/HEAD HEAD)'
 alias gp="git push"
