@@ -32,7 +32,6 @@ __prompt_command() {
 alias ga="git add"
 alias gaa="git add -A"
 alias gd="git diff"
-alias gdp='git diff $(git merge-base refs/remotes/origin/HEAD HEAD)'
 alias gp="git push"
 alias gc="git commit -v"
 alias gl="git log --oneline --graph --decorate"
