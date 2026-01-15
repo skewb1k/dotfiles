@@ -5,8 +5,6 @@ adwaita-cursors
 adwaita-fonts
 adwaita-icon-theme
 adwaita-icon-theme-legacy
-alacritty-git
-alacritty-git-debug
 alsa-card-profiles
 alsa-lib
 alsa-topology-conf
@@ -140,10 +138,8 @@ gdbm
 gdk-pixbuf2
 gettext
 gexiv2
-gfold
 ghc-libs
 ghostty-git
-ghostty-git-debug
 ghostty-shell-integration-git
 ghostty-terminfo-git
 giflib
@@ -456,12 +452,12 @@ icu
 imagemagick
 imath
 imlib2
+intellij-idea-ultimate-edition
 iproute2
 iptables
 iputils
 iso-codes
 jansson
-jasper
 jbigkit
 jq
 json-c
@@ -783,6 +779,7 @@ nettle
 networkmanager
 nftables
 ninja
+nmap
 node-gyp
 nodejs
 nodejs-nopt
@@ -846,6 +843,8 @@ pixman
 pkgconf
 playerctl
 polkit
+poop
+poop-debug
 poppler
 poppler-glib
 popt
@@ -912,6 +911,7 @@ ruff
 runc
 rustup
 sbc
+scdoc
 sdl2-compat
 sdl3
 seatd
@@ -940,7 +940,6 @@ spotify-launcher
 sqlite
 sratom
 srt
-st
 st-debug
 startup-notification
 stow
@@ -974,7 +973,6 @@ totem-pl-parser
 tpm2-tss
 tree
 tree-sitter
-tree-sitter-cli
 ts_query_ls
 ts_query_ls-debug
 tslib
