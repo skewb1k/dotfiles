@@ -35,6 +35,8 @@ vim.o.smartindent = true
 
 vim.o.timeout = false
 
+vim.o.exrc = true
+
 vim.o.splitright = true
 vim.o.splitbelow = true
 
