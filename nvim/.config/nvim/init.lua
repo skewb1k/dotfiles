@@ -53,7 +53,4 @@ vim.opt.cot = { "noinsert", "menuone", "popup" }
 require("pack_build")
 vim.pack.add({
 	{ src = "https://github.com/skewb1k/vague.nvim", version = "quiet" },
-	"https://github.com/nvim-mini/mini.trailspace",
 }, { confirm = false })
-
-require("mini.trailspace").setup()
