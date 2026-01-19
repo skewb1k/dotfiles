@@ -54,13 +54,6 @@ require("pack_build")
 vim.pack.add({
 	{ src = "https://github.com/skewb1k/vague.nvim", version = "quiet" },
 	"https://github.com/nvim-mini/mini.trailspace",
-	{
-		src = "https://github.com/tree-sitter-grammars/tree-sitter-test",
-		data = {
-			build = "mkdir parser && tree-sitter build -o parser/test.so",
-		},
-	},
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 }, { confirm = false })
 
 require("mini.trailspace").setup()
