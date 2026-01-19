@@ -50,7 +50,6 @@ vim.opt.listchars = { tab = "> ", space = "·" }
 
 vim.opt.cot = { "noinsert", "menuone", "popup" }
 
-require("pack_build")
 vim.pack.add({
 	{ src = "https://github.com/skewb1k/vague.nvim", version = "quiet" },
 }, { confirm = false })
