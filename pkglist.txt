@@ -22,7 +22,6 @@ audit
 autoconf
 automake
 avahi
-ayatana-ido
 base
 base-devel
 bash
@@ -227,8 +226,6 @@ libasyncns
 libatasmart
 libatomic_ops
 libavc1394
-libayatana-appindicator
-libayatana-indicator
 libb2
 libblockdev
 libblockdev-crypto
@@ -254,12 +251,9 @@ libcmis
 libcolord
 libcue
 libcups
-libcurl-gnutls
 libdaemon
 libdatachannel
 libdatrie
-libdbusmenu-glib
-libdbusmenu-gtk3
 libdc1394
 libdecor
 libdeflate
@@ -635,7 +629,6 @@ sdl2-compat
 sdl3
 seatd
 sed
-sequoia-sqv
 serd
 serf
 shaderc
@@ -653,7 +646,6 @@ source-highlight
 speex
 speexdsp
 spirv-tools
-spotify-launcher
 sqlite
 sratom
 srt
@@ -759,7 +751,6 @@ yajl
 yazi
 yt-dlp
 yyjson
-zenity
 zeromq
 zig
 zimg
