@@ -53,10 +53,12 @@ chroma-ls
 chroma-ls-debug
 chromium
 clang
+clang20
 clucene
 cmake
 code
 compiler-rt
+compiler-rt20
 confuse
 containerd
 coreutils
@@ -494,8 +496,10 @@ linux-firmware-other
 linux-firmware-radeon
 linux-firmware-realtek
 linux-firmware-whence
+lld20
 llvm
 llvm-libs
+llvm20-libs
 lm_sensors
 lmdb
 localsearch
@@ -517,6 +521,8 @@ md4c
 mdadm
 mercurial
 mesa
+mew
+mew-debug
 minizip
 minizip-ng
 mkinitcpio
@@ -660,7 +666,6 @@ reuse
 rhash
 ripgrep
 rnnoise
-rofi
 rsync
 rtkit
 rubberband
@@ -694,7 +699,6 @@ spotify-launcher
 sqlite
 sratom
 srt
-startup-notification
 stow
 strace
 stylua
@@ -716,6 +720,7 @@ throne-debug
 thunderbird
 tinysparql
 tk
+tllist
 tmux
 tokei
 totem-pl-parser
@@ -755,6 +760,7 @@ vulkan-headers
 vulkan-icd-loader
 vulkan-validation-layers
 wayland
+wayland-protocols
 webrtc-audio-processing-1
 websocat
 which
@@ -765,7 +771,6 @@ wlroots0.19
 wpa_supplicant
 x264
 x265
-xcb-imdkit
 xcb-proto
 xcb-util
 xcb-util-cursor
@@ -795,12 +800,12 @@ xxhash
 xz
 yajl
 yaml-cpp
-yamlfmt
 yazi
 yt-dlp
 yyjson
 zenity
 zeromq
+zig
 zimg
 zix
 zlib
