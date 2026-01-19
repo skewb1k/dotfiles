@@ -29,7 +29,6 @@ bash
 bash-completion
 bc
 binutils
-biome
 bison
 blas
 blueprint-compiler
@@ -56,7 +55,6 @@ clang
 clang20
 clucene
 cmake
-code
 compiler-rt
 compiler-rt20
 confuse
@@ -94,9 +92,7 @@ egl-wayland
 egl-wayland2
 egl-x11
 eglexternalplatform
-electron39
 elfutils
-emacs
 exempi
 exiv2
 expac
@@ -112,11 +108,8 @@ findutils
 firefox
 flac
 flex
-flow-control
-flow-control-debug
 fontconfig
 foot
-freeglut
 freetype2
 fribidi
 fuse-common
@@ -127,7 +120,6 @@ gc
 gcc
 gcc-libs
 gcr-4
-gd
 gdb
 gdb-common
 gdbm
@@ -137,7 +129,6 @@ gexiv2
 giflib
 git
 github-cli
-glew
 glfw
 glib-networking
 glib2
@@ -145,7 +136,6 @@ glibc
 glibmm-2.68
 glow
 glslang
-glu
 glycin
 gmp
 gnome-autoar
@@ -170,7 +160,6 @@ groff
 grub
 gsettings-desktop-schemas
 gsettings-system-schemas
-gsl
 gsm
 gssdp
 gst-plugins-bad-libs
@@ -191,7 +180,6 @@ gvfs
 gzip
 harfbuzz
 harfbuzz-icu
-helix
 hicolor-icon-theme
 hidapi
 highway
@@ -220,20 +208,10 @@ json-glib
 jsoncpp
 kanshi
 kbd
-kcompletion5
-kconfig5
-kcoreaddons5
-kcrash5
 keepassxc
 keyutils
-kguiaddons5
-ki18n5
-kitemviews5
 kmod
 krb5
-krita
-kwidgetsaddons5
-kwindowsystem5
 l-smash
 lame
 lapack
@@ -249,7 +227,6 @@ libasyncns
 libatasmart
 libatomic_ops
 libavc1394
-libavif
 libayatana-appindicator
 libayatana-indicator
 libb2
@@ -284,7 +261,6 @@ libdatrie
 libdbusmenu-glib
 libdbusmenu-gtk3
 libdc1394
-libde265
 libdecor
 libdeflate
 libdisplay-info
@@ -310,7 +286,6 @@ libfontenc
 libfreeaptx
 libfreehand
 libfyaml
-libgccjit
 libgcrypt
 libgexiv2
 libgirepository
@@ -319,7 +294,6 @@ libgpg-error
 libgsf
 libgudev
 libgxps
-libheif
 libice
 libidn2
 libiec61883
@@ -333,7 +307,6 @@ libixion
 libjpeg-turbo
 libjuice
 libjxl
-libkdcraw5
 libksba
 liblangtag
 liblc3
@@ -371,7 +344,6 @@ libogg
 libopenmpt
 liborcus
 libosinfo
-libotf
 libp11-kit
 libpagemaker
 libpcap
@@ -446,7 +418,6 @@ libwpd
 libwps
 libx11
 libxau
-libxaw
 libxcb
 libxcomposite
 libxcrypt
@@ -465,8 +436,6 @@ libxkbcommon-x11
 libxkbfile
 libxml2
 libxmlb
-libxmu
-libxpm
 libxpresent
 libxrandr
 libxrender
@@ -478,7 +447,6 @@ libxtst
 libxv
 libxxf86vm
 libyaml
-libyuv
 libzmf
 licenses
 lilv
@@ -509,8 +477,6 @@ luajit
 lv2
 lz4
 lzo
-m17n-db
-m17n-lib
 m4
 mailcap
 make
@@ -524,10 +490,8 @@ mesa
 mew
 mew-debug
 minizip
-minizip-ng
 mkinitcpio
 mkinitcpio-busybox
-mlt
 mobile-broadband-provider-info
 mpdecimal
 mpfr
@@ -561,11 +525,9 @@ ocl-icd
 onetbb
 oniguruma
 openal
-opencolorio
 opencore-amr
 opencv
 openexr
-openh264
 openjpeg2
 openssh
 openssl
@@ -615,7 +577,6 @@ protobuf
 psmisc
 pugixml
 pyalpm
-pystring
 python
 python-attrs
 python-binaryornot
@@ -644,10 +605,8 @@ qbittorrent
 qrcodegencpp-cmake
 qrencode
 qt5-base
-qt5-declarative
 qt5-svg
 qt5-translations
-qt5-wayland
 qt5-x11extras
 qt6-5compat
 qt6-base
@@ -655,7 +614,6 @@ qt6-shadertools
 qt6-svg
 qt6-tools
 qt6-translations
-quazip-qt5
 quazip-qt6
 raptor
 rasqal
@@ -726,7 +684,6 @@ tokei
 totem-pl-parser
 tpm2-tss
 tree
-tree-sitter
 ts_query_ls
 ts_query_ls-debug
 tslib
@@ -799,7 +756,6 @@ xvidcore
 xxhash
 xz
 yajl
-yaml-cpp
 yazi
 yt-dlp
 yyjson
