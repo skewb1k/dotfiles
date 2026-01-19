@@ -50,7 +50,6 @@ local ensure_installed = {
 	"rust",
 	"sql",
 	"zig",
-	"vie",
 	"python",
 	"html",
 	"css",

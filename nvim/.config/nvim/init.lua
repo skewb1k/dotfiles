@@ -54,7 +54,6 @@ require("pack_build")
 vim.pack.add({
 	"https://github.com/skewb1k/vague.nvim",
 	"https://github.com/nvim-mini/mini.trailspace",
-	"https://github.com/vietmpl/vie.nvim",
 	{
 		src = "https://github.com/tree-sitter-grammars/tree-sitter-test",
 		data = {
