@@ -14,8 +14,9 @@
       "src": "https://github.com/tree-sitter-grammars/tree-sitter-test"
     },
     "vague.nvim": {
-      "rev": "57b8f8034d65dca772ff360ef53c7d83abc092cd",
-      "src": "https://github.com/skewb1k/vague.nvim"
+      "rev": "e7b8814ff14b123fea64f9872e1e30343f71bbf0",
+      "src": "https://github.com/skewb1k/vague.nvim",
+      "version": "'quiet'"
     }
   }
 }

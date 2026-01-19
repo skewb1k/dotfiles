@@ -52,7 +52,7 @@ vim.opt.cot = { "noinsert", "menuone", "popup" }
 
 require("pack_build")
 vim.pack.add({
-	"https://github.com/skewb1k/vague.nvim",
+	{ src = "https://github.com/skewb1k/vague.nvim", version = "quiet" },
 	"https://github.com/nvim-mini/mini.trailspace",
 	{
 		src = "https://github.com/tree-sitter-grammars/tree-sitter-test",
