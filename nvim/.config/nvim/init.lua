@@ -42,9 +42,6 @@ vim.o.splitbelow = true
 
 vim.o.inccommand = "split"
 
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
 vim.o.list = true
 vim.opt.listchars = { tab = "> ", space = "·" }
 
