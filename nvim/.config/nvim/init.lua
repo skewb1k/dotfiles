@@ -29,9 +29,6 @@ vim.o.foldenable = false
 vim.o.signcolumn = "yes"
 vim.opt.fillchars = { eob = " " }
 
-vim.o.tabstop = 4
-vim.o.shiftwidth = 0
-
 vim.o.timeout = false
 
 vim.o.exrc = true
