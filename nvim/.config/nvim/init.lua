@@ -31,7 +31,6 @@ vim.opt.fillchars = { eob = " " }
 
 vim.o.tabstop = 4
 vim.o.shiftwidth = 0
-vim.o.smartindent = true
 
 vim.o.timeout = false
 
