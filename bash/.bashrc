@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export EDITOR="nvim"
+export EDITOR='nvim'
 
 # TODO: move it out of .bashrc.
 export BUN_INSTALL="$HOME/.bun"
@@ -31,23 +31,23 @@ __prompt_command() {
 	PS1+=' $ \[\e[0m\]'
 }
 
-alias ga="git add"
-alias gaa="git add -A"
-alias gd="git diff"
-alias gp="git push"
-alias gc="git commit -v"
-alias gl="git log --oneline --graph --decorate"
-alias gla="gl --all"
-alias gln="gl -n 20"
-alias gs="git status"
-alias gds="git diff --staged"
-alias gcne="git commit --amend --no-edit"
+alias ga='git add'
+alias gaa='git add -A'
+alias gd='git diff'
+alias gp='git push'
+alias gc='git commit -v'
+alias gl='git log --oneline --graph --decorate'
+alias gla='gl --all'
+alias gln='gl -n 20'
+alias gs='git status'
+alias gds='git diff --staged'
+alias gcne='git commit --amend --no-edit'
 alias gwip='git commit -m "wip [skip ci]"'
 alias gfp='git fetch --all --prune'
-alias gdiff="git diff --no-index"
+alias gdiff='git diff --no-index'
 alias cdr='cd $(git rev-parse --show-toplevel)'
 
-alias ls="ls --color=auto"
-alias grep="grep --color=auto"
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
-alias ghb="gh browse"
+alias ghb='gh browse'
