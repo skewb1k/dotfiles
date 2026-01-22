@@ -26,7 +26,6 @@ __prompt_command() {
   local exit_status="$?"
 
   PS1='\[\e[34m\]\W\[\e[0m\]'
-  PS1+='$([ \j -gt 0 ] && echo "\[\e[33m\] \jj\[\e[0m\]")'
   if [ $exit_status == 0 ]; then
     PS1+='\[\e[0;32m\]'
   else
