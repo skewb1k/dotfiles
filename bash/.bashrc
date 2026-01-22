@@ -19,15 +19,4 @@ export HISTFILESIZE=10000
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-__prompt_command() {
-  local exit_status="$?"
-
-  PS1='\W'
-  if [ $exit_status == 0 ]; then
-    PS1+='\[\e[0;32m\]'
-  else
-    PS1+='\[\e[0;31m\]'
-  fi
-  PS1+=' $ \[\e[0m\]'
-}
-PROMPT_COMMAND=__prompt_command
+PS1='\W $ '
