@@ -2,7 +2,7 @@
 	email = skewb1kunix@gmail.com
 	name = skewb1k
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [push]
 	default = current
 	autoSetupRemote = true
