@@ -37,5 +37,3 @@ alias cdr='cd $(git rev-parse --show-toplevel)'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
-alias ghb='gh browse'
