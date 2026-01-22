@@ -32,7 +32,6 @@ __prompt_command() {
 }
 
 alias gwip='git commit -m "wip [skip ci]"'
-alias gdiff='git diff --no-index'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
