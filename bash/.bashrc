@@ -31,7 +31,5 @@ __prompt_command() {
 	PS1+=' $ \[\e[0m\]'
 }
 
-alias gwip='git commit -m "wip [skip ci]"'
-
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
