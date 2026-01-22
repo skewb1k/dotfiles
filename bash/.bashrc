@@ -4,9 +4,6 @@
 export EDITOR='nvim'
 
 # TODO: move PATH exports out of .bashrc.
-# TODO: remove bun-specific PATH's.
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/lib/rustup/bin:$PATH"
