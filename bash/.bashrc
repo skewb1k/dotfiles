@@ -22,7 +22,7 @@ alias grep='grep --color=auto'
 __prompt_command() {
   local exit_status="$?"
 
-  PS1='\[\e[34m\]\W\[\e[0m\]'
+  PS1='\W'
   if [ $exit_status == 0 ]; then
     PS1+='\[\e[0;32m\]'
   else
