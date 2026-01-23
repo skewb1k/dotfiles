@@ -25,8 +25,6 @@ vim.o.writebackup = false
 vim.o.signcolumn = "yes"
 vim.opt.fillchars = { eob = " " }
 
-vim.o.timeout = false
-
 vim.o.exrc = true
 
 vim.o.inccommand = "split"
