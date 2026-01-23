@@ -1,4 +1,5 @@
-function FindFunc(arg, _)
+--- Implements fuzzy-find for :find command.
+function FuzzyFind(arg, _)
 	local paths = vim.fn.globpath(".", "**", true, true)
 
 	-- Filter out directories and format the paths.
@@ -22,4 +23,4 @@ function FindFunc(arg, _)
 end
 
 vim.o.grepprg = "rg --vimgrep --hidden --glob='!.git' --color=never"
-vim.o.findfunc = "v:lua.FindFunc"
+vim.o.findfunc = "v:lua.FuzzyFind"
