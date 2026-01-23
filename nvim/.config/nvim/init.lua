@@ -34,8 +34,6 @@ vim.o.inccommand = "split"
 vim.o.list = true
 vim.opt.listchars = { tab = "> ", space = "·" }
 
-vim.opt.cot = { "noinsert", "menuone", "popup" }
-
 vim.pack.add({
 	{ src = "https://github.com/skewb1k/vague-quiet.nvim" },
 }, { confirm = false })
