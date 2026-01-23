@@ -1,6 +1,6 @@
--- https://github.com/neovim/neovim/pull/35360#issuecomment-3212327279
+-- Based on https://github.com/neovim/neovim/pull/35360#issuecomment-3212327279
 vim.api.nvim_create_autocmd("PackChanged", {
-	group = vim.api.nvim_create_augroup("vim.pack-build-system", {}),
+	group = vim.api.nvim_create_augroup("packbuild", {}),
 	desc = "Execute the plugin's `data.build`",
 	callback = function(e)
 		if e.data.kind == "delete" then

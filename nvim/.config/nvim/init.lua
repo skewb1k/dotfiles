@@ -32,7 +32,7 @@ vim.o.inccommand = "split"
 vim.o.list = true
 vim.opt.listchars = { tab = "> ", space = "·" }
 
-require("pack_build")
+require("packbuild")
 vim.pack.add({
 	{ src = "https://github.com/skewb1k/vague-quiet.nvim" },
 }, { confirm = false })
