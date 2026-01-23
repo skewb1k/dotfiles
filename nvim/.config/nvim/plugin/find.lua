@@ -1,9 +1,24 @@
-function FindFunc(arg)
-	local cmd = vim.o.grepprg .. " --files"
-	if #arg ~= 0 then
-		cmd = cmd .. "| fzf -f " .. arg
+function FindFunc(arg, _)
+	local paths = vim.fn.globpath(".", "**", true, true)
+
+	-- Filter out directories and format the paths.
+	-- Iterate backwards to safely remove elements while
+	-- modifying the table.
+	for i = #paths, 1, -1 do
+		local path = paths[i]
+		if vim.fn.isdirectory(path) ~= 0 then
+			table.remove(paths, i)
+		else
+			-- Strip leading ./
+			-- TODO: test on Windows.
+			paths[i] = string.sub(path, 3)
+		end
 	end
-	return vim.fn.systemlist(cmd)
+
+	if arg == "" then
+		return paths
+	end
+	return vim.fn.matchfuzzy(paths, arg)
 end
 
 vim.o.grepprg = "rg --vimgrep --hidden --glob='!.git' --color=never"
