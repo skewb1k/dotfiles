@@ -22,5 +22,4 @@ function FuzzyFind(arg, _)
 	return vim.fn.matchfuzzy(paths, arg)
 end
 
-vim.o.grepprg = "rg --vimgrep --hidden --glob='!.git' --color=never"
 vim.o.findfunc = "v:lua.FuzzyFind"
