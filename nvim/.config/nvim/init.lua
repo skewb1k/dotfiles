@@ -29,9 +29,6 @@ vim.o.timeout = false
 
 vim.o.exrc = true
 
-vim.o.splitright = true
-vim.o.splitbelow = true
-
 vim.o.inccommand = "split"
 
 vim.o.list = true
