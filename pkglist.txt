@@ -9,11 +9,13 @@ chromium
 clang
 cmake
 devtools
+discord
 dmenu
 docker
 docker-buildx
 docker-compose
-fastfetch
+dolphin
+feh
 firefox
 fzf
 gcc
@@ -47,6 +49,7 @@ pipewire
 pipewire-pulse
 poop
 poop-debug
+ruff
 rustup
 scrot
 shfmt
@@ -59,7 +62,6 @@ tokei
 ttf-jetbrains-mono-nerd
 typescript
 unzip
-uv
 v2ray
 v2raya-bin
 v2raya-bin-debug
