@@ -120,7 +120,8 @@ default_border pixel 0
 # disable titlebar
 default_floating_border pixel 0
 
-# exec --no-startup-id setxkbmap -layout us,ru -option grp:win_space_toggle
+# TODO: move this elsewhere.
+exec --no-startup-id setxkbmap -layout us,ru -option grp:win_space_toggle
 
 bar {
         status_command i3status
