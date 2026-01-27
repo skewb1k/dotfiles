@@ -1,7 +1,7 @@
 {
   "plugins": {
     "vague-quiet.nvim": {
-      "rev": "3ce090dd1b94ce676879d6f15e266a0aaec8181f",
+      "rev": "c5b32fba9a42534da6e1e6c82c9df81ad2094584",
       "src": "https://github.com/skewb1k/vague-quiet.nvim"
     }
   }
