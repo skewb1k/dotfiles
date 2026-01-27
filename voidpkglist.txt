@@ -9,6 +9,7 @@ bash-completion
 brightnessctl
 cargo
 ccache
+chromium
 clang
 cmake
 curl
@@ -35,13 +36,13 @@ libX11-devel
 libXft-devel
 libXinerama-devel
 liberation-fonts-ttf
-lua
 lua-language-server
 mesa-dri
 mesa-vaapi
 mesa-vdpau
 mesa-vulkan-radeon
 meson
+ncdu
 nerd-fonts
 ninja
 nodejs
